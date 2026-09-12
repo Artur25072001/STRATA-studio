@@ -1,0 +1,1833 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STRATA — Architecture &amp; Interior Design Studio · Toronto</title>
+    <meta
+      name="description"
+      content="STRATA is a Toronto architecture &amp; interior design studio shaping spaces through light, material, and restraint. Bespoke residential, commercial, hospitality and cultural projects across Southern Ontario."
+    />
+    <link rel="canonical" href="https://strata-design.ca/" />
+    <meta name="theme-color" content="#100F0E" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="STRATA" />
+    <meta
+      property="og:title"
+      content="STRATA — Architecture &amp; Interior Design Studio · Toronto"
+    />
+    <meta
+      property="og:description"
+      content="Spaces shaped by light, material, and restraint. Bespoke architecture and interiors from a five-person Toronto studio."
+    />
+    <meta property="og:url" content="https://strata-design.ca/" />
+    <meta
+      property="og:image"
+      content="https://strata-design.ca/PLACEHOLDER-og-strata-studio-hero.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="STRATA — Architecture &amp; Interior Design Studio · Toronto"
+    />
+    <meta
+      name="twitter:description"
+      content="Spaces shaped by light, material, and restraint. Bespoke architecture and interiors from a five-person Toronto studio."
+    />
+    <meta
+      name="twitter:image"
+      content="https://strata-design.ca/PLACEHOLDER-og-strata-studio-hero.jpg"
+    />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="STRATA" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "STRATA — Architecture & Interior Design Studio",
+        "alternateName": "STRATA",
+        "description": "Toronto architecture and interior design studio shaping spaces through light, material, and restraint. Bespoke residential, commercial, hospitality and cultural projects across Southern Ontario.",
+        "url": "https://strata-design.ca/",
+        "email": "studio@strata-design.ca",
+        "telephone": "+1 (416) 555-0120",
+        "image": "https://strata-design.ca/background.jpg",
+        "priceRange": "$$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Toronto",
+          "addressRegion": "Ontario",
+          "addressCountry": "CA"
+        },
+        "areaServed": "Southern Ontario",
+        "founder": {
+          "@type": "Person",
+          "name": "Nadia Ostrow",
+          "jobTitle": "Founding Principal & Architect"
+        },
+        "sameAs": [
+          "https://www.instagram.com/strata.studio",
+          "https://www.linkedin.com/company/strata-studio"
+        ]
+      }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#100F0E",
+              "ink-deep": "#0B0A09",
+              paper: "#F5F2ED",
+              bronze: "#B8935F",
+            },
+            fontFamily: {
+              display: ["Fraunces", "Georgia", "serif"],
+              body: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            spacing: {
+              13: "3.25rem",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* ================================================================
+   STRATA — custom layer: grain, cursor, preloader, editorial detail
+   ================================================================ */
+      :root {
+        --ink: #100f0e;
+        --ink-deep: #0b0a09;
+        --paper: #f5f2ed;
+        --bronze: #b8935f;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--ink);
+        color: var(--paper);
+        font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      ::selection {
+        background: var(--bronze);
+        color: var(--ink);
+      }
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      select:focus-visible,
+      textarea:focus-visible {
+        outline: 1px solid var(--bronze);
+        outline-offset: 4px;
+      }
+      body.no-scroll {
+        overflow: hidden;
+      }
+      section {
+        scroll-margin-top: 3rem;
+      }
+
+      /* ---------- grain overlay ---------- */
+      #grain {
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        z-index: 250;
+        pointer-events: none;
+        opacity: 0.055;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+        animation: grain-shift 9s steps(10) infinite;
+      }
+      @keyframes grain-shift {
+        0% {
+          transform: translate(0, 0);
+        }
+        20% {
+          transform: translate(-2%, 2%);
+        }
+        40% {
+          transform: translate(2%, -1%);
+        }
+        60% {
+          transform: translate(-1%, -2%);
+        }
+        80% {
+          transform: translate(1%, 2%);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+      /* ---------- eyebrow label ---------- */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: rgba(245, 242, 237, 0.55);
+      }
+      .eyebrow .tick {
+        width: 2.25rem;
+        height: 1px;
+        background: var(--bronze);
+        flex: none;
+      }
+
+      /* ---------- preloader ---------- */
+      #preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.4rem;
+        background: var(--ink-deep);
+        /* CSS-only fallback: if JS never takes over, the preloader dismisses itself */
+        animation: pre-fallback 0.9s ease 3.6s forwards;
+      }
+      @keyframes pre-fallback {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      #preloader.is-done {
+        animation: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .pre-mask {
+        display: block;
+        overflow: hidden;
+        padding: 0.12em 0.2em;
+        margin: -0.12em -0.2em;
+      }
+      .pre-letter {
+        display: inline-block;
+        will-change: transform;
+      }
+
+      /* ---------- custom cursor ---------- */
+      html.cursor-on,
+      html.cursor-on * {
+        cursor: none !important;
+      }
+      #cursor-dot,
+      #cursor-tag {
+        position: fixed;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        z-index: 320;
+        mix-blend-mode: difference;
+      }
+      #cursor-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: #fff;
+        opacity: 0;
+      }
+      #cursor-tag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 4.6rem;
+        padding: 0.72rem 1.25rem;
+        border-radius: 999px;
+        background: #fff;
+        color: #100f0e;
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        opacity: 0;
+        visibility: hidden;
+      }
+      @media (hover: none), (pointer: coarse) {
+        #cursor-dot,
+        #cursor-tag {
+          display: none !important;
+        }
+      }
+
+      /* ---------- header burger ---------- */
+      .burger {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 1.6rem;
+      }
+      .burger span {
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: var(--paper);
+        transition:
+          transform 0.5s cubic-bezier(0.77, 0, 0.18, 1),
+          opacity 0.3s;
+      }
+      #nav-open.is-active .burger span:first-child {
+        transform: translateY(3px) rotate(45deg);
+      }
+      #nav-open.is-active .burger span:last-child {
+        transform: translateY(-3px) rotate(-45deg);
+      }
+
+      /* ---------- nav overlay ---------- */
+      #nav-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 180;
+        background: var(--ink-deep);
+        visibility: hidden;
+        opacity: 0;
+        transition:
+          opacity 0.6s cubic-bezier(0.77, 0, 0.18, 1),
+          visibility 0.6s;
+      }
+      #nav-overlay.is-open {
+        visibility: visible;
+        opacity: 1;
+      }
+      .nav-mask {
+        display: block;
+        overflow: hidden;
+      }
+      .nav-link {
+        display: flex;
+        align-items: baseline;
+        gap: 1.5rem;
+        line-height: 1.04;
+        transition:
+          color 0.4s ease,
+          padding-left 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+      }
+      .nav-link:hover {
+        color: var(--bronze);
+        padding-left: 1rem;
+      }
+
+      /* ---------- hero ---------- */
+      .hero-mask {
+        display: block;
+        overflow: hidden;
+        padding-bottom: 0.09em;
+        margin-bottom: -0.09em; /* room for descenders */
+      }
+      .hero-line {
+        display: block;
+        will-change: transform;
+      }
+      .scroll-cue-line {
+        position: relative;
+        overflow: hidden;
+      }
+      .scroll-cue-line > span {
+        position: absolute;
+        inset: 0;
+        background: var(--bronze);
+        animation: cue 2.4s cubic-bezier(0.77, 0, 0.18, 1) infinite;
+      }
+      @keyframes cue {
+        0% {
+          transform: translateY(-100%);
+        }
+        55% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(100%);
+        }
+      }
+      /* ---------- selected work ---------- */
+      .work-row {
+        border-top: 1px solid rgba(245, 242, 237, 0.12);
+      }
+      .work-list .work-row:last-child {
+        border-bottom: 1px solid rgba(245, 242, 237, 0.12);
+      }
+      .work-num {
+        color: rgba(184, 147, 95, 0.5);
+        transition: color 0.45s ease;
+      }
+      .work-row:hover .work-num {
+        color: var(--bronze);
+      }
+      .work-title {
+        position: relative;
+        display: inline-block;
+      }
+      .work-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0.06em;
+        width: 100%;
+        height: 1px;
+        background: var(--bronze);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+      }
+      .work-row:hover .work-title::after {
+        transform: scaleX(1);
+      }
+      .work-arrow {
+        display: inline-block;
+        color: var(--bronze);
+        transition:
+          transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.4s;
+        opacity: 0.4;
+      }
+      .work-row:hover .work-arrow {
+        transform: translateX(0.6rem);
+        opacity: 1;
+      }
+
+      /* cursor-follow project preview */
+      #work-preview {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 23rem;
+        max-width: 38vw;
+        aspect-ratio: 4 / 3;
+        z-index: 170;
+        pointer-events: none;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        will-change: transform;
+      }
+      #work-preview img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transform: scale(1.08);
+        transition:
+          opacity 0.45s ease,
+          transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      #work-preview img.is-active {
+        opacity: 1;
+        transform: scale(1);
+      }
+      @media (hover: none), (pointer: coarse) {
+        #work-preview {
+          display: none !important;
+        }
+      }
+
+      /* ---------- approach steps ---------- */
+      .step-card {
+        position: relative;
+      }
+      .step-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2.25rem;
+        height: 1px;
+        background: var(--bronze);
+      }
+      @media (min-width: 768px) {
+        .step-offset-2 {
+          margin-top: 7rem;
+        }
+        .step-offset-3 {
+          margin-top: 14rem;
+        }
+        .step-offset-4 {
+          margin-top: 21rem;
+        }
+      }
+
+      /* ---------- underline-draw links ---------- */
+      .u-draw {
+        position: relative;
+        display: inline-block;
+      }
+      .u-draw::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 1px;
+        background: var(--bronze);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: transform 0.6s cubic-bezier(0.77, 0, 0.18, 1);
+      }
+      .u-draw:hover::after,
+      .u-draw:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      /* ---------- form fields ---------- */
+      .lbl {
+        display: block;
+        margin-bottom: 0.45rem;
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: rgba(245, 242, 237, 0.5);
+      }
+      .field {
+        width: 100%;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid rgba(245, 242, 237, 0.18);
+        border-radius: 0;
+        padding: 0.95rem 0;
+        font-family: "Manrope", sans-serif;
+        font-size: 0.95rem;
+        color: var(--paper);
+        transition: border-color 0.35s ease;
+      }
+      .field:focus {
+        outline: none;
+        border-color: var(--bronze);
+      }
+      .field::placeholder {
+        color: rgba(245, 242, 237, 0.28);
+      }
+      select.field {
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23B8935F' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.25rem center;
+        padding-right: 1.5rem;
+        cursor: pointer;
+      }
+      select.field option {
+        background: #171512;
+        color: var(--paper);
+      }
+      textarea.field {
+        resize: vertical;
+        min-height: 7rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.9rem;
+        border: 1px solid rgba(245, 242, 237, 0.3);
+        padding: 1.1rem 2.4rem;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--paper);
+        background: transparent;
+        transition:
+          background 0.45s ease,
+          color 0.45s ease,
+          border-color 0.45s ease;
+      }
+      .btn:hover {
+        background: var(--bronze);
+        border-color: var(--bronze);
+        color: var(--ink);
+      }
+
+      /* ---------- reduced motion ---------- */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+        #grain {
+          animation: none;
+        }
+        .scroll-cue-line > span {
+          animation: none;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-ink text-paper font-body">
+    <noscript
+      ><style>
+        #preloader,
+        #work-preview,
+        #cursor-dot,
+        #cursor-tag {
+          display: none !important;
+        }
+      </style></noscript
+    >
+
+    <!-- ============ PRELOADER ============ -->
+    <div id="preloader" aria-hidden="true">
+      <span class="pre-mask">
+        <span
+          class="font-display font-light text-[clamp(3rem,8vw,6rem)] leading-none tracking-[0.08em]"
+          aria-label="STRATA"
+          ><span class="pre-letter">S</span><span class="pre-letter">T</span
+          ><span class="pre-letter">R</span><span class="pre-letter">A</span
+          ><span class="pre-letter">T</span
+          ><span class="pre-letter">A</span></span
+        >
+      </span>
+      <span
+        class="pre-sub text-[0.6rem] tracking-[0.4em] uppercase text-paper/40"
+        >Architecture &amp; Interior Design — Toronto</span
+      >
+    </div>
+
+    <!-- ============ CUSTOM CURSOR ============ -->
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-tag" aria-hidden="true">
+      <span id="cursor-tag-text">View</span>
+    </div>
+
+    <!-- ============ GRAIN OVERLAY ============ -->
+    <div id="grain" aria-hidden="true"></div>
+
+    <!-- ============ FIXED HEADER ============ -->
+    <header id="site-header" class="fixed top-0 inset-x-0 z-[190]">
+      <div
+        class="flex items-center justify-between px-6 md:px-10 py-5 bg-gradient-to-b from-ink/85 to-transparent"
+      >
+        <a
+          href="#top"
+          class="font-display font-light text-xl tracking-[0.22em] leading-none"
+          >STRATA<span class="text-bronze">.</span></a
+        >
+        <button
+          id="nav-open"
+          type="button"
+          class="group flex items-center gap-4 text-[0.62rem] font-semibold tracking-[0.35em] uppercase text-paper/80 hover:text-paper transition-colors"
+          aria-expanded="false"
+          aria-controls="nav-overlay"
+          aria-label="Open navigation"
+        >
+          <span id="nav-open-label">Menu</span>
+          <span class="burger" aria-hidden="true"
+            ><span></span><span></span
+          ></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ FULL-SCREEN NAV OVERLAY ============ -->
+    <div id="nav-overlay" aria-hidden="true">
+      <div
+        class="h-full flex flex-col justify-between px-6 md:px-14 pt-28 pb-10"
+      >
+        <nav aria-label="Primary">
+          <ul class="flex flex-col gap-2 md:gap-4">
+            <li class="nav-mask">
+              <a
+                href="#work"
+                class="nav-link nav-anim font-display font-light text-[clamp(2.8rem,8vw,6.5rem)]"
+                ><span
+                  class="text-bronze text-base md:text-xl tracking-[0.2em] align-baseline"
+                  >01</span
+                >Selected Work</a
+              >
+            </li>
+            <li class="nav-mask">
+              <a
+                href="#approach"
+                class="nav-link nav-anim font-display font-light text-[clamp(2.8rem,8vw,6.5rem)]"
+                ><span
+                  class="text-bronze text-base md:text-xl tracking-[0.2em] align-baseline"
+                  >02</span
+                >Our Approach</a
+              >
+            </li>
+            <li class="nav-mask">
+              <a
+                href="#studio"
+                class="nav-link nav-anim font-display font-light text-[clamp(2.8rem,8vw,6.5rem)]"
+                ><span
+                  class="text-bronze text-base md:text-xl tracking-[0.2em] align-baseline"
+                  >03</span
+                >The Studio</a
+              >
+            </li>
+            <li class="nav-mask">
+              <a
+                href="#contact"
+                class="nav-link nav-anim font-display font-light text-[clamp(2.8rem,8vw,6.5rem)]"
+                ><span
+                  class="text-bronze text-base md:text-xl tracking-[0.2em] align-baseline"
+                  >04</span
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between gap-6 text-sm text-paper/50"
+        >
+          <span class="nav-mask"
+            ><span class="nav-anim block"
+              >Toronto, Ontario — projects across Southern Ontario</span
+            ></span
+          >
+          <div class="flex flex-wrap gap-x-8 gap-y-2">
+            <span class="nav-mask"
+              ><a
+                class="nav-anim block u-draw"
+                href="mailto:studio@strata-design.ca"
+                >studio@strata-design.ca</a
+              ></span
+            >
+            <span class="nav-mask"
+              ><a
+                class="nav-anim block u-draw"
+                href="https://www.instagram.com/strata.studio"
+                target="_blank"
+                rel="noopener"
+                >Instagram</a
+              ></span
+            >
+            <span class="nav-mask"
+              ><a
+                class="nav-anim block u-draw"
+                href="https://www.linkedin.com/company/strata-studio"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <main id="top">
+      <!-- ============ HERO ============ -->
+      <section
+        class="hero relative min-h-screen flex flex-col justify-end overflow-hidden"
+        aria-label="Introduction"
+      >
+        <div
+          class="hero-bg absolute inset-0 overflow-hidden"
+          aria-hidden="true"
+        >
+          <img
+            src="hero-dim-double-height-concrete-interior.jpg"
+            alt="Double-height living space in raw concrete at dusk, a single tall window drawing a blade of warm amber light across a board-formed wall, low furniture sinking into deep shadow"
+            class="w-full h-full object-cover opacity-40 scale-110"
+            fetchpriority="high"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/25"
+          ></div>
+        </div>
+
+        <div class="relative z-10 px-6 md:px-10 pb-20 md:pb-24 pt-40">
+          <p class="eyebrow" data-hero="eyebrow">
+            <span class="tick"></span>STRATA · Architecture &amp; Interior
+            Design — Toronto
+          </p>
+
+          <h1
+            class="font-display font-light leading-[0.96] text-[clamp(3.2rem,10vw,10rem)] mt-8 md:mt-10 max-w-[14ch]"
+          >
+            <span class="hero-mask"
+              ><span class="hero-line">Spaces shaped</span></span
+            >
+            <span class="hero-mask"
+              ><span class="hero-line"
+                >by <em class="italic text-bronze">light</em>, material,</span
+              ></span
+            >
+            <span class="hero-mask"
+              ><span class="hero-line">and restraint.</span></span
+            >
+          </h1>
+
+          <div class="flex items-end justify-between gap-10 mt-14 md:mt-20">
+            <p class="hero-sub max-w-md text-sm leading-relaxed text-paper/60">
+              A five-person studio in Toronto designing residences, workplaces,
+              and rooms worth standing still in — across Southern Ontario and
+              occasionally beyond.
+            </p>
+            <div
+              class="hidden sm:flex flex-col items-center gap-4 shrink-0"
+              data-hero="cue"
+            >
+              <span
+                class="text-[0.58rem] tracking-[0.4em] uppercase text-paper/40"
+                >Scroll</span
+              >
+              <span class="scroll-cue-line block w-px h-16 bg-paper/15"
+                ><span></span
+              ></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MANIFESTO ============ -->
+      <section
+        id="manifesto"
+        class="relative px-6 md:px-10 py-36 md:py-60"
+        aria-label="Manifesto"
+      >
+        <div class="max-w-5xl md:ml-[12vw]" data-reveal>
+          <p class="eyebrow mb-12 md:mb-16">
+            <span class="tick"></span>01 — Manifesto
+          </p>
+          <blockquote
+            class="font-display font-light text-[clamp(1.9rem,4.2vw,3.8rem)] leading-[1.18] text-paper/90"
+          >
+            &ldquo;We don&rsquo;t decorate rooms. We resolve the tension between
+            how a space is used and
+            <em class="italic">how it feels to stand inside it</em> — one
+            material decision at a time.&rdquo;
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- ============ SELECTED WORK ============ -->
+      <section
+        id="work"
+        class="px-6 md:px-10 pb-32 md:pb-48"
+        aria-label="Selected work"
+      >
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14 md:mb-20"
+          data-reveal
+        >
+          <div>
+            <p class="eyebrow mb-8">
+              <span class="tick"></span>02 — Selected Work
+            </p>
+            <h2
+              class="font-display font-light text-4xl md:text-6xl leading-[1.02]"
+            >
+              Five sites.<br class="hidden md:block" />
+              Nothing arbitrary.
+            </h2>
+          </div>
+          <p
+            class="max-w-xs text-sm leading-relaxed text-paper/50 md:text-right md:pb-2"
+          >
+            Each project begins with the land and the life that will happen on
+            it. Hover to step inside.
+          </p>
+        </div>
+
+        <ol class="work-list">
+          <li class="work-row group" data-cursor="View">
+            <div
+              class="grid grid-cols-12 gap-x-4 gap-y-3 items-baseline py-9 md:py-13"
+            >
+              <span
+                class="work-num font-display col-span-2 md:col-span-1 text-lg md:text-2xl"
+                >01</span
+              >
+              <h3
+                class="col-span-10 md:col-span-6 font-display font-light text-3xl md:text-[3.4rem] leading-none"
+              >
+                <span class="work-title">Ridgeline Residence</span>
+              </h3>
+              <div
+                class="col-span-10 col-start-3 md:col-span-4 md:col-start-auto"
+              >
+                <p
+                  class="text-[0.62rem] tracking-[0.28em] uppercase text-paper/45"
+                >
+                  Private residence · Muskoka, ON · 2024
+                </p>
+                <p class="mt-2 text-sm text-paper/55 leading-relaxed">
+                  A lakeside home built from board-formed concrete and reclaimed
+                  cedar, designed to disappear into the treeline.
+                </p>
+              </div>
+              <span class="hidden md:flex md:col-span-1 justify-end"
+                ><span class="work-arrow text-xl">&rarr;</span></span
+              >
+            </div>
+            <img
+              src="project-ridgeline-residence-muskoka.jpg"
+              alt="Low lakeside house of board-formed concrete and reclaimed cedar receding into a dark pine treeline at dusk, warm interior glow spilling through full-height glazing onto granite outcrop"
+              class="md:hidden mt-1 mb-9 w-full aspect-[16/10] object-cover opacity-90"
+              loading="lazy"
+            />
+          </li>
+
+          <li class="work-row group" data-cursor="View">
+            <div
+              class="grid grid-cols-12 gap-x-4 gap-y-3 items-baseline py-9 md:py-13"
+            >
+              <span
+                class="work-num font-display col-span-2 md:col-span-1 text-lg md:text-2xl"
+                >02</span
+              >
+              <h3
+                class="col-span-10 md:col-span-6 font-display font-light text-3xl md:text-[3.4rem] leading-none"
+              >
+                <span class="work-title">The Hensley Loft</span>
+              </h3>
+              <div
+                class="col-span-10 col-start-3 md:col-span-4 md:col-start-auto"
+              >
+                <p
+                  class="text-[0.62rem] tracking-[0.28em] uppercase text-paper/45"
+                >
+                  Commercial interior · Toronto, ON · 2023
+                </p>
+                <p class="mt-2 text-sm text-paper/55 leading-relaxed">
+                  Adaptive reuse of a century-old warehouse into an
+                  editorial-style office for a publishing house.
+                </p>
+              </div>
+              <span class="hidden md:flex md:col-span-1 justify-end"
+                ><span class="work-arrow text-xl">&rarr;</span></span
+              >
+            </div>
+            <img
+              src="project-hensley-loft-toronto.jpg"
+              alt="Century-old warehouse loft converted to office, exposed brick and heavy timber beams, blackened steel mezzanine, long oak work tables under rows of industrial sash windows"
+              class="md:hidden mt-1 mb-9 w-full aspect-[16/10] object-cover opacity-90"
+              loading="lazy"
+            />
+          </li>
+
+          <li class="work-row group" data-cursor="View">
+            <div
+              class="grid grid-cols-12 gap-x-4 gap-y-3 items-baseline py-9 md:py-13"
+            >
+              <span
+                class="work-num font-display col-span-2 md:col-span-1 text-lg md:text-2xl"
+                >03</span
+              >
+              <h3
+                class="col-span-10 md:col-span-6 font-display font-light text-3xl md:text-[3.4rem] leading-none"
+              >
+                <span class="work-title">Wren &amp; Salt</span>
+              </h3>
+              <div
+                class="col-span-10 col-start-3 md:col-span-4 md:col-start-auto"
+              >
+                <p
+                  class="text-[0.62rem] tracking-[0.28em] uppercase text-paper/45"
+                >
+                  Hospitality · Toronto, ON · 2023
+                </p>
+                <p class="mt-2 text-sm text-paper/55 leading-relaxed">
+                  A 40-seat restaurant built around a single material story:
+                  blackened steel, travertine, and warm oak.
+                </p>
+              </div>
+              <span class="hidden md:flex md:col-span-1 justify-end"
+                ><span class="work-arrow text-xl">&rarr;</span></span
+              >
+            </div>
+            <img
+              src="project-wren-and-salt-restaurant.jpg"
+              alt="Intimate forty-seat restaurant dining room at night, blackened steel banquettes, honed travertine bar glowing under brass pendants, warm oak ceiling, candlelight pooling on set tables"
+              class="md:hidden mt-1 mb-9 w-full aspect-[16/10] object-cover opacity-90"
+              loading="lazy"
+            />
+          </li>
+          <li class="work-row group" data-cursor="View">
+            <div
+              class="grid grid-cols-12 gap-x-4 gap-y-3 items-baseline py-9 md:py-13"
+            >
+              <span
+                class="work-num font-display col-span-2 md:col-span-1 text-lg md:text-2xl"
+                >04</span
+              >
+              <h3
+                class="col-span-10 md:col-span-6 font-display font-light text-3xl md:text-[3.4rem] leading-none"
+              >
+                <span class="work-title">Ashgrove Pavilion</span>
+              </h3>
+              <div
+                class="col-span-10 col-start-3 md:col-span-4 md:col-start-auto"
+              >
+                <p
+                  class="text-[0.62rem] tracking-[0.28em] uppercase text-paper/45"
+                >
+                  Residential addition · King City, ON · 2022
+                </p>
+                <p class="mt-2 text-sm text-paper/55 leading-relaxed">
+                  A glass-and-timber pavilion extending a mid-century home
+                  toward its ravine lot.
+                </p>
+              </div>
+              <span class="hidden md:flex md:col-span-1 justify-end"
+                ><span class="work-arrow text-xl">&rarr;</span></span
+              >
+            </div>
+            <img
+              src="project-ashgrove-pavilion-king-city.jpg"
+              alt="Glass-and-timber pavilion addition extending a low mid-century house toward a ravine at dawn, morning fog drifting through birch trees behind floor-to-ceiling glazing"
+              class="md:hidden mt-1 mb-9 w-full aspect-[16/10] object-cover opacity-90"
+              loading="lazy"
+            />
+          </li>
+
+          <li class="work-row group" data-cursor="View">
+            <div
+              class="grid grid-cols-12 gap-x-4 gap-y-3 items-baseline py-9 md:py-13"
+            >
+              <span
+                class="work-num font-display col-span-2 md:col-span-1 text-lg md:text-2xl"
+                >05</span
+              >
+              <h3
+                class="col-span-10 md:col-span-6 font-display font-light text-3xl md:text-[3.4rem] leading-none"
+              >
+                <span class="work-title">Meridian Gallery</span>
+              </h3>
+              <div
+                class="col-span-10 col-start-3 md:col-span-4 md:col-start-auto"
+              >
+                <p
+                  class="text-[0.62rem] tracking-[0.28em] uppercase text-paper/45"
+                >
+                  Cultural · Toronto, ON · 2022
+                </p>
+                <p class="mt-2 text-sm text-paper/55 leading-relaxed">
+                  A private art gallery renovation organized around three carved
+                  light wells.
+                </p>
+              </div>
+              <span class="hidden md:flex md:col-span-1 justify-end"
+                ><span class="work-arrow text-xl">&rarr;</span></span
+              >
+            </div>
+            <img
+              src="project-meridian-gallery-toronto.jpg"
+              alt="Minimal private art gallery with white lime-plaster walls and three carved skylight wells raking soft daylight across a single large canvas, polished concrete floor in shadow"
+              class="md:hidden mt-1 mb-9 w-full aspect-[16/10] object-cover opacity-90"
+              loading="lazy"
+            />
+          </li>
+        </ol>
+      </section>
+
+      <!-- ============ APPROACH ============ -->
+      <section
+        id="approach"
+        class="px-6 md:px-10 pt-24 md:pt-32 pb-48 md:pb-72 border-t border-paper/10"
+        aria-label="Our approach"
+      >
+        <div class="max-w-2xl" data-reveal>
+          <p class="eyebrow mb-8">
+            <span class="tick"></span>03 — Our Approach
+          </p>
+          <h2
+            class="font-display font-light text-4xl md:text-6xl leading-[1.02]"
+          >
+            A slow, deliberate sequence.
+            <em class="italic text-paper/60">Four moves, no shortcuts.</em>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-y-16 md:gap-x-8 mt-20 md:mt-28">
+          <div class="step-card md:col-span-3 md:col-start-1 pt-8" data-reveal>
+            <span class="font-display text-bronze text-lg">01</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">
+              Discover
+            </h3>
+            <p class="mt-5 text-sm text-paper/55 leading-relaxed">
+              Site analysis, client vision, and constraints mapping before a
+              single line is drawn.
+            </p>
+          </div>
+          <div
+            class="step-card md:col-span-3 md:col-start-4 step-offset-2 pt-8"
+            data-reveal
+          >
+            <span class="font-display text-bronze text-lg">02</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">
+              Concept
+            </h3>
+            <p class="mt-5 text-sm text-paper/55 leading-relaxed">
+              Spatial narrative, massing studies, and material direction.
+            </p>
+          </div>
+          <div
+            class="step-card md:col-span-3 md:col-start-7 step-offset-3 pt-8"
+            data-reveal
+          >
+            <span class="font-display text-bronze text-lg">03</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">
+              Detail
+            </h3>
+            <p class="mt-5 text-sm text-paper/55 leading-relaxed">
+              Technical drawings, material specification, and engineering
+              coordination.
+            </p>
+          </div>
+          <div
+            class="step-card md:col-span-3 md:col-start-10 step-offset-4 pt-8"
+            data-reveal
+          >
+            <span class="font-display text-bronze text-lg">04</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">
+              Deliver
+            </h3>
+            <p class="mt-5 text-sm text-paper/55 leading-relaxed">
+              Construction oversight, styling, and the final reveal.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- ============ STUDIO ============ -->
+      <section
+        id="studio"
+        class="px-6 md:px-10 py-32 md:py-44 border-t border-paper/10"
+        aria-label="The studio"
+      >
+        <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-start">
+          <figure class="relative md:sticky md:top-28" data-reveal>
+            <div class="overflow-hidden aspect-[3/4] max-w-lg">
+              <img
+                src="portrait-nadia-ostrow-studio-window-light.jpg"
+                alt="Portrait of founding principal Nadia Ostrow standing in soft north-window light against a raw concrete studio wall, charcoal tailored jacket, arms loosely crossed, calm direct gaze, drafting table blurred behind her"
+                class="studio-img w-full h-full object-cover scale-110 opacity-90"
+                loading="lazy"
+              />
+            </div>
+            <figcaption
+              class="mt-5 text-[0.62rem] tracking-[0.3em] uppercase text-paper/40"
+            >
+              Nadia Ostrow — Founding Principal &amp; Architect
+            </figcaption>
+          </figure>
+
+          <div class="md:pt-20 md:pl-6">
+            <p class="eyebrow mb-10" data-reveal>
+              <span class="tick"></span>04 — The Studio
+            </p>
+            <p
+              class="font-display font-light text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.25] text-paper/90"
+              data-reveal
+            >
+              &ldquo;I started STRATA after a decade designing for
+              <em class="italic">other people&rsquo;s visions</em>.&rdquo;
+            </p>
+            <div
+              class="mt-10 max-w-md space-y-6 text-[0.95rem] leading-relaxed text-paper/60"
+              data-reveal
+            >
+              <p>
+                Here, every project starts with the site and the client&rsquo;s
+                actual life in it — not a mood board. The land tells you what it
+                can hold; the people tell you what it should feel like. Our job
+                is to make those two answers agree.
+              </p>
+              <p>
+                Our team is small on purpose: five people, every project touched
+                by the same hands from first sketch to final walkthrough.
+                Nothing is handed off, nothing gets lost between departments,
+                and nothing leaves the studio that we wouldn&rsquo;t want to
+                live with ourselves.
+              </p>
+            </div>
+            <p
+              class="mt-10 font-display italic text-lg text-bronze"
+              data-reveal
+            >
+              Nadia Ostrow
+            </p>
+
+            <div class="mt-16 md:mt-24" data-reveal>
+              <p
+                class="text-[0.62rem] tracking-[0.32em] uppercase text-paper/40 mb-2"
+              >
+                As seen in / Recognized by
+              </p>
+              <ul
+                class="divide-y divide-paper/10 border-y border-paper/10 mt-4"
+              >
+                <li
+                  class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1 text-sm text-paper/60"
+                >
+                  <span class="text-paper/35">Featured in</span
+                  ><span>Azure Magazine</span>
+                </li>
+                <li
+                  class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1 text-sm text-paper/60"
+                >
+                  <span class="text-paper/35">Recognized by</span
+                  ><span>Toronto Design Awards — Finalist 2024</span>
+                </li>
+                <li
+                  class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1 text-sm text-paper/60"
+                >
+                  <span class="text-paper/35">Recognized by</span
+                  ><span>Interior Design Best of Year — Shortlist</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============ CONTACT ============ -->
+      <section
+        id="contact"
+        class="px-6 md:px-10 py-32 md:py-48 border-t border-paper/10"
+        aria-label="Contact"
+      >
+        <div class="grid md:grid-cols-12 gap-16 md:gap-12">
+          <div class="md:col-span-5">
+            <p class="eyebrow mb-10" data-reveal>
+              <span class="tick"></span>05 — Contact
+            </p>
+            <h2
+              class="font-display font-light leading-[0.98] text-[clamp(2.6rem,6vw,5.5rem)]"
+              data-reveal
+            >
+              Let&rsquo;s talk about your <em class="italic">project</em>.
+            </h2>
+            <p
+              class="mt-8 max-w-md text-[0.95rem] leading-relaxed text-paper/60"
+              data-reveal
+            >
+              Every project we take on is bespoke — investment reflects scope,
+              materials, and site conditions. Tell us about your vision and
+              we&rsquo;ll follow up within two business days.
+            </p>
+
+            <ul class="mt-14 space-y-7 text-sm" data-reveal>
+              <li>
+                <span class="lbl">Email</span>
+                <a
+                  href="mailto:studio@strata-design.ca"
+                  class="u-draw font-display text-xl md:text-2xl"
+                  >studio@strata-design.ca</a
+                >
+              </li>
+              <li>
+                <span class="lbl">Phone</span>
+                <a href="tel:+14165550120" class="u-draw text-paper/80"
+                  >(416) 555-0120</a
+                >
+              </li>
+              <li class="flex flex-wrap gap-x-10 gap-y-4">
+                <span>
+                  <span class="lbl">Instagram</span>
+                  <a
+                    href="https://www.instagram.com/strata.studio"
+                    target="_blank"
+                    rel="noopener"
+                    class="u-draw text-paper/80"
+                    >@strata.studio</a
+                  >
+                </span>
+                <span>
+                  <span class="lbl">LinkedIn</span>
+                  <a
+                    href="https://www.linkedin.com/company/strata-studio"
+                    target="_blank"
+                    rel="noopener"
+                    class="u-draw text-paper/80"
+                    >STRATA Studio</a
+                  >
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-7 md:pl-10">
+            <form
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              name="inquiry"
+              method="POST"
+              class="grid sm:grid-cols-2 gap-x-10 gap-y-10"
+              data-reveal
+            >
+              <input type="hidden" name="form-name" value="inquiry" />
+              <p class="hidden">
+                <label
+                  >Don&rsquo;t fill this out if you&rsquo;re human:
+                  <input name="bot-field"
+                /></label>
+              </p>
+
+              <div>
+                <label class="lbl" for="f-name">Name *</label>
+                <input
+                  class="field"
+                  type="text"
+                  id="f-name"
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+              <div>
+                <label class="lbl" for="f-email">Email *</label>
+                <input
+                  class="field"
+                  type="email"
+                  id="f-email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+              <div>
+                <label class="lbl" for="f-phone">Phone</label>
+                <input
+                  class="field"
+                  type="tel"
+                  id="f-phone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="(000) 000-0000"
+                />
+              </div>
+              <div>
+                <label class="lbl" for="f-location">Project Location</label>
+                <input
+                  class="field"
+                  type="text"
+                  id="f-location"
+                  name="project_location"
+                  placeholder="City, region, or site"
+                />
+              </div>
+              <div>
+                <label class="lbl" for="f-type">Project Type *</label>
+                <select class="field" id="f-type" name="project_type" required>
+                  <option value="" selected disabled>
+                    Select a project type
+                  </option>
+                  <option value="residential">Residential</option>
+                  <option value="commercial">Commercial</option>
+                  <option value="hospitality">Hospitality</option>
+                  <option value="cultural">Cultural</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label class="lbl" for="f-investment"
+                  >Estimated Investment *</label
+                >
+                <select
+                  class="field"
+                  id="f-investment"
+                  name="estimated_investment"
+                  required
+                >
+                  <option value="" selected disabled>Select a range</option>
+                  <option value="under-250k">Under $250K</option>
+                  <option value="250k-750k">$250K – $750K</option>
+                  <option value="750k-2m">$750K – $2M</option>
+                  <option value="2m-plus">$2M+</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label class="lbl" for="f-message">Message *</label>
+                <textarea
+                  class="field"
+                  id="f-message"
+                  name="message"
+                  rows="4"
+                  placeholder="The site, the dream, the constraints — whatever you have."
+                  required
+                ></textarea>
+              </div>
+              <div class="sm:col-span-2">
+                <button type="submit" class="btn" data-cursor="">
+                  Send Inquiry <span aria-hidden="true">&rarr;</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ============ FOOTER ============ -->
+    <footer class="px-6 md:px-10 pt-24 md:pt-32 pb-10 border-t border-paper/10">
+      <div data-reveal>
+        <p
+          class="text-[0.62rem] tracking-[0.35em] uppercase text-paper/40 mb-6"
+        >
+          STRATA — Architecture &amp; Interior Design Studio
+        </p>
+        <a
+          href="#top"
+          class="block font-display font-light leading-none text-[clamp(4.5rem,15vw,13rem)] text-paper/95 transition-colors hover:text-bronze"
+        >
+          STRATA<span class="text-bronze">.</span>
+        </a>
+      </div>
+
+      <div class="mt-16 grid sm:grid-cols-3 gap-10 text-sm" data-reveal>
+        <nav aria-label="Footer">
+          <p class="lbl">Menu</p>
+          <ul class="mt-4 space-y-2 text-paper/60">
+            <li><a href="#work" class="u-draw">Selected Work</a></li>
+            <li><a href="#approach" class="u-draw">Our Approach</a></li>
+            <li><a href="#studio" class="u-draw">The Studio</a></li>
+            <li><a href="#contact" class="u-draw">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="lbl">Elsewhere</p>
+          <ul class="mt-4 space-y-2 text-paper/60">
+            <li>
+              <a
+                href="https://www.instagram.com/strata.studio"
+                target="_blank"
+                rel="noopener"
+                class="u-draw"
+                >Instagram — @strata.studio</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/strata-studio"
+                target="_blank"
+                rel="noopener"
+                class="u-draw"
+                >LinkedIn — STRATA Studio</a
+              >
+            </li>
+            <li>
+              <a href="mailto:studio@strata-design.ca" class="u-draw"
+                >studio@strata-design.ca</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="lbl">Studio</p>
+          <p class="mt-4 text-paper/60 leading-relaxed">
+            Toronto, Ontario<br />Projects across Southern Ontario<br />(416)
+            555-0120
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="mt-20 pt-6 border-t border-paper/10 flex flex-col sm:flex-row justify-between gap-3 text-[0.68rem] tracking-[0.12em] text-paper/35"
+        data-reveal
+      >
+        <p>
+          &copy; 2026 STRATA Architecture &amp; Interior Design Studio. All
+          rights reserved.
+        </p>
+        <p>Designed in Toronto. Built with restraint.</p>
+      </div>
+    </footer>
+
+    <!-- ============ CURSOR-FOLLOW PROJECT PREVIEW (desktop only) ============ -->
+    <div id="work-preview" aria-hidden="true">
+      <img
+        src="project-ridgeline-residence-muskoka.jpg"
+        alt=""
+        loading="lazy"
+      />
+      <img src="project-hensley-loft-toronto.jpg" alt="" loading="lazy" />
+      <img src="project-wren-and-salt-restaurant.jpg" alt="" loading="lazy" />
+      <img
+        src="project-ashgrove-pavilion-king-city.jpg"
+        alt=""
+        loading="lazy"
+      />
+      <img src="project-meridian-gallery-toronto.jpg" alt="" loading="lazy" />
+    </div>
+
+    <!-- ============ MOTION LIBRARIES ============ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+      (function () {
+        "use strict";
+
+        function main() {
+          var reduced = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+          ).matches;
+          var finePointer = window.matchMedia(
+            "(hover: hover) and (pointer: fine)",
+          ).matches;
+          var hasGsap = typeof window.gsap !== "undefined";
+
+          if (hasGsap && window.ScrollTrigger) {
+            window.gsap.registerPlugin(window.ScrollTrigger);
+          }
+
+          var preloader = document.getElementById("preloader");
+          var navOverlay = document.getElementById("nav-overlay");
+          var navBtn = document.getElementById("nav-open");
+          var navLabel = document.getElementById("nav-open-label");
+          var navIsOpen = false;
+
+          /* ---------- full-screen nav overlay ---------- */
+          function openNav() {
+            navIsOpen = true;
+            navOverlay.classList.add("is-open");
+            navOverlay.setAttribute("aria-hidden", "false");
+            navBtn.classList.add("is-active");
+            navBtn.setAttribute("aria-expanded", "true");
+            navBtn.setAttribute("aria-label", "Close navigation");
+            if (navLabel) navLabel.textContent = "Close";
+            document.body.classList.add("no-scroll");
+            if (hasGsap && !reduced) {
+              window.gsap.fromTo(
+                ".nav-anim",
+                { yPercent: 120 },
+                {
+                  yPercent: 0,
+                  duration: 1.1,
+                  ease: "power4.out",
+                  stagger: 0.055,
+                  overwrite: true,
+                },
+              );
+            }
+          }
+
+          function closeNav() {
+            navIsOpen = false;
+            navOverlay.classList.remove("is-open");
+            navOverlay.setAttribute("aria-hidden", "true");
+            navBtn.classList.remove("is-active");
+            navBtn.setAttribute("aria-expanded", "false");
+            navBtn.setAttribute("aria-label", "Open navigation");
+            if (navLabel) navLabel.textContent = "Menu";
+            document.body.classList.remove("no-scroll");
+            if (hasGsap && !reduced) {
+              /* reset stagger state once the CSS fade-out has finished */
+              setTimeout(function () {
+                if (!navIsOpen) window.gsap.set(".nav-anim", { yPercent: 120 });
+              }, 700);
+            }
+          }
+
+          if (navBtn && navOverlay) {
+            navBtn.addEventListener("click", function () {
+              navIsOpen ? closeNav() : openNav();
+            });
+            document.addEventListener("keydown", function (e) {
+              if (e.key === "Escape" && navIsOpen) closeNav();
+            });
+            navOverlay.querySelectorAll("a").forEach(function (link) {
+              link.addEventListener("click", function () {
+                if (navIsOpen) closeNav();
+              });
+            });
+            if (hasGsap && !reduced)
+              window.gsap.set(".nav-anim", { yPercent: 120 });
+          }
+
+          /* ---------- hero intro (runs as the preloader lifts) ---------- */
+          function heroIntro() {
+            if (!hasGsap || reduced) return;
+            var tl = window.gsap.timeline({ defaults: { ease: "power4.out" } });
+            tl.from("#site-header", { y: -24, autoAlpha: 0, duration: 1 })
+              .from(
+                '[data-hero="eyebrow"]',
+                { y: 26, autoAlpha: 0, duration: 0.9 },
+                "-=0.65",
+              )
+              .from(
+                ".hero-line",
+                { yPercent: 115, duration: 1.2, stagger: 0.11 },
+                "-=0.6",
+              )
+              .from(
+                ".hero-sub",
+                { y: 26, autoAlpha: 0, duration: 0.9 },
+                "-=0.7",
+              )
+              .from(
+                '[data-hero="cue"]',
+                { autoAlpha: 0, duration: 0.9 },
+                "-=0.5",
+              );
+          }
+
+          /* ---------- preloader ---------- */
+          if (preloader) {
+            if (hasGsap && !reduced) {
+              preloader.style.animation =
+                "none"; /* JS takes over from the CSS fallback */
+              document.body.classList.add("no-scroll");
+              var tlPre = window.gsap.timeline();
+              tlPre
+                .from(".pre-letter", {
+                  yPercent: 130,
+                  autoAlpha: 0,
+                  stagger: 0.055,
+                  duration: 1,
+                  ease: "power4.out",
+                })
+                .from(
+                  ".pre-sub",
+                  { autoAlpha: 0, y: 12, duration: 0.7, ease: "power3.out" },
+                  "-=0.45",
+                )
+                .to({}, { duration: 0.5 }) /* hold the wordmark briefly */
+                .to(preloader, {
+                  yPercent: -100,
+                  duration: 0.95,
+                  ease: "power4.inOut",
+                })
+                .add(function () {
+                  heroIntro();
+                }, "-=0.7")
+                .add(function () {
+                  preloader.classList.add("is-done");
+                  document.body.classList.remove("no-scroll");
+                });
+            } else {
+              preloader.classList.add("is-done");
+              heroIntro(); /* no-op without GSAP — content is already visible */
+            }
+          }
+          /* ---------- scroll-triggered reveals ---------- */
+          if (hasGsap && window.ScrollTrigger && !reduced) {
+            window.gsap.utils.toArray("[data-reveal]").forEach(function (el) {
+              window.gsap.from(el, {
+                y: 36,
+                autoAlpha: 0,
+                duration: 1.05,
+                ease: "power3.out",
+                scrollTrigger: { trigger: el, start: "top 88%", once: true },
+              });
+            });
+
+            /* ---------- subtle parallax ---------- */
+            var heroImg = document.querySelector(".hero-bg img");
+            if (heroImg) {
+              window.gsap.fromTo(
+                heroImg,
+                { yPercent: -9 },
+                {
+                  yPercent: 7,
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: ".hero",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true,
+                  },
+                },
+              );
+            }
+            var studioImg = document.querySelector(".studio-img");
+            if (studioImg) {
+              window.gsap.fromTo(
+                studioImg,
+                { yPercent: -8 },
+                {
+                  yPercent: 8,
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: studioImg,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
+                  },
+                },
+              );
+            }
+          }
+
+          /* ---------- custom cursor (fine pointers only) ---------- */
+          if (finePointer && !reduced && hasGsap) {
+            document.documentElement.classList.add("cursor-on");
+            var dot = document.getElementById("cursor-dot");
+            var tag = document.getElementById("cursor-tag");
+            var tagText = document.getElementById("cursor-tag-text");
+            var tx = window.innerWidth / 2,
+              ty = window.innerHeight / 2;
+            var dx = tx,
+              dy = ty,
+              tagX = tx,
+              tagY = ty;
+
+            window.gsap.set([dot, tag], { xPercent: -50, yPercent: -50 });
+            window.addEventListener(
+              "mousemove",
+              function (e) {
+                tx = e.clientX;
+                ty = e.clientY;
+              },
+              { passive: true },
+            );
+            window.gsap.ticker.add(function () {
+              dx += (tx - dx) * 0.22;
+              dy += (ty - dy) * 0.22; /* dot: quick */
+              tagX += (tx - tagX) * 0.12;
+              tagY += (ty - tagY) * 0.12; /* tag: softer trail */
+              window.gsap.set(dot, { x: dx, y: dy });
+              window.gsap.set(tag, { x: tagX, y: tagY });
+            });
+            window.gsap.to(dot, { opacity: 1, duration: 0.4 });
+
+            document
+              .querySelectorAll(
+                "a, button, [data-cursor], input, select, textarea",
+              )
+              .forEach(function (el) {
+                el.addEventListener("mouseenter", function () {
+                  var label = el.getAttribute("data-cursor");
+                  if (label) {
+                    if (tagText) tagText.textContent = label;
+                    window.gsap.to(dot, {
+                      scale: 0,
+                      duration: 0.3,
+                      ease: "power3.out",
+                      overwrite: "auto",
+                    });
+                    window.gsap.to(tag, {
+                      autoAlpha: 1,
+                      scale: 1,
+                      duration: 0.35,
+                      ease: "power3.out",
+                      overwrite: "auto",
+                    });
+                  } else {
+                    window.gsap.to(dot, {
+                      scale: 2.6,
+                      duration: 0.35,
+                      ease: "power3.out",
+                      overwrite: "auto",
+                    });
+                  }
+                });
+                el.addEventListener("mouseleave", function () {
+                  window.gsap.to(tag, {
+                    autoAlpha: 0,
+                    scale: 0.8,
+                    duration: 0.3,
+                    ease: "power3.in",
+                    overwrite: "auto",
+                  });
+                  window.gsap.to(dot, {
+                    scale: 1,
+                    duration: 0.35,
+                    ease: "power3.out",
+                    overwrite: "auto",
+                  });
+                });
+              });
+          }
+
+          /* ---------- cursor-follow project preview ---------- */
+          if (finePointer && !reduced && hasGsap) {
+            var preview = document.getElementById("work-preview");
+            var previewImgs = preview ? preview.querySelectorAll("img") : [];
+            var rows = document.querySelectorAll(".work-row");
+            if (preview && rows.length) {
+              var qx = window.gsap.quickTo(preview, "x", {
+                duration: 0.45,
+                ease: "power3",
+              });
+              var qy = window.gsap.quickTo(preview, "y", {
+                duration: 0.45,
+                ease: "power3",
+              });
+              window.gsap.set(preview, {
+                xPercent: -50,
+                yPercent: -50,
+                scale: 0.92,
+                rotation: -1.5,
+              });
+              rows.forEach(function (row, i) {
+                row.addEventListener("mouseenter", function (e) {
+                  previewImgs.forEach(function (img, j) {
+                    img.classList.toggle("is-active", j === i);
+                  });
+                  qx(e.clientX);
+                  qy(e.clientY);
+                  window.gsap.to(preview, {
+                    autoAlpha: 1,
+                    scale: 1,
+                    rotation: 0,
+                    duration: 0.5,
+                    ease: "power3.out",
+                    overwrite: "auto",
+                  });
+                });
+                row.addEventListener("mousemove", function (e) {
+                  qx(e.clientX);
+                  qy(e.clientY);
+                });
+                row.addEventListener("mouseleave", function () {
+                  window.gsap.to(preview, {
+                    autoAlpha: 0,
+                    scale: 0.92,
+                    duration: 0.35,
+                    ease: "power3.in",
+                    overwrite: "auto",
+                  });
+                });
+              });
+            }
+          }
+        }
+
+        try {
+          main();
+        } catch (err) {
+          /* Fail gracefully: never let a script error trap the visitor behind the preloader */
+          var p = document.getElementById("preloader");
+          if (p) p.classList.add("is-done");
+          if (document.body) document.body.classList.remove("no-scroll");
+        }
+      })();
+    </script>
+  </body>
+</html>
