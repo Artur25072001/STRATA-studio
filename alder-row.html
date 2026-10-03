@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Demo/preview site: a fictional business used as a portfolio sample by
+         Artur Dymchevskyi. It is not a real company. The "noindex" directive
+         below is what keeps these pages out of search results; see robots.txt. -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <title>Alder Row — Private residence, Ottawa, ON · STRATA</title>
+    <meta name="description" content="A narrow infill house with four and a half metres of rear wall and a garden worth looking at, so nearly all of that wall became one window set on the counter — no framing above, no blind, nothing between the room and the trees." />
+    <meta name="theme-color" content="#100F0E" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="STRATA" />
+    <meta property="og:title" content="Alder Row — STRATA" />
+    <meta property="og:description" content="Four and a half metres of rear wall, given almost entirely to one window sitting on the counter." />
+    <meta property="og:image" content="project-alder-row-ottawa.jpg" />
+    <meta property="og:locale" content="en_CA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alder Row — STRATA" />
+    <meta name="twitter:description" content="Four and a half metres of rear wall, given almost entirely to one window sitting on the counter." />
+    <meta name="twitter:image" content="project-alder-row-ottawa.jpg" />
+
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="STRATA" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "STRATA",
+        "description": "A demo architecture and interior design studio website built as a portfolio sample by Artur Dymchevskyi. The business, its address, phone number, prices, reviews and testimonials are all fictional, and these pages are deliberately kept out of search results.",
+        "genre": "Website design demo",
+        "inLanguage": "en-CA",
+        "creator": {
+          "@type": "Person",
+          "name": "Artur Dymchevskyi",
+          "jobTitle": "Fullstack Developer",
+          "email": "arturdymschevskyi@gmail.com",
+          "url": "https://github.com/Artur25072001"
+        }
+      }
+    </script>
+
+    <!-- Fonts: only the three weights actually used, so the two families cost
+         roughly 110 KB instead of the 185 KB the five weight request cost. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="project-alder-row-ottawa.jpg" imagesrcset="project-alder-row-ottawa-640.jpg 640w, project-alder-row-ottawa-900.jpg 900w, project-alder-row-ottawa-1600.jpg 1600w" imagesizes="100vw" fetchpriority="high" />
+
+    <link rel="stylesheet" href="assets/strata.css" />
+
+    <!-- Theme before first paint: no flash of the wrong palette, and one
+         honest class change that says whether JavaScript arrived at all. -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.classList.remove("no-js");
+        try {
+          if (localStorage.getItem("strata-theme") === "paper") {
+            d.setAttribute("data-theme", "paper");
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-ink text-paper font-body" data-page="case" data-slug="alder-row">
+
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="notice" role="note">
+      <p class="notice-wide">
+        <strong>Demo website.</strong> A fictional business built as a portfolio sample by Artur Dymchevskyi. The company, its team, its photos, prices, contact details, reviews and testimonials are all invented, and this page is deliberately kept out of search results. <a href="https://portfolio-artur-dymchevskyi.netlify.app/" target="_blank" rel="noopener">See the author&rsquo;s portfolio</a>
+      </p>
+      <div class="notice-compact">
+        <p>
+          <strong>Demo website.</strong> A fictional business built as a portfolio sample. <a href="https://portfolio-artur-dymchevskyi.netlify.app/" target="_blank" rel="noopener">Author&rsquo;s portfolio</a>
+        </p>
+        <details class="notice-more">
+          <summary>What is invented?</summary>
+          <p>
+            By Artur Dymchevskyi. The company, its team, its photos, prices, contact details,
+            reviews and testimonials are all invented, and this page is deliberately kept out of
+            search results.
+          </p>
+        </details>
+      </div>
+    </div>
+
+    <div id="preloader" aria-hidden="true">
+      <span class="pre-mask">
+        <span
+          class="font-display font-light text-[clamp(3rem,8vw,6rem)] leading-none tracking-[0.08em]"
+          aria-label="STRATA"
+        ><span class="pre-letter">S</span><span class="pre-letter">T</span><span class="pre-letter">R</span><span class="pre-letter">A</span><span class="pre-letter">T</span><span class="pre-letter">A</span></span>
+      </span>
+      <span class="pre-rule" aria-hidden="true"><span data-pre-rule></span></span>
+      <span class="pre-sub text-[0.78rem] tracking-[0.26em] uppercase text-paper/75">Architecture &amp; Interior Design — Toronto</span>
+    </div>
+
+    <div id="light" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-tag" aria-hidden="true"><span id="cursor-tag-text">View</span></div>
+    <div id="grain" aria-hidden="true"></div>
+    <div id="curtain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand font-display font-light text-xl tracking-[0.22em] leading-none" aria-label="STRATA — home">STRATA<span class="text-bronze">.</span></a>
+        <div class="flex items-center gap-1 sm:gap-3">
+          <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch to the daylight theme">
+            <span data-theme-label>Daylight</span>
+          </button>
+          <button
+            id="nav-open"
+            type="button"
+            class="icon-btn"
+            aria-expanded="false"
+            aria-controls="nav-overlay"
+            aria-label="Open navigation"
+          >
+            <span id="nav-open-label">Menu</span>
+            <span class="burger" aria-hidden="true"><span></span><span></span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div id="nav-overlay" aria-hidden="true">
+      <div class="nav-overlay-inner" data-lenis-prevent>
+        <nav aria-label="Primary">
+          <ul class="nav-sections">
+            <li class="nav-mask">
+              <a href="index.html#manifesto" data-section="manifesto" class="nav-link nav-anim font-display font-light"><span class="nav-num">01</span>Manifesto</a>
+            </li>
+            <li class="nav-mask">
+              <a href="index.html#work" data-section="work" class="nav-link nav-anim font-display font-light"><span class="nav-num">02</span>Selected Work</a>
+            </li>
+            <li class="nav-mask">
+              <a href="index.html#drawing" data-section="drawing" class="nav-link nav-anim font-display font-light"><span class="nav-num">03</span>The Drawing</a>
+            </li>
+            <li class="nav-mask">
+              <a href="index.html#approach" data-section="approach" class="nav-link nav-anim font-display font-light"><span class="nav-num">04</span>Our Approach</a>
+            </li>
+            <li class="nav-mask">
+              <a href="index.html#studio" data-section="studio" class="nav-link nav-anim font-display font-light"><span class="nav-num">05</span>The Studio</a>
+            </li>
+            <li class="nav-mask">
+              <a href="index.html#contact" data-section="contact" class="nav-link nav-anim font-display font-light"><span class="nav-num">06</span>Contact</a>
+            </li>
+          </ul>
+          <div class="nav-studies">
+            <p class="nav-studies-head">Eight studies</p>
+            <ol class="nav-index">
+              <li><a href="ridgeline-residence.html"><span class="idx">01</span>Ridgeline Residence<span class="nav-index-meta">Muskoka, ON · 2024</span></a></li>
+              <li><a href="hensley-loft.html"><span class="idx">02</span>The Hensley Loft<span class="nav-index-meta">Toronto, ON · 2023</span></a></li>
+              <li><a href="wren-and-salt.html"><span class="idx">03</span>Wren &amp; Salt<span class="nav-index-meta">Toronto, ON · 2023</span></a></li>
+              <li><a href="ashgrove-pavilion.html"><span class="idx">04</span>Ashgrove Pavilion<span class="nav-index-meta">King City, ON · 2022</span></a></li>
+              <li><a href="meridian-gallery.html"><span class="idx">05</span>Meridian Gallery<span class="nav-index-meta">Toronto, ON · 2022</span></a></li>
+              <li><a href="alder-row.html" aria-current="page"><span class="idx">06</span>Alder Row<span class="nav-index-meta">Ottawa, ON · 2024</span></a></li>
+              <li><a href="quarry-lane-workshop.html"><span class="idx">07</span>Quarry Lane Workshop<span class="nav-index-meta">Hamilton, ON · 2023</span></a></li>
+              <li><a href="morse-street-reading-room.html"><span class="idx">08</span>Morse Street Reading Room<span class="nav-index-meta">Toronto, ON · 2021</span></a></li>
+            </ol>
+          </div>
+        </nav>
+        <div class="nav-foot">
+          <span class="nav-mask"><span class="nav-anim block">Toronto, Ontario — projects across Southern Ontario</span></span>
+          <div class="nav-foot-links">
+            <span class="nav-mask"><a class="nav-anim block u-draw" href="mailto:studio@example.com">studio@example.com</a></span>
+            <span class="nav-mask"><a class="nav-anim block u-draw" href="https://www.instagram.com/strata.studio" target="_blank" rel="noopener">Instagram</a></span>
+            <span class="nav-mask"><a class="nav-anim block u-draw" href="https://www.linkedin.com/company/strata-studio" target="_blank" rel="noopener">LinkedIn</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rail" aria-hidden="true">
+      <span class="rail-count"><span data-rail-current>06</span><span class="sep"> / </span>08</span>
+      <span class="rail-progress"><span data-rail-bar></span></span>
+      <span class="rail-count" data-rail-label>Alder Row</span>
+    </div>
+
+    <!-- ScrollSmoother puts a transform on this content, so nothing with
+         position: fixed may live inside it. The fixed layers are above. -->
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+    <main id="main">
+      <article>
+        <header class="px-6 md:px-10 pt-[calc(var(--chrome)+2.5rem)] pb-10">
+          <p class="eyebrow"><span class="tick"></span><a href="index.html#work" class="u-draw">Selected Work</a> — 06 / 08</p>
+          <h1 class="font-display font-light leading-[0.98] text-[clamp(2.6rem,7vw,6rem)] mt-6 max-w-[18ch]" data-split>
+            Alder Row
+          </h1>
+          <p class="mt-6 text-[0.78rem] tracking-[0.22em] uppercase text-paper/75">
+            Private residence · Ottawa, ON · 2024
+          </p>
+        </header>
+
+        <figure class="case-hero mx-6 md:mx-10" data-reveal>
+          <img
+            src="project-alder-row-ottawa.jpg"
+             srcset="project-alder-row-ottawa-900.jpg 900w, project-alder-row-ottawa-1600.jpg 1600w"
+            sizes="100vw"
+            width="1408"
+            height="768"
+            fetchpriority="high"
+            decoding="async"
+            alt="Rear kitchen of a narrow infill house opening onto a garden, pale oak cabinetry running the length of the room, dark stone counters, black steel window frames and a clerestory above drawing daylight across the floor"
+          />
+          <div class="case-hero-veil" aria-hidden="true"></div>
+        </figure>
+
+        <section class="px-6 md:px-10 py-20 md:py-28" aria-label="The brief">
+          <div class="grid md:grid-cols-12 gap-10 md:gap-12">
+            <div class="md:col-span-6">
+              <p class="font-display font-light text-[clamp(1.5rem,2.6vw,2.1rem)] leading-[1.25] text-paper/90" data-reveal>
+                A narrow infill house with four and a half metres of rear wall and a garden worth looking at, so nearly all of that wall became one window set on the counter — no framing above, no blind, nothing between the room and the trees.
+              </p>
+            </div>
+            <div class="md:col-span-5 md:col-start-8 space-y-6 text-[0.98rem] leading-relaxed text-paper/80">
+              <p data-reveal>On a lot this narrow the rear wall is the whole project. The opening is a single black steel frame sitting on the counter line, with the top of the frame left open to the ceiling so the light lands on the floor rather than on the wall above the sink.</p>
+              <p data-reveal>The kitchen runs the full width under it: pale oak below, the counters in a dark honed stone, everything else in flat white so the trees are the only colour in the room. The cabinetry pulls back to twenty centimetres deep where the room is tightest.</p>
+              <p data-reveal>The old house gave us one good floor level and a bad rear addition, which came out. What is left is 1852 mm of clear circulation between the island and the window run, which is more than the street frontage suggests is possible.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="px-6 md:px-10 pb-20 md:pb-28" aria-label="Project facts">
+          <dl class="facts max-w-3xl" data-reveal>
+            <div><dt>Type</dt><dd>Private residence · Ottawa, ON</dd></div>
+            <div><dt>Completed</dt><dd>2024</dd></div>
+            <div><dt>Area</dt><dd>142 m² (1,530 sq ft)</dd></div>
+            <div><dt>Scope</dt><dd>Rear addition, kitchen, single-storey infill</dd></div>
+            <div><dt>Timeline</dt><dd>13 months, completed summer 2024</dd></div>
+            <div><dt>Team</dt><dd>Nadia Ostrow, with M. Ferreira</dd></div>
+            <div><dt>Material</dt><dd>White oak, honed stone, flat white plaster, black steel</dd></div>
+          </dl>
+        </section>
+
+        <section class="px-6 md:px-10 pb-24 md:pb-32 border-t border-paper/10 pt-20 md:pt-28" aria-label="The drawing">
+          <div class="max-w-3xl mb-14" data-reveal>
+            <p class="eyebrow mb-6"><span class="tick"></span>The drawing</p>
+            <h2 class="font-display font-light text-3xl md:text-5xl leading-[1.05]">Drawn before it was built.</h2>
+            <p class="mt-6 text-[0.98rem] leading-relaxed text-paper/80">
+              Every study in this studio starts as a plan, and the plan is where the argument is
+              actually won or lost. This one is shown at the scale it was worked at.
+            </p>
+          </div>
+          <div class="dwg" data-reveal>
+            <div data-draw-scope data-dwg-zoom-scope>
+            <div class="dwg-plan-wrap" tabindex="0" role="group" aria-label="Working drawing, Alder Row at the scale it was drawn">
+              <svg class="dwg-plan" viewBox="0 0 900 660" role="img" aria-label="Plan of Alder Row: the stair and a service strip along the west party wall, a three metre kitchen island with 1852 mm of clear circulation either side, and the single black steel window sitting on the counter across the whole rear wall, opening onto the garden." xmlns="http://www.w3.org/2000/svg">
+  <text x="60" y="32">Alder Row — rear kitchen and stair · 1:100</text>
+
+  <rect x="60" y="60" width="780" height="380" class="dwg-line" />
+  <rect x="60" y="60" width="780" height="380" class="dwg-fill" />
+
+  <!-- the stair, hard against the party wall -->
+  <g class="dwg-line--fine">
+    <rect x="84" y="96" width="40" height="308" />
+    <line x1="84" y1="140" x2="124" y2="140" />
+    <line x1="84" y1="184" x2="124" y2="184" />
+    <line x1="84" y1="228" x2="124" y2="228" />
+    <line x1="84" y1="272" x2="124" y2="272" />
+    <line x1="84" y1="316" x2="124" y2="316" />
+    <line x1="84" y1="360" x2="124" y2="360" />
+  </g>
+  <text x="60" y="432">STAIR</text>
+
+  <!-- service strip: coats, powder, pantry -->
+  <rect x="180" y="96" width="120" height="308" class="dwg-line--fine" />
+  <g class="dwg-line--fine">
+    <line x1="180" y1="200" x2="300" y2="200" />
+    <line x1="180" y1="304" x2="300" y2="304" />
+  </g>
+  <text x="190" y="160">COATS</text>
+  <text x="190" y="264">POWDER</text>
+  <text x="190" y="368">PANTRY</text>
+
+  <!-- the island: one three metre slab, nothing either side of it -->
+  <rect x="380" y="176" width="240" height="90" class="dwg-line" />
+  <rect x="380" y="176" width="240" height="90" class="dwg-fill" />
+  <text x="500" y="228" text-anchor="middle">ISLAND — 3.0 m</text>
+
+  <!-- clear circulation either side, then the window run -->
+  <g class="dwg-line--fine">
+    <rect x="352" y="176" width="16" height="90" />
+    <rect x="632" y="176" width="16" height="90" />
+  </g>
+  <text x="392" y="300">1852 CLEAR EACH SIDE</text>
+
+  <!-- the counter, and the steel frame sitting on it -->
+  <rect x="676" y="96" width="120" height="308" class="dwg-line" />
+  <rect x="676" y="96" width="120" height="308" class="dwg-fill" />
+  <line x1="700" y1="120" x2="700" y2="380" class="dwg-line" />
+  <text x="712" y="448">STEEL WINDOW — ON THE COUNTER</text>
+
+  <!-- the garden beyond, and the trees worth the window -->
+  <g class="dwg-line--fine" stroke-dasharray="10 8">
+    <rect x="60" y="470" width="780" height="60" />
+    <circle cx="300" cy="500" r="18" />
+    <circle cx="430" cy="500" r="14" />
+  </g>
+  <text x="700" y="556" text-anchor="end">GARDEN — NORTH LIGHT</text>
+  
+  <g class="dwg-line--fine">
+    <line x1="806" y1="46" x2="806" y2="94" class="dwg-line" />
+    <polyline points="800,62 806,46 812,62" class="dwg-line" />
+  </g>
+  <text x="806" y="110" text-anchor="middle">N</text>
+  
+  <g class="dwg-line--fine">
+    <line x1="60" y1="610" x2="260" y2="610" />
+    <line x1="60" y1="604" x2="60" y2="616" />
+    <line x1="110" y1="604" x2="110" y2="616" />
+    <line x1="160" y1="604" x2="160" y2="616" />
+    <line x1="210" y1="604" x2="210" y2="616" />
+    <line x1="260" y1="604" x2="260" y2="616" />
+  </g>
+  <text x="60" y="636">0</text>
+  <text x="260" y="636" text-anchor="middle">10 m</text>
+</svg>
+            </div>
+            <button type="button" class="dwg-zoom" data-dwg-zoom aria-pressed="false">Full size</button>
+            <p class="dwg-note">06 — Alder Row, working drawing</p>
+          </div>
+            <div>
+              <p class="text-[0.78rem] tracking-[0.22em] uppercase text-paper/70 mb-4">Drawing over photograph</p>
+                            <div class="dwg-slider" data-slider>
+                <img
+                  src="project-alder-row-ottawa.jpg"
+                   srcset="project-alder-row-ottawa-900.jpg 900w, project-alder-row-ottawa-1600.jpg 1600w"
+                  sizes="(min-width: 1024px) 52vw, 92vw"
+                  width="1408"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Rear kitchen of a narrow infill house opening onto a garden, pale oak cabinetry running the length of the room, dark stone counters, black steel window frames and a clerestory above drawing daylight across the floor"
+                />
+                <div class="dwg-study" aria-hidden="true">
+                  <svg class="dwg-plan" viewBox="0 0 900 660" role="img" aria-label="Plan of Alder Row: the stair and a service strip along the west party wall, a three metre kitchen island with 1852 mm of clear circulation either side, and the single black steel window sitting on the counter across the whole rear wall, opening onto the garden." xmlns="http://www.w3.org/2000/svg">
+  <text x="60" y="32">Alder Row — rear kitchen and stair · 1:100</text>
+
+  <rect x="60" y="60" width="780" height="380" class="dwg-line" />
+  <rect x="60" y="60" width="780" height="380" class="dwg-fill" />
+
+  <!-- the stair, hard against the party wall -->
+  <g class="dwg-line--fine">
+    <rect x="84" y="96" width="40" height="308" />
+    <line x1="84" y1="140" x2="124" y2="140" />
+    <line x1="84" y1="184" x2="124" y2="184" />
+    <line x1="84" y1="228" x2="124" y2="228" />
+    <line x1="84" y1="272" x2="124" y2="272" />
+    <line x1="84" y1="316" x2="124" y2="316" />
+    <line x1="84" y1="360" x2="124" y2="360" />
+  </g>
+  <text x="60" y="432">STAIR</text>
+
+  <!-- service strip: coats, powder, pantry -->
+  <rect x="180" y="96" width="120" height="308" class="dwg-line--fine" />
+  <g class="dwg-line--fine">
+    <line x1="180" y1="200" x2="300" y2="200" />
+    <line x1="180" y1="304" x2="300" y2="304" />
+  </g>
+  <text x="190" y="160">COATS</text>
+  <text x="190" y="264">POWDER</text>
+  <text x="190" y="368">PANTRY</text>
+
+  <!-- the island: one three metre slab, nothing either side of it -->
+  <rect x="380" y="176" width="240" height="90" class="dwg-line" />
+  <rect x="380" y="176" width="240" height="90" class="dwg-fill" />
+  <text x="500" y="228" text-anchor="middle">ISLAND — 3.0 m</text>
+
+  <!-- clear circulation either side, then the window run -->
+  <g class="dwg-line--fine">
+    <rect x="352" y="176" width="16" height="90" />
+    <rect x="632" y="176" width="16" height="90" />
+  </g>
+  <text x="392" y="300">1852 CLEAR EACH SIDE</text>
+
+  <!-- the counter, and the steel frame sitting on it -->
+  <rect x="676" y="96" width="120" height="308" class="dwg-line" />
+  <rect x="676" y="96" width="120" height="308" class="dwg-fill" />
+  <line x1="700" y1="120" x2="700" y2="380" class="dwg-line" />
+  <text x="712" y="448">STEEL WINDOW — ON THE COUNTER</text>
+
+  <!-- the garden beyond, and the trees worth the window -->
+  <g class="dwg-line--fine" stroke-dasharray="10 8">
+    <rect x="60" y="470" width="780" height="60" />
+    <circle cx="300" cy="500" r="18" />
+    <circle cx="430" cy="500" r="14" />
+  </g>
+  <text x="700" y="556" text-anchor="end">GARDEN — NORTH LIGHT</text>
+  
+  <g class="dwg-line--fine">
+    <line x1="806" y1="46" x2="806" y2="94" class="dwg-line" />
+    <polyline points="800,62 806,46 812,62" class="dwg-line" />
+  </g>
+  <text x="806" y="110" text-anchor="middle">N</text>
+  
+  <g class="dwg-line--fine">
+    <line x1="60" y1="610" x2="260" y2="610" />
+    <line x1="60" y1="604" x2="60" y2="616" />
+    <line x1="110" y1="604" x2="110" y2="616" />
+    <line x1="160" y1="604" x2="160" y2="616" />
+    <line x1="210" y1="604" x2="210" y2="616" />
+    <line x1="260" y1="604" x2="260" y2="616" />
+  </g>
+  <text x="60" y="636">0</text>
+  <text x="260" y="636" text-anchor="middle">10 m</text>
+</svg>
+                </div>
+                <button
+                  type="button"
+                  class="dwg-handle"
+                  data-slider-handle
+                  role="slider"
+                  aria-label="Reveal the line study over the photograph, arrow keys move the handle"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="50"
+                  aria-orientation="horizontal"
+                >
+                  <span aria-hidden="true">&#8596;</span>
+                </button>
+              </div>
+              <div class="dwg-legend"><span>Photograph</span><span>Alder Row — plan</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="px-6 md:px-10 pb-24 md:pb-32" aria-label="Next study">
+          <a class="next-project" href="quarry-lane-workshop.html" data-cursor="Next study">
+            <figure>
+              <img
+                src="project-quarry-lane-workshop-hamilton.jpg"
+                 srcset="project-quarry-lane-workshop-hamilton-640.jpg 640w, project-quarry-lane-workshop-hamilton-900.jpg 900w"
+                sizes="(min-width: 768px) 46vw, 92vw"
+                width="1408"
+                height="768"
+                loading="lazy"
+                decoding="async"
+                alt="Furniture workshop interior with a maker working at a saw bench, long timber racks and tools along the wall behind, brick piers between tall industrial windows, concrete floor swept clean around the machinery"
+              />
+            </figure>
+            <div>
+              <p class="text-[0.78rem] tracking-[0.22em] uppercase text-paper/70">Next study — 07 / 08</p>
+              <p class="font-display font-light text-3xl md:text-4xl mt-3">Quarry Lane Workshop</p>
+              <p class="mt-3 text-paper/75 text-[0.95rem] leading-relaxed">A furniture workshop where the machines set the plan and the daylight sets the day.</p>
+              <span class="u-draw mt-6 inline-block text-paper/90">Read the study &rarr;</span>
+            </div>
+          </a>
+        </section>
+
+        <section class="px-6 md:px-10 pb-24 md:pb-32 border-t border-paper/10 pt-20 md:pt-28" aria-label="Contact">
+          <div class="max-w-3xl">
+            <p class="eyebrow mb-6" data-reveal><span class="tick"></span>Start something</p>
+            <h2 class="font-display font-light leading-[1.02] text-[clamp(2rem,4.5vw,3.6rem)]" data-reveal>
+              Working on a project like this one?
+            </h2>
+            <p class="mt-6 max-w-xl text-[0.98rem] leading-relaxed text-paper/80" data-reveal>
+              Tell us about the site, the brief and the constraints. Every project is bespoke, so the
+              first conversation is about how you actually want to live or work in the space.
+            </p>
+            <p class="mt-10 flex flex-wrap gap-4" data-reveal>
+              <a href="index.html#contact" class="btn" data-cursor="Inquire">Send an inquiry <span aria-hidden="true">&rarr;</span></a>
+              <a href="index.html#work" class="btn" data-cursor="Deck">All eight studies</a>
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="px-6 md:px-10 pt-24 md:pt-32 pb-14 border-t border-paper/10">
+      <div data-reveal>
+        <p class="text-[0.78rem] tracking-[0.22em] uppercase text-paper/75 mb-6">
+          STRATA — Architecture &amp; Interior Design Studio
+        </p>
+        <a href="index.html" class="block font-display font-light leading-none text-[clamp(4.5rem,15vw,13rem)] text-paper/95 transition-colors hover:text-bronze">
+          STRATA<span class="text-bronze">.</span>
+        </a>
+      </div>
+
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm" data-reveal>
+        <nav aria-label="Footer">
+          <p class="lbl">Menu</p>
+          <ul class="mt-4 space-y-1 text-paper/75">
+            <li><a href="index.html#manifesto" class="u-draw">Manifesto</a></li>
+            <li><a href="index.html#work" class="u-draw">Selected Work</a></li>
+            <li><a href="index.html#drawing" class="u-draw">The Drawing</a></li>
+            <li><a href="index.html#approach" class="u-draw">Our Approach</a></li>
+            <li><a href="index.html#studio" class="u-draw">The Studio</a></li>
+            <li><a href="index.html#contact" class="u-draw">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="lbl">Eight studies</p>
+          <ul class="mt-4 space-y-1 text-paper/75">
+            <li><a href="ridgeline-residence.html" class="u-draw">01 — Ridgeline Residence</a></li>
+            <li><a href="hensley-loft.html" class="u-draw">02 — The Hensley Loft</a></li>
+            <li><a href="wren-and-salt.html" class="u-draw">03 — Wren &amp; Salt</a></li>
+            <li><a href="ashgrove-pavilion.html" class="u-draw">04 — Ashgrove Pavilion</a></li>
+            <li><a href="meridian-gallery.html" class="u-draw">05 — Meridian Gallery</a></li>
+            <li><a href="alder-row.html" class="u-draw">06 — Alder Row</a></li>
+            <li><a href="quarry-lane-workshop.html" class="u-draw">07 — Quarry Lane Workshop</a></li>
+            <li><a href="morse-street-reading-room.html" class="u-draw">08 — Morse Street Reading Room</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="lbl">Elsewhere</p>
+          <ul class="mt-4 space-y-1 text-paper/75">
+            <li><a href="https://www.instagram.com/strata.studio" target="_blank" rel="noopener" class="u-draw">Instagram — @strata.studio</a></li>
+            <li><a href="https://www.linkedin.com/company/strata-studio" target="_blank" rel="noopener" class="u-draw">LinkedIn — STRATA Studio</a></li>
+            <li><a href="mailto:studio@example.com" class="u-draw">studio@example.com</a></li>
+            <li><a href="tel:+14165550120" class="u-draw">(416) 555-0120</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="lbl">Studio</p>
+          <p class="mt-4 text-paper/75 leading-relaxed">
+            Toronto, Ontario<br />
+            Projects across Southern Ontario<br />
+            Monday to Friday, 9 to 6
+          </p>
+          <a href="#main" class="u-draw mt-5 inline-block text-paper/75">Back to top &uarr;</a>
+        </div>
+      </div>
+
+      <div class="mt-20 pt-6 border-t border-paper/10 flex flex-col sm:flex-row justify-between gap-3 text-[0.78rem] tracking-[0.08em] text-paper/70" data-reveal>
+        <p>&copy; 2026 STRATA Architecture &amp; Interior Design Studio. A fictional studio, built as a demo.</p>
+        <p>Designed in Toronto. Built with restraint.</p>
+      </div>
+
+      <!-- Honest provenance. The three most recent studies are illustrated with
+           free-licence photographs rather than invented ones, and the one
+           licence that requires a credit gets it here. -->
+      <p class="mt-6 text-[0.78rem] leading-relaxed text-paper/65" data-reveal>
+        Demo photography: Alder Row and Quarry Lane use photographs from Unsplash and Pexels
+        (free licence, no attribution required); Morse Street uses
+        <a href="https://commons.wikimedia.org/wiki/File:Statsbiblioteket_l%C3%A6sesalen-2.jpg" target="_blank" rel="noopener" class="u-draw">&ldquo;Statsbiblioteket l&aelig;sesalen&rdquo;</a>
+        by Villy Fink Isaksen, via Wikimedia Commons, CC BY-SA 4.0. Every other image on this
+        site is demonstration artwork.
+      </p>
+    </footer>
+      </div>
+    </div>
+
+    <!-- All of GSAP is free since 3.13, including the plugins that used to be
+         Club-only: SplitText, ScrollSmoother, DrawSVG, Observer. -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
+    <script src="assets/motion.js" defer></script>
+  </body>
+</html>

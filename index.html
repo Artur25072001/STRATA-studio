@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,54 +8,33 @@
          below is what keeps these pages out of search results; see robots.txt. -->
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
     <title>STRATA — Architecture &amp; Interior Design Studio · Toronto</title>
-    <meta
-      name="description"
-      content="STRATA is a Toronto architecture &amp; interior design studio shaping spaces through light, material, and restraint. Bespoke residential, commercial, hospitality and cultural projects across Southern Ontario."
-    />
+    <meta name="description" content="STRATA is a Toronto architecture &amp; interior design studio shaping spaces through light, material, and restraint. Bespoke residential, commercial, hospitality and cultural projects across Southern Ontario." />
     <meta name="theme-color" content="#100F0E" />
 
-    <!-- Open Graph / Social -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="STRATA" />
-    <meta
-      property="og:title"
-      content="STRATA — Architecture &amp; Interior Design Studio · Toronto"
-    />
-    <meta
-      property="og:description"
-      content="Spaces shaped by light, material, and restraint. Bespoke architecture and interiors from a five-person Toronto studio."
-    />
-    <meta
-      property="og:image"
-      content="hero-dim-double-height-concrete-interior.jpg"
-    />
+    <meta property="og:title" content="STRATA — Architecture &amp; Interior Design Studio · Toronto" />
+    <meta property="og:description" content="Spaces shaped by light, material, and restraint. Eight studies from a five-person Toronto studio, with the working drawings that got them built." />
+    <meta property="og:image" content="hero-dim-double-height-concrete-interior.jpg" />
+    <meta property="og:locale" content="en_CA" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="STRATA — Architecture &amp; Interior Design Studio · Toronto"
-    />
-    <meta
-      name="twitter:description"
-      content="Spaces shaped by light, material, and restraint. Bespoke architecture and interiors from a five-person Toronto studio."
-    />
-    <meta
-      name="twitter:image"
-      content="hero-dim-double-height-concrete-interior.jpg"
-    />
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="STRATA" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="twitter:title" content="STRATA — Architecture &amp; Interior Design Studio · Toronto" />
+    <meta name="twitter:description" content="Spaces shaped by light, material, and restraint. Eight studies from a five-person Toronto studio, with the working drawings that got them built." />
+    <meta name="twitter:image" content="hero-dim-double-height-concrete-interior.jpg" />
 
-    <!-- Structured data -->
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="STRATA" />
+    <link rel="manifest" href="site.webmanifest" />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "CreativeWork",
         "name": "STRATA",
-        "description": "A demo architecture and interior design studio website built as a portfolio sample by Artur Dymchevskyi. The business, its address, phone number, prices, reviews and testimonials are all fictional, and this page is deliberately kept out of search results.",
+        "description": "A demo architecture and interior design studio website built as a portfolio sample by Artur Dymchevskyi. The business, its address, phone number, prices, reviews and testimonials are all fictional, and these pages are deliberately kept out of search results.",
         "genre": "Website design demo",
         "inLanguage": "en-CA",
         "creator": {
@@ -68,1268 +47,1031 @@
       }
     </script>
 
-    <!-- Fonts -->
+    <!-- Fonts: only the three weights actually used, so the two families cost
+         roughly 110 KB instead of the 185 KB the five weight request cost. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="hero-dim-double-height-concrete-interior.jpg" imagesrcset="hero-dim-double-height-concrete-interior-640.jpg 640w, hero-dim-double-height-concrete-interior-900.jpg 900w, hero-dim-double-height-concrete-interior-1600.jpg 1600w" imagesizes="100vw" fetchpriority="high" />
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/strata.css" />
+
+    <!-- Theme before first paint: no flash of the wrong palette, and one
+         honest class change that says whether JavaScript arrived at all. -->
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              ink: "#100F0E",
-              "ink-deep": "#0B0A09",
-              paper: "#F5F2ED",
-              bronze: "#B8935F",
-            },
-            fontFamily: {
-              display: ["Fraunces", "Georgia", "serif"],
-              body: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
-            },
-            spacing: {
-              13: "3.25rem",
-            },
-          },
-        },
-      };
+      (function () {
+        var d = document.documentElement;
+        d.classList.remove("no-js");
+        try {
+          if (localStorage.getItem("strata-theme") === "paper") {
+            d.setAttribute("data-theme", "paper");
+          }
+        } catch (e) {}
+      })();
     </script>
-
-    <style>
-      /* ================================================================
-   STRATA — custom layer: grain, cursor, preloader, editorial detail
-   ================================================================ */
-      :root {
-        --ink: #100f0e;
-        --ink-deep: #0b0a09;
-        --paper: #f5f2ed;
-        --bronze: #b8935f;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        background: var(--ink);
-        color: var(--paper);
-        font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        overflow-x: hidden;
-      }
-      img {
-        display: block;
-        max-width: 100%;
-      }
-      ::selection {
-        background: var(--bronze);
-        color: var(--ink);
-      }
-      a:focus-visible,
-      button:focus-visible,
-      input:focus-visible,
-      select:focus-visible,
-      textarea:focus-visible {
-        outline: 1px solid var(--bronze);
-        outline-offset: 4px;
-      }
-      body.no-scroll {
-        overflow: hidden;
-      }
-      section {
-        scroll-margin-top: 3rem;
-      }
-
-      /* ---------- grain overlay ---------- */
-      #grain {
-        position: fixed;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        z-index: 250;
-        pointer-events: none;
-        opacity: 0.055;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
-        animation: grain-shift 9s steps(10) infinite;
-      }
-      @keyframes grain-shift {
-        0% {
-          transform: translate(0, 0);
-        }
-        20% {
-          transform: translate(-2%, 2%);
-        }
-        40% {
-          transform: translate(2%, -1%);
-        }
-        60% {
-          transform: translate(-1%, -2%);
-        }
-        80% {
-          transform: translate(1%, 2%);
-        }
-        100% {
-          transform: translate(0, 0);
-        }
-      }
-      /* ---------- eyebrow label ---------- */
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 1rem;
-        font-size: 0.65rem;
-        font-weight: 600;
-        letter-spacing: 0.35em;
-        text-transform: uppercase;
-        color: rgba(245, 242, 237, 0.55);
-      }
-      .eyebrow .tick {
-        width: 2.25rem;
-        height: 1px;
-        background: var(--bronze);
-        flex: none;
-      }
-
-      /* ---------- preloader ---------- */
-      #preloader {
-        position: fixed;
-        inset: 0;
-        z-index: 200;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1.4rem;
-        background: var(--ink-deep);
-        /* CSS-only fallback: if JS never takes over, the preloader dismisses itself */
-        animation: pre-fallback 0.9s ease 3.6s forwards;
-      }
-      @keyframes pre-fallback {
-        to {
-          opacity: 0;
-          visibility: hidden;
-        }
-      }
-      #preloader.is-done {
-        animation: none;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-      .pre-mask {
-        display: block;
-        overflow: hidden;
-        padding: 0.12em 0.2em;
-        margin: -0.12em -0.2em;
-      }
-      .pre-letter {
-        display: inline-block;
-        will-change: transform;
-      }
-
-      /* ---------- custom cursor ---------- */
-      html.cursor-on,
-      html.cursor-on * {
-        cursor: none !important;
-      }
-      #cursor-dot,
-      #cursor-tag {
-        position: fixed;
-        left: 0;
-        top: 0;
-        pointer-events: none;
-        z-index: 320;
-        mix-blend-mode: difference;
-      }
-      #cursor-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 999px;
-        background: #fff;
-        opacity: 0;
-      }
-      #cursor-tag {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 4.6rem;
-        padding: 0.72rem 1.25rem;
-        border-radius: 999px;
-        background: #fff;
-        color: #100f0e;
-        font-size: 0.58rem;
-        font-weight: 700;
-        letter-spacing: 0.28em;
-        text-transform: uppercase;
-        opacity: 0;
-        visibility: hidden;
-      }
-      @media (hover: none), (pointer: coarse) {
-        #cursor-dot,
-        #cursor-tag {
-          display: none !important;
-        }
-      }
-
-      /* ---------- header burger ---------- */
-      .burger {
-        display: inline-flex;
-        flex-direction: column;
-        gap: 5px;
-        width: 1.6rem;
-      }
-      .burger span {
-        display: block;
-        height: 1px;
-        width: 100%;
-        background: var(--paper);
-        transition:
-          transform 0.5s cubic-bezier(0.77, 0, 0.18, 1),
-          opacity 0.3s;
-      }
-      #nav-open.is-active .burger span:first-child {
-        transform: translateY(3px) rotate(45deg);
-      }
-      #nav-open.is-active .burger span:last-child {
-        transform: translateY(-3px) rotate(-45deg);
-      }
-
-      /* ---------- nav overlay ---------- */
-      #nav-overlay {
-        position: fixed;
-        inset: 0;
-        z-index: 180;
-        background: var(--ink-deep);
-        visibility: hidden;
-        opacity: 0;
-        transition:
-          opacity 0.6s cubic-bezier(0.77, 0, 0.18, 1),
-          visibility 0.6s;
-      }
-      #nav-overlay.is-open {
-        visibility: visible;
-        opacity: 1;
-      }
-      .nav-mask {
-        display: block;
-        overflow: hidden;
-      }
-      .nav-link {
-        display: flex;
-        align-items: baseline;
-        gap: 1.5rem;
-        line-height: 1.04;
-        transition:
-          color 0.4s ease,
-          padding-left 0.5s cubic-bezier(0.77, 0, 0.18, 1);
-      }
-      .nav-link:hover {
-        color: var(--bronze);
-        padding-left: 1rem;
-      }
-
-      /* ---------- hero ---------- */
-      .hero-mask {
-        display: block;
-        overflow: hidden;
-        padding-bottom: 0.09em;
-        margin-bottom: -0.09em; /* room for descenders */
-      }
-      .hero-line {
-        display: block;
-        will-change: transform;
-      }
-      .scroll-cue-line {
-        position: relative;
-        overflow: hidden;
-      }
-      .scroll-cue-line > span {
-        position: absolute;
-        inset: 0;
-        background: var(--bronze);
-        animation: cue 2.4s cubic-bezier(0.77, 0, 0.18, 1) infinite;
-      }
-      @keyframes cue {
-        0% {
-          transform: translateY(-100%);
-        }
-        55% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(100%);
-        }
-      }
-      /* ---------- selected work ---------- */
-      .work-row {
-        border-top: 1px solid rgba(245, 242, 237, 0.12);
-      }
-      .work-list .work-row:last-child {
-        border-bottom: 1px solid rgba(245, 242, 237, 0.12);
-      }
-      .work-num {
-        color: rgba(184, 147, 95, 0.5);
-        transition: color 0.45s ease;
-      }
-      .work-row:hover .work-num {
-        color: var(--bronze);
-      }
-      .work-title {
-        position: relative;
-        display: inline-block;
-      }
-      .work-title::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0.06em;
-        width: 100%;
-        height: 1px;
-        background: var(--bronze);
-        transform: scaleX(0);
-        transform-origin: 0 50%;
-        transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
-      }
-      .work-row:hover .work-title::after {
-        transform: scaleX(1);
-      }
-      .work-arrow {
-        display: inline-block;
-        color: var(--bronze);
-        transition:
-          transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-          opacity 0.4s;
-        opacity: 0.4;
-      }
-      .work-row:hover .work-arrow {
-        transform: translateX(0.6rem);
-        opacity: 1;
-      }
-
-      /* cursor-follow project preview */
-      #work-preview {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 23rem;
-        max-width: 38vw;
-        aspect-ratio: 4 / 3;
-        z-index: 170;
-        pointer-events: none;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        will-change: transform;
-      }
-      #work-preview img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transform: scale(1.08);
-        transition:
-          opacity 0.45s ease,
-          transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-      }
-      #work-preview img.is-active {
-        opacity: 1;
-        transform: scale(1);
-      }
-      @media (hover: none), (pointer: coarse) {
-        #work-preview {
-          display: none !important;
-        }
-      }
-
-      /* ---------- approach steps ---------- */
-      .step-card {
-        position: relative;
-      }
-      .step-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 2.25rem;
-        height: 1px;
-        background: var(--bronze);
-      }
-      @media (min-width: 768px) {
-        .step-offset-2 {
-          margin-top: 7rem;
-        }
-        .step-offset-3 {
-          margin-top: 14rem;
-        }
-        .step-offset-4 {
-          margin-top: 21rem;
-        }
-      }
-
-      /* ---------- underline-draw links ---------- */
-      .u-draw {
-        position: relative;
-        display: inline-block;
-      }
-      .u-draw::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -3px;
-        width: 100%;
-        height: 1px;
-        background: var(--bronze);
-        transform: scaleX(0);
-        transform-origin: 0 50%;
-        transition: transform 0.6s cubic-bezier(0.77, 0, 0.18, 1);
-      }
-      .u-draw:hover::after,
-      .u-draw:focus-visible::after {
-        transform: scaleX(1);
-      }
-
-      /* ---------- form fields ---------- */
-      .lbl {
-        display: block;
-        margin-bottom: 0.45rem;
-        font-size: 0.62rem;
-        font-weight: 600;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        color: rgba(245, 242, 237, 0.5);
-      }
-      .field {
-        width: 100%;
-        background: transparent;
-        border: 0;
-        border-bottom: 1px solid rgba(245, 242, 237, 0.18);
-        border-radius: 0;
-        padding: 0.95rem 0;
-        font-family: "Manrope", sans-serif;
-        font-size: 0.95rem;
-        color: var(--paper);
-        transition: border-color 0.35s ease;
-      }
-      .field:focus {
-        outline: none;
-        border-color: var(--bronze);
-      }
-      .field::placeholder {
-        color: rgba(245, 242, 237, 0.28);
-      }
-      select.field {
-        -webkit-appearance: none;
-        appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23B8935F' fill='none'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 0.25rem center;
-        padding-right: 1.5rem;
-        cursor: pointer;
-      }
-      select.field option {
-        background: #171512;
-        color: var(--paper);
-      }
-      textarea.field {
-        resize: vertical;
-        min-height: 7rem;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.9rem;
-        border: 1px solid rgba(245, 242, 237, 0.3);
-        padding: 1.1rem 2.4rem;
-        font-size: 0.68rem;
-        font-weight: 700;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        color: var(--paper);
-        background: transparent;
-        transition:
-          background 0.45s ease,
-          color 0.45s ease,
-          border-color 0.45s ease;
-      }
-      .btn:hover {
-        background: var(--bronze);
-        border-color: var(--bronze);
-        color: var(--ink);
-      }
-
-      /* ---------- reduced motion ---------- */
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-        }
-        #grain {
-          animation: none;
-        }
-        .scroll-cue-line > span {
-          animation: none;
-          transform: none;
-        }
-      }
-    </style>
   </head>
-  <body class="bg-ink text-paper font-body">
-<!-- Demo notice: this is a fictional business built as a portfolio sample. See robots.txt and the noindex meta tag in <head>. --><div role="note" style="background:#1b1b19;color:#f4efe7;font:400 0.8rem/1.55 system-ui,-apple-system,sans-serif;text-align:center;padding:0.65rem 1rem;"><strong style="font-weight:600;">Demo website.</strong> A fictional business built as a portfolio sample by Artur Dymchevskyi. The company, its team, its photos, prices, contact details, reviews and testimonials are all invented, and this page is deliberately kept out of search results. <a href="https://portfolio-artur-dymchevskyi.netlify.app/" target="_blank" rel="noopener" style="color:#f4efe7;text-decoration:underline;">See the author&rsquo;s portfolio</a></div>
-    <noscript
-      ><style>
-        #preloader,
-        #work-preview,
-        #cursor-dot,
-        #cursor-tag {
-          display: none !important;
-        }
-      </style></noscript
-    >
+  <body class="bg-ink text-paper font-body" data-page="home">
 
-    <!-- ============ PRELOADER ============ -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="notice" role="note">
+      <p class="notice-wide">
+        <strong>Demo website.</strong> A fictional business built as a portfolio sample by Artur Dymchevskyi. The company, its team, its photos, prices, contact details, reviews and testimonials are all invented, and this page is deliberately kept out of search results. <a href="https://portfolio-artur-dymchevskyi.netlify.app/" target="_blank" rel="noopener">See the author&rsquo;s portfolio</a>
+      </p>
+      <div class="notice-compact">
+        <p>
+          <strong>Demo website.</strong> A fictional business built as a portfolio sample. <a href="https://portfolio-artur-dymchevskyi.netlify.app/" target="_blank" rel="noopener">Author&rsquo;s portfolio</a>
+        </p>
+        <details class="notice-more">
+          <summary>What is invented?</summary>
+          <p>
+            By Artur Dymchevskyi. The company, its team, its photos, prices, contact details,
+            reviews and testimonials are all invented, and this page is deliberately kept out of
+            search results.
+          </p>
+        </details>
+      </div>
+    </div>
+
     <div id="preloader" aria-hidden="true">
       <span class="pre-mask">
         <span
           class="font-display font-light text-[clamp(3rem,8vw,6rem)] leading-none tracking-[0.08em]"
           aria-label="STRATA"
-          ><span class="pre-letter">S</span><span class="pre-letter">T</span
-          ><span class="pre-letter">R</span><span class="pre-letter">A</span
-          ><span class="pre-letter">T</span
-          ><span class="pre-letter">A</span></span
-        >
+        ><span class="pre-letter">S</span><span class="pre-letter">T</span><span class="pre-letter">R</span><span class="pre-letter">A</span><span class="pre-letter">T</span><span class="pre-letter">A</span></span>
       </span>
-      <span
-        class="pre-sub text-[0.6rem] tracking-[0.4em] uppercase text-paper/40"
-        >Architecture &amp; Interior Design — Toronto</span
-      >
+      <span class="pre-rule" aria-hidden="true"><span data-pre-rule></span></span>
+      <span class="pre-sub text-[0.78rem] tracking-[0.26em] uppercase text-paper/75">Architecture &amp; Interior Design — Toronto</span>
     </div>
 
-    <!-- ============ CUSTOM CURSOR ============ -->
+    <div id="light" aria-hidden="true"></div>
     <div id="cursor-dot" aria-hidden="true"></div>
-    <div id="cursor-tag" aria-hidden="true">
-      <span id="cursor-tag-text">View</span>
-    </div>
-
-    <!-- ============ GRAIN OVERLAY ============ -->
+    <div id="cursor-tag" aria-hidden="true"><span id="cursor-tag-text">View</span></div>
     <div id="grain" aria-hidden="true"></div>
+    <div id="curtain" aria-hidden="true"></div>
 
-    <!-- ============ FIXED HEADER ============ -->
-    <header id="site-header" class="fixed top-0 inset-x-0 z-[190]">
-      <div
-        class="flex items-center justify-between px-6 md:px-10 py-5 bg-gradient-to-b from-ink/85 to-transparent"
-      >
-        <a
-          href="#top"
-          class="font-display font-light text-xl tracking-[0.22em] leading-none"
-          >STRATA<span class="text-bronze">.</span></a
-        >
-        <button
-          id="nav-open"
-          type="button"
-          class="group flex items-center gap-4 text-[0.62rem] font-semibold tracking-[0.35em] uppercase text-paper/80 hover:text-paper transition-colors"
-          aria-expanded="false"
-          aria-controls="nav-overlay"
-          aria-label="Open navigation"
-        >
-          <span id="nav-open-label">Menu</span>
-          <span class="burger" aria-hidden="true"
-            ><span></span><span></span
-          ></span>
-        </button>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand font-display font-light text-xl tracking-[0.22em] leading-none" aria-label="STRATA — home">STRATA<span class="text-bronze">.</span></a>
+        <div class="flex items-center gap-1 sm:gap-3">
+          <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch to the daylight theme">
+            <span data-theme-label>Daylight</span>
+          </button>
+          <button
+            id="nav-open"
+            type="button"
+            class="icon-btn"
+            aria-expanded="false"
+            aria-controls="nav-overlay"
+            aria-label="Open navigation"
+          >
+            <span id="nav-open-label">Menu</span>
+            <span class="burger" aria-hidden="true"><span></span><span></span></span>
+          </button>
+        </div>
       </div>
     </header>
 
-    <!-- ============ FULL-SCREEN NAV OVERLAY ============ -->
     <div id="nav-overlay" aria-hidden="true">
-      <div
-        class="h-full flex flex-col justify-between px-6 md:px-14 pt-28 pb-10"
-      >
+      <div class="nav-overlay-inner" data-lenis-prevent>
         <nav aria-label="Primary">
-          <ul class="flex flex-col gap-2 md:gap-4">
+          <ul class="nav-sections">
             <li class="nav-mask">
-              <a
-                href="#work"
-                class="nav-link nav-anim font-display font-light text-[clamp(2.8rem,8vw,6.5rem)]"
-                ><span
-                  class="text-bronze text-base md:text-xl tracking-[0.2em] align-baseline"
-                  >01</span
-                >Selected Work</a
-              >
+              <a href="#manifesto" data-section="manifesto" class="nav-link nav-anim font-display font-light"><span class="nav-num">01</span>Manifesto</a>
             </li>
             <li class="nav-mask">
-              <a
-                href="#approach"
-                class="nav-link nav-anim font-display font-light text-[clamp(2.8rem,8vw,6.5rem)]"
-                ><span
-                  class="text-bronze text-base md:text-xl tracking-[0.2em] align-baseline"
-                  >02</span
-                >Our Approach</a
-              >
+              <a href="#work" data-section="work" class="nav-link nav-anim font-display font-light" aria-current="location"><span class="nav-num">02</span>Selected Work</a>
             </li>
             <li class="nav-mask">
-              <a
-                href="#studio"
-                class="nav-link nav-anim font-display font-light text-[clamp(2.8rem,8vw,6.5rem)]"
-                ><span
-                  class="text-bronze text-base md:text-xl tracking-[0.2em] align-baseline"
-                  >03</span
-                >The Studio</a
-              >
+              <a href="#drawing" data-section="drawing" class="nav-link nav-anim font-display font-light"><span class="nav-num">03</span>The Drawing</a>
             </li>
             <li class="nav-mask">
-              <a
-                href="#contact"
-                class="nav-link nav-anim font-display font-light text-[clamp(2.8rem,8vw,6.5rem)]"
-                ><span
-                  class="text-bronze text-base md:text-xl tracking-[0.2em] align-baseline"
-                  >04</span
-                >Contact</a
-              >
+              <a href="#approach" data-section="approach" class="nav-link nav-anim font-display font-light"><span class="nav-num">04</span>Our Approach</a>
+            </li>
+            <li class="nav-mask">
+              <a href="#studio" data-section="studio" class="nav-link nav-anim font-display font-light"><span class="nav-num">05</span>The Studio</a>
+            </li>
+            <li class="nav-mask">
+              <a href="#contact" data-section="contact" class="nav-link nav-anim font-display font-light"><span class="nav-num">06</span>Contact</a>
             </li>
           </ul>
+          <div class="nav-studies">
+            <p class="nav-studies-head">Eight studies</p>
+            <ol class="nav-index">
+              <li><a href="ridgeline-residence.html"><span class="idx">01</span>Ridgeline Residence<span class="nav-index-meta">Muskoka, ON · 2024</span></a></li>
+              <li><a href="hensley-loft.html"><span class="idx">02</span>The Hensley Loft<span class="nav-index-meta">Toronto, ON · 2023</span></a></li>
+              <li><a href="wren-and-salt.html"><span class="idx">03</span>Wren &amp; Salt<span class="nav-index-meta">Toronto, ON · 2023</span></a></li>
+              <li><a href="ashgrove-pavilion.html"><span class="idx">04</span>Ashgrove Pavilion<span class="nav-index-meta">King City, ON · 2022</span></a></li>
+              <li><a href="meridian-gallery.html"><span class="idx">05</span>Meridian Gallery<span class="nav-index-meta">Toronto, ON · 2022</span></a></li>
+              <li><a href="alder-row.html"><span class="idx">06</span>Alder Row<span class="nav-index-meta">Ottawa, ON · 2024</span></a></li>
+              <li><a href="quarry-lane-workshop.html"><span class="idx">07</span>Quarry Lane Workshop<span class="nav-index-meta">Hamilton, ON · 2023</span></a></li>
+              <li><a href="morse-street-reading-room.html"><span class="idx">08</span>Morse Street Reading Room<span class="nav-index-meta">Toronto, ON · 2021</span></a></li>
+            </ol>
+          </div>
         </nav>
-        <div
-          class="flex flex-col md:flex-row md:items-end justify-between gap-6 text-sm text-paper/50"
-        >
-          <span class="nav-mask"
-            ><span class="nav-anim block"
-              >Toronto, Ontario — projects across Southern Ontario</span
-            ></span
-          >
-          <div class="flex flex-wrap gap-x-8 gap-y-2">
-            <span class="nav-mask"
-              ><a
-                class="nav-anim block u-draw"
-                href="mailto:studio@example.com"
-                >studio@example.com</a
-              ></span
-            >
-            <span class="nav-mask"
-              ><a
-                class="nav-anim block u-draw"
-                href="https://www.instagram.com/strata.studio"
-                target="_blank"
-                rel="noopener"
-                >Instagram</a
-              ></span
-            >
-            <span class="nav-mask"
-              ><a
-                class="nav-anim block u-draw"
-                href="https://www.linkedin.com/company/strata-studio"
-                target="_blank"
-                rel="noopener"
-                >LinkedIn</a
-              ></span
-            >
+        <div class="nav-foot">
+          <span class="nav-mask"><span class="nav-anim block">Toronto, Ontario — projects across Southern Ontario</span></span>
+          <div class="nav-foot-links">
+            <span class="nav-mask"><a class="nav-anim block u-draw" href="mailto:studio@example.com">studio@example.com</a></span>
+            <span class="nav-mask"><a class="nav-anim block u-draw" href="https://www.instagram.com/strata.studio" target="_blank" rel="noopener">Instagram</a></span>
+            <span class="nav-mask"><a class="nav-anim block u-draw" href="https://www.linkedin.com/company/strata-studio" target="_blank" rel="noopener">LinkedIn</a></span>
           </div>
         </div>
       </div>
     </div>
-    <main id="top">
-      <!-- ============ HERO ============ -->
+
+    <div class="rail" aria-hidden="true">
+      <span class="rail-count"><span data-rail-current>01</span><span class="sep"> / </span>08</span>
+      <span class="rail-progress"><span data-rail-bar></span></span>
+      <span class="rail-count" data-rail-label>Ridgeline</span>
+    </div>
+
+    <!-- ScrollSmoother puts a transform on this content, so nothing with
+         position: fixed may live inside it. The fixed layers are above. -->
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+<main id="main">
+      <!-- ============ HERO ============
+           Desktop: the photograph is the room. Mobile: a 16:10 band, so the
+           frame keeps almost all of the picture instead of the 25% that a
+           full-height crop of a 16:9 file leaves behind.
+           "Hold to dim" is the studio's own idea — light as material — and it
+           is the one hero effect that works on a phone. -->
       <section
-        class="hero relative min-h-screen flex flex-col justify-end overflow-hidden"
+        class="hero relative min-h-[100svh] flex flex-col justify-end overflow-hidden pt-[var(--chrome)]"
         aria-label="Introduction"
+        data-dim-hold
       >
-        <div
-          class="hero-bg absolute inset-0 overflow-hidden"
-          aria-hidden="true"
-        >
+        <div class="hero-figure dim-surface" data-dim-surface>
           <img
             src="hero-dim-double-height-concrete-interior.jpg"
-            alt="Double-height living space in raw concrete at dusk, a single tall window drawing a blade of warm amber light across a board-formed wall, low furniture sinking into deep shadow"
-            class="w-full h-full object-cover opacity-40 scale-110"
+            srcset="hero-dim-double-height-concrete-interior-640.jpg 640w, hero-dim-double-height-concrete-interior-900.jpg 900w, hero-dim-double-height-concrete-interior-1600.jpg 1600w"
+            sizes="100vw"
+            width="1408"
+            height="768"
             fetchpriority="high"
+            decoding="async"
+            alt="Double-height living space in raw concrete at dusk, a single tall window drawing a blade of warm amber light across a board-formed wall, low furniture sinking into deep shadow"
           />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/25"
-          ></div>
+          <canvas id="hero-gl" aria-hidden="true"></canvas>
+          <div class="hero-veil" aria-hidden="true"></div>
         </div>
+        <!-- The dim itself: one layer over the whole hero, so the type and the
+             button dim with the room instead of floating on top of it. -->
+        <div class="hero-shade" aria-hidden="true"></div>
 
-        <div class="relative z-10 px-6 md:px-10 pb-20 md:pb-24 pt-40">
+        <div class="relative z-10 px-6 md:px-10 pb-16 md:pb-24">
           <p class="eyebrow" data-hero="eyebrow">
-            <span class="tick"></span>STRATA · Architecture &amp; Interior
-            Design — Toronto
+            <span class="tick"></span>STRATA · Architecture &amp; Interior Design — Toronto
           </p>
 
           <h1
-            class="font-display font-light leading-[0.96] text-[clamp(3.2rem,10vw,10rem)] mt-8 md:mt-10 max-w-[14ch]"
+            class="font-display font-light leading-[0.96] text-[clamp(3rem,10vw,10rem)] mt-7 md:mt-10 max-w-[14ch]"
           >
-            <span class="hero-mask"
-              ><span class="hero-line">Spaces shaped</span></span
-            >
-            <span class="hero-mask"
-              ><span class="hero-line"
-                >by <em class="italic text-bronze">light</em>, material,</span
-              ></span
-            >
-            <span class="hero-mask"
-              ><span class="hero-line">and restraint.</span></span
-            >
+            <span class="hero-mask"><span class="hero-line">Spaces shaped</span></span>
+            <span class="hero-mask"><span class="hero-line">by <em class="italic text-bronze">light</em>, material,</span></span>
+            <span class="hero-mask"><span class="hero-line">and restraint.</span></span>
           </h1>
 
-          <div class="flex items-end justify-between gap-10 mt-14 md:mt-20">
-            <p class="hero-sub max-w-md text-sm leading-relaxed text-paper/60">
-              A five-person studio in Toronto designing residences, workplaces,
-              and rooms worth standing still in — across Southern Ontario and
-              occasionally beyond.
+          <div class="flex flex-wrap items-end justify-between gap-8 mt-12 md:mt-16">
+            <p class="hero-sub max-w-md text-[0.98rem] leading-relaxed text-paper/80">
+              A five-person studio in Toronto designing residences, workplaces, and rooms worth
+              standing still in — across Southern Ontario and occasionally beyond.
             </p>
-            <div
-              class="hidden sm:flex flex-col items-center gap-4 shrink-0"
-              data-hero="cue"
-            >
-              <span
-                class="text-[0.58rem] tracking-[0.4em] uppercase text-paper/40"
-                >Scroll</span
-              >
-              <span class="scroll-cue-line block w-px h-16 bg-paper/15"
-                ><span></span
-              ></span>
+            <div class="flex items-center gap-5">
+              <button type="button" class="hold-hint" data-dim-toggle aria-pressed="false">
+                <span class="dot" aria-hidden="true"></span>
+                <span data-dim-label>Dim the room</span>
+              </button>
+              <div class="hidden sm:flex flex-col items-center gap-3" data-hero="cue">
+                <span class="text-[0.78rem] tracking-[0.24em] uppercase text-paper/75">Scroll</span>
+                <span class="scroll-cue-line block w-px h-16 bg-paper/20"><span></span></span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ============ MANIFESTO ============ -->
-      <section
-        id="manifesto"
-        class="relative px-6 md:px-10 py-36 md:py-60"
-        aria-label="Manifesto"
-      >
-        <div class="max-w-5xl md:ml-[12vw]" data-reveal>
-          <p class="eyebrow mb-12 md:mb-16">
-            <span class="tick"></span>01 — Manifesto
-          </p>
+      <!-- ============ MANIFESTO ============
+           Read word by word as you scroll: the one piece of writing on this
+           site that deserves to be paced rather than skimmed. -->
+      <section id="manifesto" class="relative px-6 md:px-10 py-28 md:py-44" aria-label="Manifesto">
+        <div class="max-w-5xl md:ml-[12vw]">
+          <p class="eyebrow mb-10 md:mb-14"><span class="tick"></span>01 — Manifesto</p>
           <blockquote
-            class="font-display font-light text-[clamp(1.9rem,4.2vw,3.8rem)] leading-[1.18] text-paper/90"
+            class="font-display font-light text-[clamp(1.7rem,4vw,3.6rem)] leading-[1.22] text-paper/90"
+            data-manifesto
           >
-            &ldquo;We don&rsquo;t decorate rooms. We resolve the tension between
-            how a space is used and
-            <em class="italic">how it feels to stand inside it</em> — one
-            material decision at a time.&rdquo;
+            We don&rsquo;t decorate rooms. We resolve the tension between how a space is used and
+            <em class="italic">how it feels to stand inside it</em> — one material decision at a
+            time.
           </blockquote>
+          <p class="mt-12 max-w-xl text-[0.98rem] leading-relaxed text-paper/75">
+            That is the whole method. Everything below — the studies, the drawings, the numbers —
+            is what it looks like when it is followed properly.
+          </p>
         </div>
       </section>
-
-      <!-- ============ SELECTED WORK ============ -->
-      <section
-        id="work"
-        class="px-6 md:px-10 pb-32 md:pb-48"
-        aria-label="Selected work"
-      >
-        <div
-          class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14 md:mb-20"
-          data-reveal
-        >
+<!-- ============ SELECTED WORK ============
+           New here: eight real links to eight real case studies, reachable with
+           Tab and Enter, a live counter, and a deck that advances by scrolling
+           on a desktop and by swiping on a phone. -->
+      <section id="work" data-deck class="pt-10 md:pt-16 pb-20 md:pb-28" aria-label="Selected work">
+        <div class="px-6 md:px-10 flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 md:mb-16" data-reveal>
           <div>
-            <p class="eyebrow mb-8">
-              <span class="tick"></span>02 — Selected Work
-            </p>
-            <h2
-              class="font-display font-light text-4xl md:text-6xl leading-[1.02]"
-            >
-              Five sites.<br class="hidden md:block" />
-              Nothing arbitrary.
+            <p class="eyebrow mb-7"><span class="tick"></span>02 — Selected Work</p>
+            <h2 class="font-display font-light text-4xl md:text-6xl leading-[1.02]" data-split>
+              Eight sites. Nothing arbitrary.
             </h2>
           </div>
-          <p
-            class="max-w-xs text-sm leading-relaxed text-paper/50 md:text-right md:pb-2"
-          >
-            Each project begins with the land and the life that will happen on
-            it. Hover to step inside.
-          </p>
+          <div class="md:text-right">
+            <p class="max-w-xs text-[0.98rem] leading-relaxed text-paper/75 md:ml-auto">
+              Each project begins with the land and the life that will happen on it.
+            </p>
+            <p class="mt-5 text-[0.78rem] tracking-[0.2em] uppercase text-paper/75">
+              <span data-deck-count class="text-bronze">01</span> / 08 —
+              <span class="md:hidden">swipe</span><span class="hidden md:inline">drag or scroll</span> to advance
+            </p>
+            <div class="mt-6 flex items-center gap-3 md:justify-end">
+              <button type="button" class="wd-nav" data-deck-prev aria-label="Previous project">
+                <span aria-hidden="true">&larr;</span>
+              </button>
+              <button type="button" class="wd-nav" data-deck-next aria-label="Next project">
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </div>
         </div>
 
-        <ol class="work-list">
-          <li class="work-row group" data-cursor="View">
-            <div
-              class="grid grid-cols-12 gap-x-4 gap-y-3 items-baseline py-9 md:py-13"
+        <div
+          class="wd-viewport"
+          data-deck-viewport
+          tabindex="0"
+          role="region"
+          aria-label="Selected work: eight projects, left and right arrow keys move between them"
+        >
+          <ol class="wd-track" data-deck-track>
+            <li
+              class="wd-card is-current"
+              data-deck-card
+              data-index="01"
+              data-short="Ridgeline"
+              data-count="08"
             >
-              <span
-                class="work-num font-display col-span-2 md:col-span-1 text-lg md:text-2xl"
-                >01</span
-              >
-              <h3
-                class="col-span-10 md:col-span-6 font-display font-light text-3xl md:text-[3.4rem] leading-none"
-              >
-                <span class="work-title">Ridgeline Residence</span>
-              </h3>
-              <div
-                class="col-span-10 col-start-3 md:col-span-4 md:col-start-auto"
-              >
-                <p
-                  class="text-[0.62rem] tracking-[0.28em] uppercase text-paper/45"
-                >
-                  Private residence · Muskoka, ON · 2024
-                </p>
-                <p class="mt-2 text-sm text-paper/55 leading-relaxed">
-                  A lakeside home built from board-formed concrete and reclaimed
-                  cedar, designed to disappear into the treeline.
-                </p>
-              </div>
-              <span class="hidden md:flex md:col-span-1 justify-end"
-                ><span class="work-arrow text-xl">&rarr;</span></span
-              >
-            </div>
-            <img
-              src="project-ridgeline-residence-muskoka.jpg"
-              alt="Low lakeside house of board-formed concrete and reclaimed cedar receding into a dark pine treeline at dusk, warm interior glow spilling through full-height glazing onto granite outcrop"
-              class="md:hidden mt-1 mb-9 w-full aspect-[16/10] object-cover opacity-90"
-              loading="lazy"
-            />
-          </li>
+              <a class="wd-link" href="ridgeline-residence.html" data-cursor="Read study">
+                <figure class="wd-figure">
+                  <img
+                    src="project-ridgeline-residence-muskoka.jpg"
+                    srcset="project-ridgeline-residence-muskoka-640.jpg 640w, project-ridgeline-residence-muskoka-900.jpg 900w, project-ridgeline-residence-muskoka-1600.jpg 1600w"
+                    sizes="(min-width: 768px) 38vw, 78vw"
+                    width="1408"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Low lakeside house of board-formed concrete and reclaimed cedar receding into a dark pine treeline at dusk, warm interior glow spilling through full-height glazing onto granite outcrop"
+                  />
+                </figure>
+                <span class="wd-index">01 / 08</span>
+                <h3 class="wd-title">Ridgeline Residence</h3>
+                <p class="wd-facts">Private residence · Muskoka, ON · 2024</p>
+                <p class="wd-note">A long, low bar house laid against the granite shelf, so the treeline stays the tallest thing on the site.</p>
+              </a>
+            </li>
+            <li
+              class="wd-card"
+              data-deck-card
+              data-index="02"
+              data-short="Hensley"
+              data-count="08"
+            >
+              <a class="wd-link" href="hensley-loft.html" data-cursor="Read study">
+                <figure class="wd-figure">
+                  <img
+                    src="project-hensley-loft-toronto.jpg"
+                    srcset="project-hensley-loft-toronto-640.jpg 640w, project-hensley-loft-toronto-900.jpg 900w, project-hensley-loft-toronto-1600.jpg 1600w"
+                    sizes="(min-width: 768px) 38vw, 78vw"
+                    width="1408"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Century-old warehouse loft converted to office, exposed brick and heavy timber beams, blackened steel mezzanine, long oak work tables under rows of industrial sash windows"
+                  />
+                </figure>
+                <span class="wd-index">02 / 08</span>
+                <h3 class="wd-title">The Hensley Loft</h3>
+                <p class="wd-facts">Commercial interior · Toronto, ON · 2023</p>
+                <p class="wd-note">A publishing house in a 1908 warehouse: the building already knew how to work, so we mostly got out of its way.</p>
+              </a>
+            </li>
+            <li
+              class="wd-card"
+              data-deck-card
+              data-index="03"
+              data-short="Wren &amp; Salt"
+              data-count="08"
+            >
+              <a class="wd-link" href="wren-and-salt.html" data-cursor="Read study">
+                <figure class="wd-figure">
+                  <img
+                    src="project-wren-and-salt-restaurant.jpg"
+                    srcset="project-wren-and-salt-restaurant-640.jpg 640w, project-wren-and-salt-restaurant-900.jpg 900w, project-wren-and-salt-restaurant-1600.jpg 1600w"
+                    sizes="(min-width: 768px) 38vw, 78vw"
+                    width="1408"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Intimate forty-seat restaurant dining room at night, blackened steel banquettes, honed travertine bar glowing under brass pendants, warm oak ceiling, candlelight pooling on set tables"
+                  />
+                </figure>
+                <span class="wd-index">03 / 08</span>
+                <h3 class="wd-title">Wren &amp; Salt</h3>
+                <p class="wd-facts">Hospitality · Toronto, ON · 2023</p>
+                <p class="wd-note">Forty seats, one material story, and a bar you can watch the whole kitchen from.</p>
+              </a>
+            </li>
+            <li
+              class="wd-card"
+              data-deck-card
+              data-index="04"
+              data-short="Ashgrove"
+              data-count="08"
+            >
+              <a class="wd-link" href="ashgrove-pavilion.html" data-cursor="Read study">
+                <figure class="wd-figure">
+                  <img
+                    src="project-ashgrove-pavilion-king-city.jpg"
+                    srcset="project-ashgrove-pavilion-king-city-640.jpg 640w, project-ashgrove-pavilion-king-city-900.jpg 900w, project-ashgrove-pavilion-king-city-1600.jpg 1600w"
+                    sizes="(min-width: 768px) 38vw, 78vw"
+                    width="1408"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Glass-and-timber pavilion addition extending a low mid-century house toward a ravine at dawn, morning fog drifting through birch trees behind floor-to-ceiling glazing"
+                  />
+                </figure>
+                <span class="wd-index">04 / 08</span>
+                <h3 class="wd-title">Ashgrove Pavilion</h3>
+                <p class="wd-facts">Residential addition · King City, ON · 2022</p>
+                <p class="wd-note">A glass pavilion that pushes a mid-century house out to the edge of its ravine, without touching the original roofline.</p>
+              </a>
+            </li>
+            <li
+              class="wd-card"
+              data-deck-card
+              data-index="05"
+              data-short="Meridian"
+              data-count="08"
+            >
+              <a class="wd-link" href="meridian-gallery.html" data-cursor="Read study">
+                <figure class="wd-figure">
+                  <img
+                    src="project-meridian-gallery-toronto.jpg"
+                    srcset="project-meridian-gallery-toronto-640.jpg 640w, project-meridian-gallery-toronto-900.jpg 900w, project-meridian-gallery-toronto-1600.jpg 1600w"
+                    sizes="(min-width: 768px) 38vw, 78vw"
+                    width="1408"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Minimal private art gallery with white lime-plaster walls and three carved skylight wells raking soft daylight across a single large canvas, polished concrete floor in shadow"
+                  />
+                </figure>
+                <span class="wd-index">05 / 08</span>
+                <h3 class="wd-title">Meridian Gallery</h3>
+                <p class="wd-facts">Cultural · Toronto, ON · 2022</p>
+                <p class="wd-note">A private collection, lit by three wells cut into the roof so no canvas ever sees a spotlight.</p>
+              </a>
+            </li>
+            <li
+              class="wd-card"
+              data-deck-card
+              data-index="06"
+              data-short="Alder Row"
+              data-count="08"
+            >
+              <a class="wd-link" href="alder-row.html" data-cursor="Read study">
+                <figure class="wd-figure">
+                  <img
+                    src="project-alder-row-ottawa.jpg"
+                    srcset="project-alder-row-ottawa-640.jpg 640w, project-alder-row-ottawa-900.jpg 900w, project-alder-row-ottawa-1600.jpg 1600w"
+                    sizes="(min-width: 768px) 38vw, 78vw"
+                    width="1408"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Rear kitchen of a narrow infill house opening onto a garden, pale oak cabinetry running the length of the room, dark stone counters, black steel window frames and a clerestory above drawing daylight across the floor"
+                  />
+                </figure>
+                <span class="wd-index">06 / 08</span>
+                <h3 class="wd-title">Alder Row</h3>
+                <p class="wd-facts">Private residence · Ottawa, ON · 2024</p>
+                <p class="wd-note">Four and a half metres of rear wall, given almost entirely to one window sitting on the counter.</p>
+              </a>
+            </li>
+            <li
+              class="wd-card"
+              data-deck-card
+              data-index="07"
+              data-short="Quarry Lane"
+              data-count="08"
+            >
+              <a class="wd-link" href="quarry-lane-workshop.html" data-cursor="Read study">
+                <figure class="wd-figure">
+                  <img
+                    src="project-quarry-lane-workshop-hamilton.jpg"
+                    srcset="project-quarry-lane-workshop-hamilton-640.jpg 640w, project-quarry-lane-workshop-hamilton-900.jpg 900w, project-quarry-lane-workshop-hamilton-1600.jpg 1600w"
+                    sizes="(min-width: 768px) 38vw, 78vw"
+                    width="1408"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Furniture workshop interior with a maker working at a saw bench, long timber racks and tools along the wall behind, brick piers between tall industrial windows, concrete floor swept clean around the machinery"
+                  />
+                </figure>
+                <span class="wd-index">07 / 08</span>
+                <h3 class="wd-title">Quarry Lane Workshop</h3>
+                <p class="wd-facts">Workplace · Hamilton, ON · 2023</p>
+                <p class="wd-note">A furniture workshop where the machines set the plan and the daylight sets the day.</p>
+              </a>
+            </li>
+            <li
+              class="wd-card"
+              data-deck-card
+              data-index="08"
+              data-short="Morse Street"
+              data-count="08"
+            >
+              <a class="wd-link" href="morse-street-reading-room.html" data-cursor="Read study">
+                <figure class="wd-figure">
+                  <img
+                    src="project-morse-street-reading-room-toronto.jpg"
+                    srcset="project-morse-street-reading-room-toronto-640.jpg 640w, project-morse-street-reading-room-toronto-900.jpg 900w, project-morse-street-reading-room-toronto-1600.jpg 1600w"
+                    sizes="(min-width: 768px) 38vw, 78vw"
+                    width="1408"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Two-storey reading hall lined in pale ash joinery, long tables with reading lamps filling the floor between freestanding shelf piers, a mezzanine gallery above with a pale steel balustrade, daylight arriving from clerestories on both sides"
+                  />
+                </figure>
+                <span class="wd-index">08 / 08</span>
+                <h3 class="wd-title">Morse Street Reading Room</h3>
+                <p class="wd-facts">Institutional · Toronto, ON · 2021</p>
+                <p class="wd-note">The library as furniture: one ash joinery system, and every table has a lamp and a view of a window.</p>
+              </a>
+            </li>
+          </ol>
+        </div>
 
-          <li class="work-row group" data-cursor="View">
-            <div
-              class="grid grid-cols-12 gap-x-4 gap-y-3 items-baseline py-9 md:py-13"
-            >
-              <span
-                class="work-num font-display col-span-2 md:col-span-1 text-lg md:text-2xl"
-                >02</span
-              >
-              <h3
-                class="col-span-10 md:col-span-6 font-display font-light text-3xl md:text-[3.4rem] leading-none"
-              >
-                <span class="work-title">The Hensley Loft</span>
-              </h3>
-              <div
-                class="col-span-10 col-start-3 md:col-span-4 md:col-start-auto"
-              >
-                <p
-                  class="text-[0.62rem] tracking-[0.28em] uppercase text-paper/45"
-                >
-                  Commercial interior · Toronto, ON · 2023
-                </p>
-                <p class="mt-2 text-sm text-paper/55 leading-relaxed">
-                  Adaptive reuse of a century-old warehouse into an
-                  editorial-style office for a publishing house.
-                </p>
-              </div>
-              <span class="hidden md:flex md:col-span-1 justify-end"
-                ><span class="work-arrow text-xl">&rarr;</span></span
-              >
-            </div>
-            <img
-              src="project-hensley-loft-toronto.jpg"
-              alt="Century-old warehouse loft converted to office, exposed brick and heavy timber beams, blackened steel mezzanine, long oak work tables under rows of industrial sash windows"
-              class="md:hidden mt-1 mb-9 w-full aspect-[16/10] object-cover opacity-90"
-              loading="lazy"
-            />
-          </li>
-
-          <li class="work-row group" data-cursor="View">
-            <div
-              class="grid grid-cols-12 gap-x-4 gap-y-3 items-baseline py-9 md:py-13"
-            >
-              <span
-                class="work-num font-display col-span-2 md:col-span-1 text-lg md:text-2xl"
-                >03</span
-              >
-              <h3
-                class="col-span-10 md:col-span-6 font-display font-light text-3xl md:text-[3.4rem] leading-none"
-              >
-                <span class="work-title">Wren &amp; Salt</span>
-              </h3>
-              <div
-                class="col-span-10 col-start-3 md:col-span-4 md:col-start-auto"
-              >
-                <p
-                  class="text-[0.62rem] tracking-[0.28em] uppercase text-paper/45"
-                >
-                  Hospitality · Toronto, ON · 2023
-                </p>
-                <p class="mt-2 text-sm text-paper/55 leading-relaxed">
-                  A 40-seat restaurant built around a single material story:
-                  blackened steel, travertine, and warm oak.
-                </p>
-              </div>
-              <span class="hidden md:flex md:col-span-1 justify-end"
-                ><span class="work-arrow text-xl">&rarr;</span></span
-              >
-            </div>
-            <img
-              src="project-wren-and-salt-restaurant.jpg"
-              alt="Intimate forty-seat restaurant dining room at night, blackened steel banquettes, honed travertine bar glowing under brass pendants, warm oak ceiling, candlelight pooling on set tables"
-              class="md:hidden mt-1 mb-9 w-full aspect-[16/10] object-cover opacity-90"
-              loading="lazy"
-            />
-          </li>
-          <li class="work-row group" data-cursor="View">
-            <div
-              class="grid grid-cols-12 gap-x-4 gap-y-3 items-baseline py-9 md:py-13"
-            >
-              <span
-                class="work-num font-display col-span-2 md:col-span-1 text-lg md:text-2xl"
-                >04</span
-              >
-              <h3
-                class="col-span-10 md:col-span-6 font-display font-light text-3xl md:text-[3.4rem] leading-none"
-              >
-                <span class="work-title">Ashgrove Pavilion</span>
-              </h3>
-              <div
-                class="col-span-10 col-start-3 md:col-span-4 md:col-start-auto"
-              >
-                <p
-                  class="text-[0.62rem] tracking-[0.28em] uppercase text-paper/45"
-                >
-                  Residential addition · King City, ON · 2022
-                </p>
-                <p class="mt-2 text-sm text-paper/55 leading-relaxed">
-                  A glass-and-timber pavilion extending a mid-century home
-                  toward its ravine lot.
-                </p>
-              </div>
-              <span class="hidden md:flex md:col-span-1 justify-end"
-                ><span class="work-arrow text-xl">&rarr;</span></span
-              >
-            </div>
-            <img
-              src="project-ashgrove-pavilion-king-city.jpg"
-              alt="Glass-and-timber pavilion addition extending a low mid-century house toward a ravine at dawn, morning fog drifting through birch trees behind floor-to-ceiling glazing"
-              class="md:hidden mt-1 mb-9 w-full aspect-[16/10] object-cover opacity-90"
-              loading="lazy"
-            />
-          </li>
-
-          <li class="work-row group" data-cursor="View">
-            <div
-              class="grid grid-cols-12 gap-x-4 gap-y-3 items-baseline py-9 md:py-13"
-            >
-              <span
-                class="work-num font-display col-span-2 md:col-span-1 text-lg md:text-2xl"
-                >05</span
-              >
-              <h3
-                class="col-span-10 md:col-span-6 font-display font-light text-3xl md:text-[3.4rem] leading-none"
-              >
-                <span class="work-title">Meridian Gallery</span>
-              </h3>
-              <div
-                class="col-span-10 col-start-3 md:col-span-4 md:col-start-auto"
-              >
-                <p
-                  class="text-[0.62rem] tracking-[0.28em] uppercase text-paper/45"
-                >
-                  Cultural · Toronto, ON · 2022
-                </p>
-                <p class="mt-2 text-sm text-paper/55 leading-relaxed">
-                  A private art gallery renovation organized around three carved
-                  light wells.
-                </p>
-              </div>
-              <span class="hidden md:flex md:col-span-1 justify-end"
-                ><span class="work-arrow text-xl">&rarr;</span></span
-              >
-            </div>
-            <img
-              src="project-meridian-gallery-toronto.jpg"
-              alt="Minimal private art gallery with white lime-plaster walls and three carved skylight wells raking soft daylight across a single large canvas, polished concrete floor in shadow"
-              class="md:hidden mt-1 mb-9 w-full aspect-[16/10] object-cover opacity-90"
-              loading="lazy"
-            />
-          </li>
-        </ol>
+        <div class="px-6 md:px-10 mt-8">
+          <div class="wd-bar" aria-hidden="true"><span data-deck-bar></span></div>
+          <p class="mt-6 text-[0.98rem] leading-relaxed text-paper/75 max-w-2xl">
+            Every card opens the full study: the brief, the working drawing at the scale it was
+            drawn at, the material list, and the numbers.
+          </p>
+        </div>
       </section>
 
-      <!-- ============ APPROACH ============ -->
-      <section
-        id="approach"
-        class="px-6 md:px-10 pt-24 md:pt-32 pb-48 md:pb-72 border-t border-paper/10"
-        aria-label="Our approach"
-      >
-        <div class="max-w-2xl" data-reveal>
-          <p class="eyebrow mb-8">
-            <span class="tick"></span>03 — Our Approach
-          </p>
-          <h2
-            class="font-display font-light text-4xl md:text-6xl leading-[1.02]"
-          >
-            A slow, deliberate sequence.
-            <em class="italic text-paper/60">Four moves, no shortcuts.</em>
+      <!-- ============ THE DRAWING ============
+           The moment that separates a studio from a hotel: the plan itself,
+           drawing itself, then giving way to the photograph underneath it. -->
+      <section id="drawing" class="px-6 md:px-10 pt-20 md:pt-28 pb-24 md:pb-32 border-t border-paper/10" aria-label="Working drawings">
+        <div class="max-w-3xl" data-reveal>
+          <p class="eyebrow mb-7"><span class="tick"></span>03 — The Drawing</p>
+          <h2 class="font-display font-light text-4xl md:text-6xl leading-[1.02]" data-split>
+            Drawn before it was built.
           </h2>
+          <p class="mt-8 text-[0.98rem] leading-relaxed text-paper/80">
+            Every project here starts as a plan, and the plan is where the argument is won or lost.
+            Ours is shown at the scale it was worked at — then dragged against the photograph of the
+            finished room, so you can see exactly which line became which wall.
+          </p>
         </div>
 
-        <div class="grid md:grid-cols-12 gap-y-16 md:gap-x-8 mt-20 md:mt-28">
-          <div class="step-card md:col-span-3 md:col-start-1 pt-8" data-reveal>
-            <span class="font-display text-bronze text-lg">01</span>
-            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">
-              Discover
-            </h3>
-            <p class="mt-5 text-sm text-paper/55 leading-relaxed">
-              Site analysis, client vision, and constraints mapping before a
-              single line is drawn.
-            </p>
+        <div class="dwg mt-16 md:mt-20" data-reveal>
+          <div data-draw-scope data-dwg-zoom-scope>
+            <div class="dwg-plan-wrap" tabindex="0" role="group" aria-label="Working drawing, Ridgeline Residence ground plan at 1:200">
+              <svg class="dwg-plan" viewBox="0 0 900 660" role="img" aria-label="Line plan of the Ridgeline Residence: a single long bar with a service corridor along the north wall, four rooms divided by three partitions, full-height glazing along the south, and a cedar deck with a dock stepping down to the lake." xmlns="http://www.w3.org/2000/svg">
+  <text x="60" y="32">Ridgeline Residence — ground plan · 1:200</text>
+
+  <!-- walls -->
+  <rect x="60" y="60" width="780" height="380" class="dwg-line" />
+  <rect x="60" y="60" width="780" height="380" class="dwg-fill" />
+
+  <!-- the north wall carries everything: mass, and a service corridor behind -->
+  <rect x="60" y="60" width="780" height="76" class="dwg-line" />
+  <line x1="60" y1="136" x2="840" y2="136" class="dwg-line" />
+
+  <!-- partitions: sauna · bathing · sleeping · living -->
+  <line x1="252" y1="136" x2="252" y2="440" class="dwg-line" />
+  <line x1="404" y1="136" x2="404" y2="440" class="dwg-line" />
+  <line x1="596" y1="136" x2="596" y2="440" class="dwg-line" />
+
+  <!-- fireplace core, the only thing standing free in the room -->
+  <rect x="636" y="196" width="52" height="120" class="dwg-fill" />
+  <rect x="636" y="196" width="52" height="120" class="dwg-line" />
+
+  <!-- south wall: glazing under the deep cedar soffit, drawn as a triple line -->
+  <line x1="96" y1="440" x2="804" y2="440" class="dwg-line--fine" />
+  <line x1="96" y1="434" x2="804" y2="434" class="dwg-line--fine" />
+  <line x1="96" y1="446" x2="804" y2="446" class="dwg-line--fine" />
+  <g class="dwg-line--fine">
+    <line x1="180" y1="428" x2="180" y2="452" />
+    <line x1="296" y1="428" x2="296" y2="452" />
+    <line x1="412" y1="428" x2="412" y2="452" />
+    <line x1="528" y1="428" x2="528" y2="452" />
+    <line x1="644" y1="428" x2="644" y2="452" />
+    <line x1="760" y1="428" x2="760" y2="452" />
+  </g>
+
+  <!-- door openings -->
+  <g class="dwg-line--fine">
+    <line x1="252" y1="300" x2="252" y2="372" />
+    <path d="M252 300 A72 72 0 0 1 324 372" />
+    <line x1="404" y1="300" x2="404" y2="372" />
+    <path d="M404 300 A72 72 0 0 1 476 372" />
+  </g>
+
+  <!-- sauna benches and stove -->
+  <rect x="76" y="152" width="160" height="34" class="dwg-line--fine" />
+  <rect x="76" y="192" width="160" height="26" class="dwg-line--fine" />
+  <circle cx="216" cy="404" r="20" class="dwg-mark" />
+  <text x="216" y="392" text-anchor="middle">STOVE</text>
+
+  <!-- beds -->
+  <rect x="272" y="164" width="112" height="152" class="dwg-line--fine" />
+  <rect x="424" y="164" width="112" height="152" class="dwg-line--fine" />
+
+  <!-- living: low sofa and a long table -->
+  <rect x="614" y="336" width="180" height="44" class="dwg-line--fine" />
+  <rect x="700" y="180" width="120" height="60" class="dwg-line--fine" />
+
+  <!-- terrace, then the lake -->
+  <rect x="60" y="446" width="780" height="70" class="dwg-line--fine" />
+  <g class="dwg-line--fine">
+    <line x1="60" y1="536" x2="840" y2="536" />
+    <line x1="60" y1="548" x2="840" y2="548" />
+    <line x1="60" y1="560" x2="840" y2="560" />
+    <line x1="60" y1="572" x2="840" y2="572" />
+  </g>
+  <line x1="748" y1="446" x2="748" y2="536" class="dwg-line" />
+  <rect x="748" y="500" width="92" height="36" class="dwg-line--fine" />
+
+  <text x="76" y="176">SAUNA</text>
+  <text x="272" y="156">BED 01</text>
+  <text x="424" y="156">BED 02</text>
+  <text x="700" y="252" text-anchor="middle">LIVING</text>
+  <text x="76" y="486">CEDAR DECK</text>
+  <text x="400" y="600" text-anchor="middle">LAKE</text>
+  <text x="748" y="492" text-anchor="middle">DOCK</text>
+  
+  <g class="dwg-line--fine">
+    <line x1="806" y1="46" x2="806" y2="94" class="dwg-line" />
+    <polyline points="800,62 806,46 812,62" class="dwg-line" />
+  </g>
+  <text x="806" y="110" text-anchor="middle">N</text>
+  
+  <g class="dwg-line--fine">
+    <line x1="60" y1="610" x2="260" y2="610" />
+    <line x1="60" y1="604" x2="60" y2="616" />
+    <line x1="110" y1="604" x2="110" y2="616" />
+    <line x1="160" y1="604" x2="160" y2="616" />
+    <line x1="210" y1="604" x2="210" y2="616" />
+    <line x1="260" y1="604" x2="260" y2="616" />
+  </g>
+  <text x="60" y="636">0</text>
+  <text x="260" y="636" text-anchor="middle">10 m</text>
+</svg>
+            </div>
+            <button type="button" class="dwg-zoom" data-dwg-zoom aria-pressed="false">Full size</button>
+            <p class="dwg-note">Ridgeline Residence — ground plan, working drawing 1:200</p>
           </div>
-          <div
-            class="step-card md:col-span-3 md:col-start-4 step-offset-2 pt-8"
-            data-reveal
-          >
-            <span class="font-display text-bronze text-lg">02</span>
-            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">
-              Concept
-            </h3>
-            <p class="mt-5 text-sm text-paper/55 leading-relaxed">
-              Spatial narrative, massing studies, and material direction.
+          <div>
+            <p class="text-[0.78rem] tracking-[0.22em] uppercase text-paper/70 mb-4">
+              Drawing over photograph — drag the handle
             </p>
-          </div>
-          <div
-            class="step-card md:col-span-3 md:col-start-7 step-offset-3 pt-8"
-            data-reveal
-          >
-            <span class="font-display text-bronze text-lg">03</span>
-            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">
-              Detail
-            </h3>
-            <p class="mt-5 text-sm text-paper/55 leading-relaxed">
-              Technical drawings, material specification, and engineering
-              coordination.
-            </p>
-          </div>
-          <div
-            class="step-card md:col-span-3 md:col-start-10 step-offset-4 pt-8"
-            data-reveal
-          >
-            <span class="font-display text-bronze text-lg">04</span>
-            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">
-              Deliver
-            </h3>
-            <p class="mt-5 text-sm text-paper/55 leading-relaxed">
-              Construction oversight, styling, and the final reveal.
+                          <div class="dwg-slider" data-slider>
+                <img
+                  src="project-ridgeline-residence-muskoka.jpg"
+                   srcset="project-ridgeline-residence-muskoka-900.jpg 900w, project-ridgeline-residence-muskoka-1600.jpg 1600w"
+                  sizes="(min-width: 1024px) 52vw, 92vw"
+                  width="1408"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Low lakeside house of board-formed concrete and reclaimed cedar receding into a dark pine treeline at dusk, warm interior glow spilling through full-height glazing onto granite outcrop"
+                />
+                <div class="dwg-study" aria-hidden="true">
+                  <svg class="dwg-plan" viewBox="0 0 900 660" role="img" aria-label="Line plan of the Ridgeline Residence: a single long bar with a service corridor along the north wall, four rooms divided by three partitions, full-height glazing along the south, and a cedar deck with a dock stepping down to the lake." xmlns="http://www.w3.org/2000/svg">
+  <text x="60" y="32">Ridgeline Residence — ground plan · 1:200</text>
+
+  <!-- walls -->
+  <rect x="60" y="60" width="780" height="380" class="dwg-line" />
+  <rect x="60" y="60" width="780" height="380" class="dwg-fill" />
+
+  <!-- the north wall carries everything: mass, and a service corridor behind -->
+  <rect x="60" y="60" width="780" height="76" class="dwg-line" />
+  <line x1="60" y1="136" x2="840" y2="136" class="dwg-line" />
+
+  <!-- partitions: sauna · bathing · sleeping · living -->
+  <line x1="252" y1="136" x2="252" y2="440" class="dwg-line" />
+  <line x1="404" y1="136" x2="404" y2="440" class="dwg-line" />
+  <line x1="596" y1="136" x2="596" y2="440" class="dwg-line" />
+
+  <!-- fireplace core, the only thing standing free in the room -->
+  <rect x="636" y="196" width="52" height="120" class="dwg-fill" />
+  <rect x="636" y="196" width="52" height="120" class="dwg-line" />
+
+  <!-- south wall: glazing under the deep cedar soffit, drawn as a triple line -->
+  <line x1="96" y1="440" x2="804" y2="440" class="dwg-line--fine" />
+  <line x1="96" y1="434" x2="804" y2="434" class="dwg-line--fine" />
+  <line x1="96" y1="446" x2="804" y2="446" class="dwg-line--fine" />
+  <g class="dwg-line--fine">
+    <line x1="180" y1="428" x2="180" y2="452" />
+    <line x1="296" y1="428" x2="296" y2="452" />
+    <line x1="412" y1="428" x2="412" y2="452" />
+    <line x1="528" y1="428" x2="528" y2="452" />
+    <line x1="644" y1="428" x2="644" y2="452" />
+    <line x1="760" y1="428" x2="760" y2="452" />
+  </g>
+
+  <!-- door openings -->
+  <g class="dwg-line--fine">
+    <line x1="252" y1="300" x2="252" y2="372" />
+    <path d="M252 300 A72 72 0 0 1 324 372" />
+    <line x1="404" y1="300" x2="404" y2="372" />
+    <path d="M404 300 A72 72 0 0 1 476 372" />
+  </g>
+
+  <!-- sauna benches and stove -->
+  <rect x="76" y="152" width="160" height="34" class="dwg-line--fine" />
+  <rect x="76" y="192" width="160" height="26" class="dwg-line--fine" />
+  <circle cx="216" cy="404" r="20" class="dwg-mark" />
+  <text x="216" y="392" text-anchor="middle">STOVE</text>
+
+  <!-- beds -->
+  <rect x="272" y="164" width="112" height="152" class="dwg-line--fine" />
+  <rect x="424" y="164" width="112" height="152" class="dwg-line--fine" />
+
+  <!-- living: low sofa and a long table -->
+  <rect x="614" y="336" width="180" height="44" class="dwg-line--fine" />
+  <rect x="700" y="180" width="120" height="60" class="dwg-line--fine" />
+
+  <!-- terrace, then the lake -->
+  <rect x="60" y="446" width="780" height="70" class="dwg-line--fine" />
+  <g class="dwg-line--fine">
+    <line x1="60" y1="536" x2="840" y2="536" />
+    <line x1="60" y1="548" x2="840" y2="548" />
+    <line x1="60" y1="560" x2="840" y2="560" />
+    <line x1="60" y1="572" x2="840" y2="572" />
+  </g>
+  <line x1="748" y1="446" x2="748" y2="536" class="dwg-line" />
+  <rect x="748" y="500" width="92" height="36" class="dwg-line--fine" />
+
+  <text x="76" y="176">SAUNA</text>
+  <text x="272" y="156">BED 01</text>
+  <text x="424" y="156">BED 02</text>
+  <text x="700" y="252" text-anchor="middle">LIVING</text>
+  <text x="76" y="486">CEDAR DECK</text>
+  <text x="400" y="600" text-anchor="middle">LAKE</text>
+  <text x="748" y="492" text-anchor="middle">DOCK</text>
+  
+  <g class="dwg-line--fine">
+    <line x1="806" y1="46" x2="806" y2="94" class="dwg-line" />
+    <polyline points="800,62 806,46 812,62" class="dwg-line" />
+  </g>
+  <text x="806" y="110" text-anchor="middle">N</text>
+  
+  <g class="dwg-line--fine">
+    <line x1="60" y1="610" x2="260" y2="610" />
+    <line x1="60" y1="604" x2="60" y2="616" />
+    <line x1="110" y1="604" x2="110" y2="616" />
+    <line x1="160" y1="604" x2="160" y2="616" />
+    <line x1="210" y1="604" x2="210" y2="616" />
+    <line x1="260" y1="604" x2="260" y2="616" />
+  </g>
+  <text x="60" y="636">0</text>
+  <text x="260" y="636" text-anchor="middle">10 m</text>
+</svg>
+                </div>
+                <button
+                  type="button"
+                  class="dwg-handle"
+                  data-slider-handle
+                  role="slider"
+                  aria-label="Reveal the line study over the photograph, arrow keys move the handle"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="50"
+                  aria-orientation="horizontal"
+                >
+                  <span aria-hidden="true">&#8596;</span>
+                </button>
+              </div>
+            <div class="dwg-legend"><span>Photograph</span><span>Line study</span></div>
+            <p class="mt-6 text-[0.98rem] leading-relaxed text-paper/75">
+              The handle is a real slider: drag it, or focus it and use the arrow keys. The line
+              study is the same photograph reduced to its drawing — mass, glazing, and the path the
+              light takes.
             </p>
           </div>
         </div>
       </section>
-      <!-- ============ STUDIO ============ -->
-      <section
-        id="studio"
-        class="px-6 md:px-10 py-32 md:py-44 border-t border-paper/10"
-        aria-label="The studio"
-      >
+<!-- ============ APPROACH ============ -->
+      <section id="approach" class="px-6 md:px-10 pt-24 md:pt-32 pb-40 md:pb-56 border-t border-paper/10" aria-label="Our approach">
+        <div class="max-w-2xl" data-reveal>
+          <p class="eyebrow mb-7"><span class="tick"></span>04 — Our Approach</p>
+          <h2 class="font-display font-light text-4xl md:text-6xl leading-[1.02]" data-split>
+            A slow, deliberate sequence.
+          </h2>
+          <p class="mt-8 text-[0.98rem] leading-relaxed text-paper/80">
+            Four moves, no shortcuts. Each one ends with something you can hold: a site report, a
+            spatial narrative, a set of drawings, a building.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-y-14 md:gap-x-8 mt-20 md:mt-24">
+          <div class="step-card md:col-span-3 pt-8" data-reveal>
+            <span class="font-display text-bronze text-lg">01</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">Discover</h3>
+            <p class="mt-5 text-[0.95rem] text-paper/75 leading-relaxed">
+              Site analysis, client vision, constraints mapping before a single line is drawn. You
+              leave with a written brief you agreed to.
+            </p>
+          </div>
+          <div class="step-card md:col-span-3 step-offset-2 pt-8" data-reveal>
+            <span class="font-display text-bronze text-lg">02</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">Concept</h3>
+            <p class="mt-5 text-[0.95rem] text-paper/75 leading-relaxed">
+              Spatial narrative, massing studies, and a material direction — argued in person, with
+              physical samples on the table.
+            </p>
+          </div>
+          <div class="step-card md:col-span-3 step-offset-3 pt-8" data-reveal>
+            <span class="font-display text-bronze text-lg">03</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">Detail</h3>
+            <p class="mt-5 text-[0.95rem] text-paper/75 leading-relaxed">
+              Technical drawings, material specification, engineering coordination — the stage that
+              decides whether the finished room looks like the drawing.
+            </p>
+          </div>
+          <div class="step-card md:col-span-3 step-offset-4 pt-8" data-reveal>
+            <span class="font-display text-bronze text-lg">04</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">Deliver</h3>
+            <p class="mt-5 text-[0.95rem] text-paper/75 leading-relaxed">
+              Construction oversight, styling, and the final reveal — by the same people who drew
+              it. Nothing is handed off.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ THE STUDIO ============
+           The numbers here are checkable against the eight studies above, which
+           is the whole point of showing them. -->
+      <section id="studio" class="px-6 md:px-10 py-28 md:py-40 border-t border-paper/10" aria-label="The studio">
         <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-start">
-          <figure class="relative md:sticky md:top-28" data-reveal>
-            <div class="overflow-hidden aspect-[3/4] max-w-lg">
+          <figure data-reveal>
+            <div class="studio-frame">
               <img
-                src="portrait-nadia-ostrow-studio-window-light.jpg"
-                alt="Portrait of founding principal Nadia Ostrow standing in soft north-window light against a raw concrete studio wall, charcoal tailored jacket, arms loosely crossed, calm direct gaze, drafting table blurred behind her"
-                class="studio-img w-full h-full object-cover scale-110 opacity-90"
+                src="portrait-nadia-ostrow-studio-window-light-portrait.jpg"
+                width="1408"
+                height="768"
                 loading="lazy"
+                decoding="async"
+                alt="Portrait of founding principal Nadia Ostrow standing in soft north-window light against a raw concrete studio wall, charcoal tailored jacket, arms loosely crossed, calm direct gaze, drafting table blurred behind her"
               />
             </div>
-            <figcaption
-              class="mt-5 text-[0.62rem] tracking-[0.3em] uppercase text-paper/40"
-            >
+            <figcaption class="mt-5 text-[0.78rem] tracking-[0.2em] uppercase text-paper/75">
               Nadia Ostrow — Founding Principal &amp; Architect
             </figcaption>
           </figure>
 
-          <div class="md:pt-20 md:pl-6">
-            <p class="eyebrow mb-10" data-reveal>
-              <span class="tick"></span>04 — The Studio
-            </p>
-            <p
-              class="font-display font-light text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.25] text-paper/90"
-              data-reveal
-            >
+          <div>
+            <p class="eyebrow mb-9"><span class="tick"></span>05 — The Studio</p>
+            <p class="font-display font-light text-[clamp(1.5rem,3vw,2.3rem)] leading-[1.25] text-paper/90" data-reveal>
               &ldquo;I started STRATA after a decade designing for
               <em class="italic">other people&rsquo;s visions</em>.&rdquo;
             </p>
-            <div
-              class="mt-10 max-w-md space-y-6 text-[0.95rem] leading-relaxed text-paper/60"
-              data-reveal
-            >
+            <div class="mt-10 max-w-lg space-y-6 text-[0.98rem] leading-relaxed text-paper/80" data-reveal>
               <p>
-                Here, every project starts with the site and the client&rsquo;s
-                actual life in it — not a mood board. The land tells you what it
-                can hold; the people tell you what it should feel like. Our job
-                is to make those two answers agree.
+                Here, every project starts with the site and the client&rsquo;s actual life in it —
+                not a mood board. The land tells you what it can hold; the people tell you what it
+                should feel like. Our job is to make those two answers agree.
               </p>
               <p>
-                Our team is small on purpose: five people, every project touched
-                by the same hands from first sketch to final walkthrough.
-                Nothing is handed off, nothing gets lost between departments,
-                and nothing leaves the studio that we wouldn&rsquo;t want to
-                live with ourselves.
+                The team is small on purpose: five people, and every project touched by the same
+                hands from first sketch to final walkthrough. Nothing is handed off, nothing gets
+                lost between departments, and nothing leaves the studio we would not want to live
+                with ourselves.
               </p>
             </div>
-            <p
-              class="mt-10 font-display italic text-lg text-bronze"
-              data-reveal
-            >
-              Nadia Ostrow
-            </p>
+            <p class="mt-10 font-display italic text-lg text-bronze" data-reveal>Nadia Ostrow</p>
 
-            <div class="mt-16 md:mt-24" data-reveal>
-              <p
-                class="text-[0.62rem] tracking-[0.32em] uppercase text-paper/40 mb-2"
-              >
-                As seen in / Recognized by
-              </p>
-              <ul
-                class="divide-y divide-paper/10 border-y border-paper/10 mt-4"
-              >
-                <li
-                  class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1 text-sm text-paper/60"
-                >
-                  <span class="text-paper/35">Featured in</span
-                  ><span>Azure Magazine</span>
-                </li>
-                <li
-                  class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1 text-sm text-paper/60"
-                >
-                  <span class="text-paper/35">Recognized by</span
-                  ><span>Toronto Design Awards — Finalist 2024</span>
-                </li>
-                <li
-                  class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1 text-sm text-paper/60"
-                >
-                  <span class="text-paper/35">Recognized by</span
-                  ><span>Interior Design Best of Year — Shortlist</span>
-                </li>
-              </ul>
+            <div class="grid grid-cols-2 gap-x-8 gap-y-12 mt-16 md:mt-20">
+            <div class="stat" data-reveal>
+              <span class="stat-num" data-count-to="5">0</span>
+              <span class="stat-label">People in the studio</span>
+              <p class="mt-2 text-sm text-paper/75">No handoffs, no account managers</p>
+            </div>
+            <div class="stat" data-reveal>
+              <span class="stat-num" data-count-to="42">0</span>
+              <span class="stat-label">Projects completed</span>
+              <p class="mt-2 text-sm text-paper/75">Since the studio opened in 2014</p>
+            </div>
+            <div class="stat" data-reveal>
+              <span class="stat-num" data-count-to="11">0</span>
+              <span class="stat-label">Years of practice</span>
+              <p class="mt-2 text-sm text-paper/75">Residential, commercial, cultural</p>
+            </div>
+            <div class="stat" data-reveal>
+              <span class="stat-num" data-count-to="9">0</span>
+              <span class="stat-label">Awards and shortlists</span>
+              <p class="mt-2 text-sm text-paper/75">Toronto Design Awards, ID Best of Year</p>
+            </div>
             </div>
           </div>
         </div>
+
+        <div class="mt-24 md:mt-32" data-reveal>
+          <p class="eyebrow mb-8"><span class="tick"></span>Material, as method</p>
+          <div class="mat">              <button
+                type="button"
+                class="mat-chip"
+                style="--chip: 214 198 175"
+                data-material="travertine"
+                data-accent="184 147 95"
+                aria-pressed="true"
+              >
+                <span class="mat-swatch" aria-hidden="true"></span>
+                <span class="mat-name">Honed travertine</span>
+                <span class="mat-spec">Wren &amp; Salt, 2023</span>
+              </button>
+              <button
+                type="button"
+                class="mat-chip"
+                style="--chip: 86 92 99"
+                data-material="steel"
+                data-accent="138 152 166"
+                aria-pressed="false"
+              >
+                <span class="mat-swatch" aria-hidden="true"></span>
+                <span class="mat-name">Blackened steel</span>
+                <span class="mat-spec">Hensley Loft, 2023</span>
+              </button>
+              <button
+                type="button"
+                class="mat-chip"
+                style="--chip: 223 217 206"
+                data-material="plaster"
+                data-accent="146 137 116"
+                aria-pressed="false"
+              >
+                <span class="mat-swatch" aria-hidden="true"></span>
+                <span class="mat-name">Lime plaster</span>
+                <span class="mat-spec">Meridian Gallery, 2022</span>
+              </button>
+              <button
+                type="button"
+                class="mat-chip"
+                style="--chip: 150 116 84"
+                data-material="cedar"
+                data-accent="182 124 68"
+                aria-pressed="false"
+              >
+                <span class="mat-swatch" aria-hidden="true"></span>
+                <span class="mat-name">Reclaimed cedar</span>
+                <span class="mat-spec">Ridgeline, 2024</span>
+              </button>
+              <button
+                type="button"
+                class="mat-chip"
+                style="--chip: 128 130 128"
+                data-material="concrete"
+                data-accent="150 150 148"
+                aria-pressed="false"
+              >
+                <span class="mat-swatch" aria-hidden="true"></span>
+                <span class="mat-name">Board-formed concrete</span>
+                <span class="mat-spec">Ridgeline, 2024</span>
+              </button>
+              <button
+                type="button"
+                class="mat-chip"
+                style="--chip: 196 166 126"
+                data-material="oak"
+                data-accent="161 122 74"
+                aria-pressed="false"
+              >
+                <span class="mat-swatch" aria-hidden="true"></span>
+                <span class="mat-name">Pale white oak</span>
+                <span class="mat-spec">Alder Row, 2024</span>
+              </button>
+              <button
+                type="button"
+                class="mat-chip"
+                style="--chip: 120 122 126"
+                data-material="wool"
+                data-accent="150 155 162"
+                aria-pressed="false"
+              >
+                <span class="mat-swatch" aria-hidden="true"></span>
+                <span class="mat-name">Wool and felt</span>
+                <span class="mat-spec">Morse Street, 2021</span>
+              </button>
+              <button
+                type="button"
+                class="mat-chip"
+                style="--chip: 166 118 96"
+                data-material="brick"
+                data-accent="176 118 88"
+                aria-pressed="false"
+              >
+                <span class="mat-swatch" aria-hidden="true"></span>
+                <span class="mat-name">Repointed brick</span>
+                <span class="mat-spec">Quarry Lane, 2023</span>
+              </button></div>
+          <p class="mt-8 max-w-2xl text-[0.98rem] leading-relaxed text-paper/75">
+            Press a swatch and the whole page takes the accent of that material — because the
+            material decides the accent, not the other way round. It is the same palette every
+            project is specified from.
+          </p>
+        </div>
+
+        <div class="mt-20 md:mt-24">
+        <div class="marquee" data-reveal>
+          <div class="marquee-track">
+            <span class="marquee-item">Featured in Azure Magazine</span><span class="marquee-item">Toronto Design Awards — Finalist 2024</span><span class="marquee-item">Interior Design Best of Year — Shortlist</span><span class="marquee-item">Ontario Association of Architects — Member</span><span class="marquee-item">Canadian Interiors — Best of Canada 2023</span><span class="marquee-item">Muskoka Build Awards — Custom Home 2024</span>
+            <span aria-hidden="true" class="contents"><span class="marquee-item">Featured in Azure Magazine</span><span class="marquee-item">Toronto Design Awards — Finalist 2024</span><span class="marquee-item">Interior Design Best of Year — Shortlist</span><span class="marquee-item">Ontario Association of Architects — Member</span><span class="marquee-item">Canadian Interiors — Best of Canada 2023</span><span class="marquee-item">Muskoka Build Awards — Custom Home 2024</span></span>
+          </div>
+        </div>
+        </div>
       </section>
+
       <!-- ============ CONTACT ============ -->
-      <section
-        id="contact"
-        class="px-6 md:px-10 py-32 md:py-48 border-t border-paper/10"
-        aria-label="Contact"
-      >
-        <div class="grid md:grid-cols-12 gap-16 md:gap-12">
+      <section id="contact" class="px-6 md:px-10 py-28 md:py-40 border-t border-paper/10" aria-label="Contact">
+        <div class="grid md:grid-cols-12 gap-14 md:gap-12">
           <div class="md:col-span-5">
-            <p class="eyebrow mb-10" data-reveal>
-              <span class="tick"></span>05 — Contact
-            </p>
-            <h2
-              class="font-display font-light leading-[0.98] text-[clamp(2.6rem,6vw,5.5rem)]"
-              data-reveal
-            >
+            <p class="eyebrow mb-9"><span class="tick"></span>06 — Contact</p>
+            <h2 class="font-display font-light leading-[0.98] text-[clamp(2.4rem,6vw,5rem)]" data-split>
               Let&rsquo;s talk about your <em class="italic">project</em>.
             </h2>
-            <p
-              class="mt-8 max-w-md text-[0.95rem] leading-relaxed text-paper/60"
-              data-reveal
-            >
-              Every project we take on is bespoke — investment reflects scope,
-              materials, and site conditions. Tell us about your vision and
-              we&rsquo;ll follow up within two business days.
+            <p class="mt-8 max-w-md text-[0.98rem] leading-relaxed text-paper/80" data-reveal>
+              Every project we take on is bespoke — investment reflects scope, materials and site
+              conditions. Tell us about your vision and we will follow up within two business days.
             </p>
 
             <ul class="mt-14 space-y-7 text-sm" data-reveal>
               <li>
                 <span class="lbl">Email</span>
-                <a
-                  href="mailto:studio@example.com"
-                  class="u-draw font-display text-xl md:text-2xl"
-                  >studio@example.com</a
-                >
+                <a href="mailto:studio@example.com" class="u-draw font-display text-xl md:text-2xl">studio@example.com</a>
               </li>
               <li>
                 <span class="lbl">Phone</span>
-                <a href="tel:+14165550120" class="u-draw text-paper/80"
-                  >(416) 555-0120</a
-                >
+                <a href="tel:+14165550120" class="u-draw text-paper/85">(416) 555-0120</a>
               </li>
               <li class="flex flex-wrap gap-x-10 gap-y-4">
                 <span>
                   <span class="lbl">Instagram</span>
-                  <a
-                    href="https://www.instagram.com/strata.studio"
-                    target="_blank"
-                    rel="noopener"
-                    class="u-draw text-paper/80"
-                    >@strata.studio</a
-                  >
+                  <a href="https://www.instagram.com/strata.studio" target="_blank" rel="noopener" class="u-draw text-paper/85">@strata.studio</a>
                 </span>
                 <span>
                   <span class="lbl">LinkedIn</span>
-                  <a
-                    href="https://www.linkedin.com/company/strata-studio"
-                    target="_blank"
-                    rel="noopener"
-                    class="u-draw text-paper/80"
-                    >STRATA Studio</a
-                  >
+                  <a href="https://www.linkedin.com/company/strata-studio" target="_blank" rel="noopener" class="u-draw text-paper/85">STRATA Studio</a>
                 </span>
               </li>
             </ul>
           </div>
 
           <div class="md:col-span-7 md:pl-10">
-            <form data-demo-form="true" onsubmit="return false"
-              name="inquiry"
+            <form
+              data-demo-form="true"
+              onsubmit="return false"
               method="POST"
               class="grid sm:grid-cols-2 gap-x-10 gap-y-10"
               data-reveal
             >
-
               <div>
                 <label class="lbl" for="f-name">Name *</label>
-                <input
-                  class="field"
-                  type="text"
-                  id="f-name"
-                  name="name"
-                  autocomplete="name"
-                  placeholder="Your full name"
-                  required
-                />
+                <input class="field" type="text" id="f-name" name="name" autocomplete="name" placeholder="Your full name" required />
               </div>
               <div>
                 <label class="lbl" for="f-email">Email *</label>
-                <input
-                  class="field"
-                  type="email"
-                  id="f-email"
-                  name="email"
-                  autocomplete="email"
-                  placeholder="you@example.com"
-                  required
-                />
+                <input class="field" type="email" id="f-email" name="email" autocomplete="email" placeholder="you@example.com" required />
               </div>
               <div>
                 <label class="lbl" for="f-phone">Phone</label>
-                <input
-                  class="field"
-                  type="tel"
-                  id="f-phone"
-                  name="phone"
-                  autocomplete="tel"
-                  placeholder="(000) 000-0000"
-                />
+                <input class="field" type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="(000) 000-0000" />
               </div>
               <div>
-                <label class="lbl" for="f-location">Project Location</label>
-                <input
-                  class="field"
-                  type="text"
-                  id="f-location"
-                  name="project_location"
-                  placeholder="City, region, or site"
-                />
+                <label class="lbl" for="f-location">Project location</label>
+                <input class="field" type="text" id="f-location" name="project_location" placeholder="City, region, or site" />
               </div>
               <div>
-                <label class="lbl" for="f-type">Project Type *</label>
+                <label class="lbl" for="f-type">Project type *</label>
                 <select class="field" id="f-type" name="project_type" required>
-                  <option value="" selected disabled>
-                    Select a project type
-                  </option>
+                  <option value="" selected disabled>Select a project type</option>
                   <option value="residential">Residential</option>
                   <option value="commercial">Commercial</option>
                   <option value="hospitality">Hospitality</option>
@@ -1338,15 +1080,8 @@
                 </select>
               </div>
               <div>
-                <label class="lbl" for="f-investment"
-                  >Estimated Investment *</label
-                >
-                <select
-                  class="field"
-                  id="f-investment"
-                  name="estimated_investment"
-                  required
-                >
+                <label class="lbl" for="f-investment">Estimated investment *</label>
+                <select class="field" id="f-investment" name="estimated_investment" required>
                   <option value="" selected disabled>Select a range</option>
                   <option value="under-250k">Under $250K</option>
                   <option value="250k-750k">$250K – $750K</option>
@@ -1356,482 +1091,102 @@
               </div>
               <div class="sm:col-span-2">
                 <label class="lbl" for="f-message">Message *</label>
-                <textarea
-                  class="field"
-                  id="f-message"
-                  name="message"
-                  rows="4"
-                  placeholder="The site, the dream, the constraints — whatever you have."
-                  required
-                ></textarea>
+                <textarea class="field" id="f-message" name="message" rows="4" placeholder="The site, the dream, the constraints — whatever you have." required></textarea>
               </div>
-              <div class="sm:col-span-2">
-                <button type="submit" class="btn" data-cursor="">
-                  Send Inquiry <span aria-hidden="true">&rarr;</span>
-                </button>
+              <div class="sm:col-span-2 flex flex-wrap items-center gap-6">
+                <button type="submit" class="btn">Send inquiry <span aria-hidden="true">&rarr;</span></button>
+                <span class="text-[0.78rem] tracking-[0.16em] uppercase text-paper/70">Or email us directly</span>
               </div>
-            
-<p data-demo-form-status role="status" aria-live="polite" style="display:none;margin-top:1rem;font-size:0.875rem;line-height:1.6;"></p>
-</form>
+              <p data-demo-form-status role="status" aria-live="polite" style="display: none; grid-column: 1 / -1; font-size: 0.92rem; line-height: 1.6"></p>
+            </form>
           </div>
         </div>
       </section>
     </main>
-    <!-- ============ FOOTER ============ -->
-    <footer class="px-6 md:px-10 pt-24 md:pt-32 pb-10 border-t border-paper/10">
+
+    <footer class="px-6 md:px-10 pt-24 md:pt-32 pb-14 border-t border-paper/10">
       <div data-reveal>
-        <p
-          class="text-[0.62rem] tracking-[0.35em] uppercase text-paper/40 mb-6"
-        >
+        <p class="text-[0.78rem] tracking-[0.22em] uppercase text-paper/75 mb-6">
           STRATA — Architecture &amp; Interior Design Studio
         </p>
-        <a
-          href="#top"
-          class="block font-display font-light leading-none text-[clamp(4.5rem,15vw,13rem)] text-paper/95 transition-colors hover:text-bronze"
-        >
+        <a href="index.html" class="block font-display font-light leading-none text-[clamp(4.5rem,15vw,13rem)] text-paper/95 transition-colors hover:text-bronze">
           STRATA<span class="text-bronze">.</span>
         </a>
       </div>
 
-      <div class="mt-16 grid sm:grid-cols-3 gap-10 text-sm" data-reveal>
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm" data-reveal>
         <nav aria-label="Footer">
           <p class="lbl">Menu</p>
-          <ul class="mt-4 space-y-2 text-paper/60">
-            <li><a href="#work" class="u-draw">Selected Work</a></li>
-            <li><a href="#approach" class="u-draw">Our Approach</a></li>
-            <li><a href="#studio" class="u-draw">The Studio</a></li>
-            <li><a href="#contact" class="u-draw">Contact</a></li>
+          <ul class="mt-4 space-y-1 text-paper/75">
+            <li><a href="index.html#manifesto" class="u-draw">Manifesto</a></li>
+            <li><a href="index.html#work" class="u-draw">Selected Work</a></li>
+            <li><a href="index.html#drawing" class="u-draw">The Drawing</a></li>
+            <li><a href="index.html#approach" class="u-draw">Our Approach</a></li>
+            <li><a href="index.html#studio" class="u-draw">The Studio</a></li>
+            <li><a href="index.html#contact" class="u-draw">Contact</a></li>
           </ul>
         </nav>
         <div>
+          <p class="lbl">Eight studies</p>
+          <ul class="mt-4 space-y-1 text-paper/75">
+            <li><a href="ridgeline-residence.html" class="u-draw">01 — Ridgeline Residence</a></li>
+            <li><a href="hensley-loft.html" class="u-draw">02 — The Hensley Loft</a></li>
+            <li><a href="wren-and-salt.html" class="u-draw">03 — Wren &amp; Salt</a></li>
+            <li><a href="ashgrove-pavilion.html" class="u-draw">04 — Ashgrove Pavilion</a></li>
+            <li><a href="meridian-gallery.html" class="u-draw">05 — Meridian Gallery</a></li>
+            <li><a href="alder-row.html" class="u-draw">06 — Alder Row</a></li>
+            <li><a href="quarry-lane-workshop.html" class="u-draw">07 — Quarry Lane Workshop</a></li>
+            <li><a href="morse-street-reading-room.html" class="u-draw">08 — Morse Street Reading Room</a></li>
+          </ul>
+        </div>
+        <div>
           <p class="lbl">Elsewhere</p>
-          <ul class="mt-4 space-y-2 text-paper/60">
-            <li>
-              <a
-                href="https://www.instagram.com/strata.studio"
-                target="_blank"
-                rel="noopener"
-                class="u-draw"
-                >Instagram — @strata.studio</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/company/strata-studio"
-                target="_blank"
-                rel="noopener"
-                class="u-draw"
-                >LinkedIn — STRATA Studio</a
-              >
-            </li>
-            <li>
-              <a href="mailto:studio@example.com" class="u-draw"
-                >studio@example.com</a
-              >
-            </li>
+          <ul class="mt-4 space-y-1 text-paper/75">
+            <li><a href="https://www.instagram.com/strata.studio" target="_blank" rel="noopener" class="u-draw">Instagram — @strata.studio</a></li>
+            <li><a href="https://www.linkedin.com/company/strata-studio" target="_blank" rel="noopener" class="u-draw">LinkedIn — STRATA Studio</a></li>
+            <li><a href="mailto:studio@example.com" class="u-draw">studio@example.com</a></li>
+            <li><a href="tel:+14165550120" class="u-draw">(416) 555-0120</a></li>
           </ul>
         </div>
         <div>
           <p class="lbl">Studio</p>
-          <p class="mt-4 text-paper/60 leading-relaxed">
-            Toronto, Ontario<br />Projects across Southern Ontario<br />(416)
-            555-0120
+          <p class="mt-4 text-paper/75 leading-relaxed">
+            Toronto, Ontario<br />
+            Projects across Southern Ontario<br />
+            Monday to Friday, 9 to 6
           </p>
+          <a href="#main" class="u-draw mt-5 inline-block text-paper/75">Back to top &uarr;</a>
         </div>
       </div>
 
-      <div
-        class="mt-20 pt-6 border-t border-paper/10 flex flex-col sm:flex-row justify-between gap-3 text-[0.68rem] tracking-[0.12em] text-paper/35"
-        data-reveal
-      >
-        <p>
-          &copy; 2026 STRATA Architecture &amp; Interior Design Studio. All
-          rights reserved.
-        </p>
+      <div class="mt-20 pt-6 border-t border-paper/10 flex flex-col sm:flex-row justify-between gap-3 text-[0.78rem] tracking-[0.08em] text-paper/70" data-reveal>
+        <p>&copy; 2026 STRATA Architecture &amp; Interior Design Studio. A fictional studio, built as a demo.</p>
         <p>Designed in Toronto. Built with restraint.</p>
       </div>
-    </footer>
 
-    <!-- ============ CURSOR-FOLLOW PROJECT PREVIEW (desktop only) ============ -->
-    <div id="work-preview" aria-hidden="true">
-      <img
-        src="project-ridgeline-residence-muskoka.jpg"
-        alt=""
-        loading="lazy"
-      />
-      <img src="project-hensley-loft-toronto.jpg" alt="" loading="lazy" />
-      <img src="project-wren-and-salt-restaurant.jpg" alt="" loading="lazy" />
-      <img
-        src="project-ashgrove-pavilion-king-city.jpg"
-        alt=""
-        loading="lazy"
-      />
-      <img src="project-meridian-gallery-toronto.jpg" alt="" loading="lazy" />
+      <!-- Honest provenance. The three most recent studies are illustrated with
+           free-licence photographs rather than invented ones, and the one
+           licence that requires a credit gets it here. -->
+      <p class="mt-6 text-[0.78rem] leading-relaxed text-paper/65" data-reveal>
+        Demo photography: Alder Row and Quarry Lane use photographs from Unsplash and Pexels
+        (free licence, no attribution required); Morse Street uses
+        <a href="https://commons.wikimedia.org/wiki/File:Statsbiblioteket_l%C3%A6sesalen-2.jpg" target="_blank" rel="noopener" class="u-draw">&ldquo;Statsbiblioteket l&aelig;sesalen&rdquo;</a>
+        by Villy Fink Isaksen, via Wikimedia Commons, CC BY-SA 4.0. Every other image on this
+        site is demonstration artwork.
+      </p>
+    </footer>
+      </div>
     </div>
 
-    <!-- ============ MOTION LIBRARIES ============ -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script>
-      (function () {
-        "use strict";
-
-        function main() {
-          var reduced = window.matchMedia(
-            "(prefers-reduced-motion: reduce)",
-          ).matches;
-          var finePointer = window.matchMedia(
-            "(hover: hover) and (pointer: fine)",
-          ).matches;
-          var hasGsap = typeof window.gsap !== "undefined";
-
-          if (hasGsap && window.ScrollTrigger) {
-            window.gsap.registerPlugin(window.ScrollTrigger);
-          }
-
-          var preloader = document.getElementById("preloader");
-          var navOverlay = document.getElementById("nav-overlay");
-          var navBtn = document.getElementById("nav-open");
-          var navLabel = document.getElementById("nav-open-label");
-          var navIsOpen = false;
-
-          /* ---------- full-screen nav overlay ---------- */
-          function openNav() {
-            navIsOpen = true;
-            navOverlay.classList.add("is-open");
-            navOverlay.setAttribute("aria-hidden", "false");
-            navBtn.classList.add("is-active");
-            navBtn.setAttribute("aria-expanded", "true");
-            navBtn.setAttribute("aria-label", "Close navigation");
-            if (navLabel) navLabel.textContent = "Close";
-            document.body.classList.add("no-scroll");
-            if (hasGsap && !reduced) {
-              window.gsap.fromTo(
-                ".nav-anim",
-                { yPercent: 120 },
-                {
-                  yPercent: 0,
-                  duration: 1.1,
-                  ease: "power4.out",
-                  stagger: 0.055,
-                  overwrite: true,
-                },
-              );
-            }
-          }
-
-          function closeNav() {
-            navIsOpen = false;
-            navOverlay.classList.remove("is-open");
-            navOverlay.setAttribute("aria-hidden", "true");
-            navBtn.classList.remove("is-active");
-            navBtn.setAttribute("aria-expanded", "false");
-            navBtn.setAttribute("aria-label", "Open navigation");
-            if (navLabel) navLabel.textContent = "Menu";
-            document.body.classList.remove("no-scroll");
-            if (hasGsap && !reduced) {
-              /* reset stagger state once the CSS fade-out has finished */
-              setTimeout(function () {
-                if (!navIsOpen) window.gsap.set(".nav-anim", { yPercent: 120 });
-              }, 700);
-            }
-          }
-
-          if (navBtn && navOverlay) {
-            navBtn.addEventListener("click", function () {
-              navIsOpen ? closeNav() : openNav();
-            });
-            document.addEventListener("keydown", function (e) {
-              if (e.key === "Escape" && navIsOpen) closeNav();
-            });
-            navOverlay.querySelectorAll("a").forEach(function (link) {
-              link.addEventListener("click", function () {
-                if (navIsOpen) closeNav();
-              });
-            });
-            if (hasGsap && !reduced)
-              window.gsap.set(".nav-anim", { yPercent: 120 });
-          }
-
-          /* ---------- hero intro (runs as the preloader lifts) ---------- */
-          function heroIntro() {
-            if (!hasGsap || reduced) return;
-            var tl = window.gsap.timeline({ defaults: { ease: "power4.out" } });
-            tl.from("#site-header", { y: -24, autoAlpha: 0, duration: 1 })
-              .from(
-                '[data-hero="eyebrow"]',
-                { y: 26, autoAlpha: 0, duration: 0.9 },
-                "-=0.65",
-              )
-              .from(
-                ".hero-line",
-                { yPercent: 115, duration: 1.2, stagger: 0.11 },
-                "-=0.6",
-              )
-              .from(
-                ".hero-sub",
-                { y: 26, autoAlpha: 0, duration: 0.9 },
-                "-=0.7",
-              )
-              .from(
-                '[data-hero="cue"]',
-                { autoAlpha: 0, duration: 0.9 },
-                "-=0.5",
-              );
-          }
-
-          /* ---------- preloader ---------- */
-          if (preloader) {
-            if (hasGsap && !reduced) {
-              preloader.style.animation =
-                "none"; /* JS takes over from the CSS fallback */
-              document.body.classList.add("no-scroll");
-              var tlPre = window.gsap.timeline();
-              tlPre
-                .from(".pre-letter", {
-                  yPercent: 130,
-                  autoAlpha: 0,
-                  stagger: 0.055,
-                  duration: 1,
-                  ease: "power4.out",
-                })
-                .from(
-                  ".pre-sub",
-                  { autoAlpha: 0, y: 12, duration: 0.7, ease: "power3.out" },
-                  "-=0.45",
-                )
-                .to({}, { duration: 0.5 }) /* hold the wordmark briefly */
-                .to(preloader, {
-                  yPercent: -100,
-                  duration: 0.95,
-                  ease: "power4.inOut",
-                })
-                .add(function () {
-                  heroIntro();
-                }, "-=0.7")
-                .add(function () {
-                  preloader.classList.add("is-done");
-                  document.body.classList.remove("no-scroll");
-                });
-            } else {
-              preloader.classList.add("is-done");
-              heroIntro(); /* no-op without GSAP — content is already visible */
-            }
-          }
-          /* ---------- scroll-triggered reveals ---------- */
-          if (hasGsap && window.ScrollTrigger && !reduced) {
-            window.gsap.utils.toArray("[data-reveal]").forEach(function (el) {
-              window.gsap.from(el, {
-                y: 36,
-                autoAlpha: 0,
-                duration: 1.05,
-                ease: "power3.out",
-                scrollTrigger: { trigger: el, start: "top 88%", once: true },
-              });
-            });
-
-            /* ---------- subtle parallax ---------- */
-            var heroImg = document.querySelector(".hero-bg img");
-            if (heroImg) {
-              window.gsap.fromTo(
-                heroImg,
-                { yPercent: -9 },
-                {
-                  yPercent: 7,
-                  ease: "none",
-                  scrollTrigger: {
-                    trigger: ".hero",
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true,
-                  },
-                },
-              );
-            }
-            var studioImg = document.querySelector(".studio-img");
-            if (studioImg) {
-              window.gsap.fromTo(
-                studioImg,
-                { yPercent: -8 },
-                {
-                  yPercent: 8,
-                  ease: "none",
-                  scrollTrigger: {
-                    trigger: studioImg,
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: true,
-                  },
-                },
-              );
-            }
-          }
-
-          /* ---------- custom cursor (fine pointers only) ---------- */
-          if (finePointer && !reduced && hasGsap) {
-            document.documentElement.classList.add("cursor-on");
-            var dot = document.getElementById("cursor-dot");
-            var tag = document.getElementById("cursor-tag");
-            var tagText = document.getElementById("cursor-tag-text");
-            var tx = window.innerWidth / 2,
-              ty = window.innerHeight / 2;
-            var dx = tx,
-              dy = ty,
-              tagX = tx,
-              tagY = ty;
-
-            window.gsap.set([dot, tag], { xPercent: -50, yPercent: -50 });
-            window.addEventListener(
-              "mousemove",
-              function (e) {
-                tx = e.clientX;
-                ty = e.clientY;
-              },
-              { passive: true },
-            );
-            window.gsap.ticker.add(function () {
-              dx += (tx - dx) * 0.22;
-              dy += (ty - dy) * 0.22; /* dot: quick */
-              tagX += (tx - tagX) * 0.12;
-              tagY += (ty - tagY) * 0.12; /* tag: softer trail */
-              window.gsap.set(dot, { x: dx, y: dy });
-              window.gsap.set(tag, { x: tagX, y: tagY });
-            });
-            window.gsap.to(dot, { opacity: 1, duration: 0.4 });
-
-            document
-              .querySelectorAll(
-                "a, button, [data-cursor], input, select, textarea",
-              )
-              .forEach(function (el) {
-                el.addEventListener("mouseenter", function () {
-                  var label = el.getAttribute("data-cursor");
-                  if (label) {
-                    if (tagText) tagText.textContent = label;
-                    window.gsap.to(dot, {
-                      scale: 0,
-                      duration: 0.3,
-                      ease: "power3.out",
-                      overwrite: "auto",
-                    });
-                    window.gsap.to(tag, {
-                      autoAlpha: 1,
-                      scale: 1,
-                      duration: 0.35,
-                      ease: "power3.out",
-                      overwrite: "auto",
-                    });
-                  } else {
-                    window.gsap.to(dot, {
-                      scale: 2.6,
-                      duration: 0.35,
-                      ease: "power3.out",
-                      overwrite: "auto",
-                    });
-                  }
-                });
-                el.addEventListener("mouseleave", function () {
-                  window.gsap.to(tag, {
-                    autoAlpha: 0,
-                    scale: 0.8,
-                    duration: 0.3,
-                    ease: "power3.in",
-                    overwrite: "auto",
-                  });
-                  window.gsap.to(dot, {
-                    scale: 1,
-                    duration: 0.35,
-                    ease: "power3.out",
-                    overwrite: "auto",
-                  });
-                });
-              });
-          }
-
-          /* ---------- cursor-follow project preview ---------- */
-          if (finePointer && !reduced && hasGsap) {
-            var preview = document.getElementById("work-preview");
-            var previewImgs = preview ? preview.querySelectorAll("img") : [];
-            var rows = document.querySelectorAll(".work-row");
-            if (preview && rows.length) {
-              var qx = window.gsap.quickTo(preview, "x", {
-                duration: 0.45,
-                ease: "power3",
-              });
-              var qy = window.gsap.quickTo(preview, "y", {
-                duration: 0.45,
-                ease: "power3",
-              });
-              window.gsap.set(preview, {
-                xPercent: -50,
-                yPercent: -50,
-                scale: 0.92,
-                rotation: -1.5,
-              });
-              rows.forEach(function (row, i) {
-                row.addEventListener("mouseenter", function (e) {
-                  previewImgs.forEach(function (img, j) {
-                    img.classList.toggle("is-active", j === i);
-                  });
-                  qx(e.clientX);
-                  qy(e.clientY);
-                  window.gsap.to(preview, {
-                    autoAlpha: 1,
-                    scale: 1,
-                    rotation: 0,
-                    duration: 0.5,
-                    ease: "power3.out",
-                    overwrite: "auto",
-                  });
-                });
-                row.addEventListener("mousemove", function (e) {
-                  qx(e.clientX);
-                  qy(e.clientY);
-                });
-                row.addEventListener("mouseleave", function () {
-                  window.gsap.to(preview, {
-                    autoAlpha: 0,
-                    scale: 0.92,
-                    duration: 0.35,
-                    ease: "power3.in",
-                    overwrite: "auto",
-                  });
-                });
-              });
-            }
-          }
-        }
-
-        try {
-          main();
-        } catch (err) {
-          /* Fail gracefully: never let a script error trap the visitor behind the preloader */
-          var p = document.getElementById("preloader");
-          if (p) p.classList.add("is-done");
-          if (document.body) document.body.classList.remove("no-scroll");
-        }
-      })();
-    </script>
-  <script>
-  /* Demo form: presentational only. Nothing is transmitted and no message is
-     sent anywhere, so there is no form endpoint behind this page. */
-  (function () {
-    var message =
-      "Thanks \u2014 this is a demo form, so nothing was actually sent. On a live site your message would reach the business.";
-    Array.prototype.forEach.call(
-      document.querySelectorAll("form[data-demo-form]"),
-      function (form) {
-        var status = form.querySelector("[data-demo-form-status]");
-        form.addEventListener("submit", function (event) {
-          event.preventDefault();
-          if (status) {
-            status.textContent = message;
-            status.style.display = "block";
-          }
-          form.reset();
-        });
-      }
-    );
-  })();
-</script></body>
+    <!-- All of GSAP is free since 3.13, including the plugins that used to be
+         Club-only: SplitText, ScrollSmoother, DrawSVG, Observer. -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
+    <script src="assets/motion.js" defer></script>
+  </body>
 </html>

@@ -6,3 +6,37 @@
 # covers anything the meta tag cannot reach (non-HTML files, error responses).
 /*
   X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+
+# Generated page fragments and build inputs are not part of the public site.
+/content/*
+  X-Robots-Tag: noindex, nofollow
+
+# ---------------------------------------------------------------------------
+# Security and caching.
+#
+# form-action 'none' keeps the "this demo form does not send anything" promise
+# enforceable by the browser, not just by the inline script.
+# Fonts come from Google; GSAP from jsDelivr. Nothing else is allowed.
+# ---------------------------------------------------------------------------
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+
+# Photography and fonts are immutable; cache them for a year.
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# HTML must never be cached; a stale hero is the fastest way to look broken.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

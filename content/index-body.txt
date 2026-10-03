@@ -1,0 +1,376 @@
+<main id="main">
+      <!-- ============ HERO ============
+           Desktop: the photograph is the room. Mobile: a 16:10 band, so the
+           frame keeps almost all of the picture instead of the 25% that a
+           full-height crop of a 16:9 file leaves behind.
+           "Hold to dim" is the studio's own idea — light as material — and it
+           is the one hero effect that works on a phone. -->
+      <section
+        class="hero relative min-h-[100svh] flex flex-col justify-end overflow-hidden pt-[var(--chrome)]"
+        aria-label="Introduction"
+        data-dim-hold
+      >
+        <div class="hero-figure dim-surface" data-dim-surface>
+          <img
+            src="{{HERO}}"
+            {{HERO_SET}}
+            sizes="100vw"
+            width="1408"
+            height="768"
+            fetchpriority="high"
+            decoding="async"
+            alt="Double-height living space in raw concrete at dusk, a single tall window drawing a blade of warm amber light across a board-formed wall, low furniture sinking into deep shadow"
+          />
+          <canvas id="hero-gl" aria-hidden="true"></canvas>
+          <div class="hero-veil" aria-hidden="true"></div>
+        </div>
+        <!-- The dim itself: one layer over the whole hero, so the type and the
+             button dim with the room instead of floating on top of it. -->
+        <div class="hero-shade" aria-hidden="true"></div>
+
+        <div class="relative z-10 px-6 md:px-10 pb-16 md:pb-24">
+          <p class="eyebrow" data-hero="eyebrow">
+            <span class="tick"></span>STRATA · Architecture &amp; Interior Design — Toronto
+          </p>
+
+          <h1
+            class="font-display font-light leading-[0.96] text-[clamp(3rem,10vw,10rem)] mt-7 md:mt-10 max-w-[14ch]"
+          >
+            <span class="hero-mask"><span class="hero-line">Spaces shaped</span></span>
+            <span class="hero-mask"><span class="hero-line">by <em class="italic text-bronze">light</em>, material,</span></span>
+            <span class="hero-mask"><span class="hero-line">and restraint.</span></span>
+          </h1>
+
+          <div class="flex flex-wrap items-end justify-between gap-8 mt-12 md:mt-16">
+            <p class="hero-sub max-w-md text-[0.98rem] leading-relaxed text-paper/80">
+              A five-person studio in Toronto designing residences, workplaces, and rooms worth
+              standing still in — across Southern Ontario and occasionally beyond.
+            </p>
+            <div class="flex items-center gap-5">
+              <button type="button" class="hold-hint" data-dim-toggle aria-pressed="false">
+                <span class="dot" aria-hidden="true"></span>
+                <span data-dim-label>Dim the room</span>
+              </button>
+              <div class="hidden sm:flex flex-col items-center gap-3" data-hero="cue">
+                <span class="text-[0.78rem] tracking-[0.24em] uppercase text-paper/75">Scroll</span>
+                <span class="scroll-cue-line block w-px h-16 bg-paper/20"><span></span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MANIFESTO ============
+           Read word by word as you scroll: the one piece of writing on this
+           site that deserves to be paced rather than skimmed. -->
+      <section id="manifesto" class="relative px-6 md:px-10 py-28 md:py-44" aria-label="Manifesto">
+        <div class="max-w-5xl md:ml-[12vw]">
+          <p class="eyebrow mb-10 md:mb-14"><span class="tick"></span>01 — Manifesto</p>
+          <blockquote
+            class="font-display font-light text-[clamp(1.7rem,4vw,3.6rem)] leading-[1.22] text-paper/90"
+            data-manifesto
+          >
+            We don&rsquo;t decorate rooms. We resolve the tension between how a space is used and
+            <em class="italic">how it feels to stand inside it</em> — one material decision at a
+            time.
+          </blockquote>
+          <p class="mt-12 max-w-xl text-[0.98rem] leading-relaxed text-paper/75">
+            That is the whole method. Everything below — the studies, the drawings, the numbers —
+            is what it looks like when it is followed properly.
+          </p>
+        </div>
+      </section>
+<!-- ============ SELECTED WORK ============
+           New here: eight real links to eight real case studies, reachable with
+           Tab and Enter, a live counter, and a deck that advances by scrolling
+           on a desktop and by swiping on a phone. -->
+      <section id="work" data-deck class="pt-10 md:pt-16 pb-20 md:pb-28" aria-label="Selected work">
+        <div class="px-6 md:px-10 flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 md:mb-16" data-reveal>
+          <div>
+            <p class="eyebrow mb-7"><span class="tick"></span>02 — Selected Work</p>
+            <h2 class="font-display font-light text-4xl md:text-6xl leading-[1.02]" data-split>
+              Eight sites. Nothing arbitrary.
+            </h2>
+          </div>
+          <div class="md:text-right">
+            <p class="max-w-xs text-[0.98rem] leading-relaxed text-paper/75 md:ml-auto">
+              Each project begins with the land and the life that will happen on it.
+            </p>
+            <p class="mt-5 text-[0.78rem] tracking-[0.2em] uppercase text-paper/75">
+              <span data-deck-count class="text-bronze">01</span> / 08 —
+              <span class="md:hidden">swipe</span><span class="hidden md:inline">drag or scroll</span> to advance
+            </p>
+            <div class="mt-6 flex items-center gap-3 md:justify-end">
+              <button type="button" class="wd-nav" data-deck-prev aria-label="Previous project">
+                <span aria-hidden="true">&larr;</span>
+              </button>
+              <button type="button" class="wd-nav" data-deck-next aria-label="Next project">
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="wd-viewport"
+          data-deck-viewport
+          tabindex="0"
+          role="region"
+          aria-label="Selected work: eight projects, left and right arrow keys move between them"
+        >
+{{DECK}}
+        </div>
+
+        <div class="px-6 md:px-10 mt-8">
+          <div class="wd-bar" aria-hidden="true"><span data-deck-bar></span></div>
+          <p class="mt-6 text-[0.98rem] leading-relaxed text-paper/75 max-w-2xl">
+            Every card opens the full study: the brief, the working drawing at the scale it was
+            drawn at, the material list, and the numbers.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ THE DRAWING ============
+           The moment that separates a studio from a hotel: the plan itself,
+           drawing itself, then giving way to the photograph underneath it. -->
+      <section id="drawing" class="px-6 md:px-10 pt-20 md:pt-28 pb-24 md:pb-32 border-t border-paper/10" aria-label="Working drawings">
+        <div class="max-w-3xl" data-reveal>
+          <p class="eyebrow mb-7"><span class="tick"></span>03 — The Drawing</p>
+          <h2 class="font-display font-light text-4xl md:text-6xl leading-[1.02]" data-split>
+            Drawn before it was built.
+          </h2>
+          <p class="mt-8 text-[0.98rem] leading-relaxed text-paper/80">
+            Every project here starts as a plan, and the plan is where the argument is won or lost.
+            Ours is shown at the scale it was worked at — then dragged against the photograph of the
+            finished room, so you can see exactly which line became which wall.
+          </p>
+        </div>
+
+        <div class="dwg mt-16 md:mt-20" data-reveal>
+          <div data-draw-scope data-dwg-zoom-scope>
+            <div class="dwg-plan-wrap" tabindex="0" role="group" aria-label="Working drawing, Ridgeline Residence ground plan at 1:200">
+              {{DRAWING}}
+            </div>
+            <button type="button" class="dwg-zoom" data-dwg-zoom aria-pressed="false">Full size</button>
+            <p class="dwg-note">Ridgeline Residence — ground plan, working drawing 1:200</p>
+          </div>
+          <div>
+            <p class="text-[0.78rem] tracking-[0.22em] uppercase text-paper/70 mb-4">
+              Drawing over photograph — drag the handle
+            </p>
+            {{SLIDER}}
+            <div class="dwg-legend"><span>Photograph</span><span>Line study</span></div>
+            <p class="mt-6 text-[0.98rem] leading-relaxed text-paper/75">
+              The handle is a real slider: drag it, or focus it and use the arrow keys. The line
+              study is the same photograph reduced to its drawing — mass, glazing, and the path the
+              light takes.
+            </p>
+          </div>
+        </div>
+      </section>
+<!-- ============ APPROACH ============ -->
+      <section id="approach" class="px-6 md:px-10 pt-24 md:pt-32 pb-40 md:pb-56 border-t border-paper/10" aria-label="Our approach">
+        <div class="max-w-2xl" data-reveal>
+          <p class="eyebrow mb-7"><span class="tick"></span>04 — Our Approach</p>
+          <h2 class="font-display font-light text-4xl md:text-6xl leading-[1.02]" data-split>
+            A slow, deliberate sequence.
+          </h2>
+          <p class="mt-8 text-[0.98rem] leading-relaxed text-paper/80">
+            Four moves, no shortcuts. Each one ends with something you can hold: a site report, a
+            spatial narrative, a set of drawings, a building.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-y-14 md:gap-x-8 mt-20 md:mt-24">
+          <div class="step-card md:col-span-3 pt-8" data-reveal>
+            <span class="font-display text-bronze text-lg">01</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">Discover</h3>
+            <p class="mt-5 text-[0.95rem] text-paper/75 leading-relaxed">
+              Site analysis, client vision, constraints mapping before a single line is drawn. You
+              leave with a written brief you agreed to.
+            </p>
+          </div>
+          <div class="step-card md:col-span-3 step-offset-2 pt-8" data-reveal>
+            <span class="font-display text-bronze text-lg">02</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">Concept</h3>
+            <p class="mt-5 text-[0.95rem] text-paper/75 leading-relaxed">
+              Spatial narrative, massing studies, and a material direction — argued in person, with
+              physical samples on the table.
+            </p>
+          </div>
+          <div class="step-card md:col-span-3 step-offset-3 pt-8" data-reveal>
+            <span class="font-display text-bronze text-lg">03</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">Detail</h3>
+            <p class="mt-5 text-[0.95rem] text-paper/75 leading-relaxed">
+              Technical drawings, material specification, engineering coordination — the stage that
+              decides whether the finished room looks like the drawing.
+            </p>
+          </div>
+          <div class="step-card md:col-span-3 step-offset-4 pt-8" data-reveal>
+            <span class="font-display text-bronze text-lg">04</span>
+            <h3 class="font-display font-light text-3xl md:text-4xl mt-4">Deliver</h3>
+            <p class="mt-5 text-[0.95rem] text-paper/75 leading-relaxed">
+              Construction oversight, styling, and the final reveal — by the same people who drew
+              it. Nothing is handed off.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ THE STUDIO ============
+           The numbers here are checkable against the eight studies above, which
+           is the whole point of showing them. -->
+      <section id="studio" class="px-6 md:px-10 py-28 md:py-40 border-t border-paper/10" aria-label="The studio">
+        <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-start">
+          <figure data-reveal>
+            <div class="studio-frame">
+              <img
+                src="{{PORTRAIT}}"
+                width="1408"
+                height="768"
+                loading="lazy"
+                decoding="async"
+                alt="Portrait of founding principal Nadia Ostrow standing in soft north-window light against a raw concrete studio wall, charcoal tailored jacket, arms loosely crossed, calm direct gaze, drafting table blurred behind her"
+              />
+            </div>
+            <figcaption class="mt-5 text-[0.78rem] tracking-[0.2em] uppercase text-paper/75">
+              Nadia Ostrow — Founding Principal &amp; Architect
+            </figcaption>
+          </figure>
+
+          <div>
+            <p class="eyebrow mb-9"><span class="tick"></span>05 — The Studio</p>
+            <p class="font-display font-light text-[clamp(1.5rem,3vw,2.3rem)] leading-[1.25] text-paper/90" data-reveal>
+              &ldquo;I started STRATA after a decade designing for
+              <em class="italic">other people&rsquo;s visions</em>.&rdquo;
+            </p>
+            <div class="mt-10 max-w-lg space-y-6 text-[0.98rem] leading-relaxed text-paper/80" data-reveal>
+              <p>
+                Here, every project starts with the site and the client&rsquo;s actual life in it —
+                not a mood board. The land tells you what it can hold; the people tell you what it
+                should feel like. Our job is to make those two answers agree.
+              </p>
+              <p>
+                The team is small on purpose: five people, and every project touched by the same
+                hands from first sketch to final walkthrough. Nothing is handed off, nothing gets
+                lost between departments, and nothing leaves the studio we would not want to live
+                with ourselves.
+              </p>
+            </div>
+            <p class="mt-10 font-display italic text-lg text-bronze" data-reveal>Nadia Ostrow</p>
+
+            <div class="grid grid-cols-2 gap-x-8 gap-y-12 mt-16 md:mt-20">
+{{STATS}}
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-24 md:mt-32" data-reveal>
+          <p class="eyebrow mb-8"><span class="tick"></span>Material, as method</p>
+          <div class="mat">{{MATERIAL}}</div>
+          <p class="mt-8 max-w-2xl text-[0.98rem] leading-relaxed text-paper/75">
+            Press a swatch and the whole page takes the accent of that material — because the
+            material decides the accent, not the other way round. It is the same palette every
+            project is specified from.
+          </p>
+        </div>
+
+        <div class="mt-20 md:mt-24">
+{{MARQUEE}}
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="px-6 md:px-10 py-28 md:py-40 border-t border-paper/10" aria-label="Contact">
+        <div class="grid md:grid-cols-12 gap-14 md:gap-12">
+          <div class="md:col-span-5">
+            <p class="eyebrow mb-9"><span class="tick"></span>06 — Contact</p>
+            <h2 class="font-display font-light leading-[0.98] text-[clamp(2.4rem,6vw,5rem)]" data-split>
+              Let&rsquo;s talk about your <em class="italic">project</em>.
+            </h2>
+            <p class="mt-8 max-w-md text-[0.98rem] leading-relaxed text-paper/80" data-reveal>
+              Every project we take on is bespoke — investment reflects scope, materials and site
+              conditions. Tell us about your vision and we will follow up within two business days.
+            </p>
+
+            <ul class="mt-14 space-y-7 text-sm" data-reveal>
+              <li>
+                <span class="lbl">Email</span>
+                <a href="mailto:studio@example.com" class="u-draw font-display text-xl md:text-2xl">studio@example.com</a>
+              </li>
+              <li>
+                <span class="lbl">Phone</span>
+                <a href="tel:+14165550120" class="u-draw text-paper/85">(416) 555-0120</a>
+              </li>
+              <li class="flex flex-wrap gap-x-10 gap-y-4">
+                <span>
+                  <span class="lbl">Instagram</span>
+                  <a href="https://www.instagram.com/strata.studio" target="_blank" rel="noopener" class="u-draw text-paper/85">@strata.studio</a>
+                </span>
+                <span>
+                  <span class="lbl">LinkedIn</span>
+                  <a href="https://www.linkedin.com/company/strata-studio" target="_blank" rel="noopener" class="u-draw text-paper/85">STRATA Studio</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-7 md:pl-10">
+            <form
+              data-demo-form="true"
+              onsubmit="return false"
+              method="POST"
+              class="grid sm:grid-cols-2 gap-x-10 gap-y-10"
+              data-reveal
+            >
+              <div>
+                <label class="lbl" for="f-name">Name *</label>
+                <input class="field" type="text" id="f-name" name="name" autocomplete="name" placeholder="Your full name" required />
+              </div>
+              <div>
+                <label class="lbl" for="f-email">Email *</label>
+                <input class="field" type="email" id="f-email" name="email" autocomplete="email" placeholder="you@example.com" required />
+              </div>
+              <div>
+                <label class="lbl" for="f-phone">Phone</label>
+                <input class="field" type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="(000) 000-0000" />
+              </div>
+              <div>
+                <label class="lbl" for="f-location">Project location</label>
+                <input class="field" type="text" id="f-location" name="project_location" placeholder="City, region, or site" />
+              </div>
+              <div>
+                <label class="lbl" for="f-type">Project type *</label>
+                <select class="field" id="f-type" name="project_type" required>
+                  <option value="" selected disabled>Select a project type</option>
+                  <option value="residential">Residential</option>
+                  <option value="commercial">Commercial</option>
+                  <option value="hospitality">Hospitality</option>
+                  <option value="cultural">Cultural</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label class="lbl" for="f-investment">Estimated investment *</label>
+                <select class="field" id="f-investment" name="estimated_investment" required>
+                  <option value="" selected disabled>Select a range</option>
+                  <option value="under-250k">Under $250K</option>
+                  <option value="250k-750k">$250K – $750K</option>
+                  <option value="750k-2m">$750K – $2M</option>
+                  <option value="2m-plus">$2M+</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label class="lbl" for="f-message">Message *</label>
+                <textarea class="field" id="f-message" name="message" rows="4" placeholder="The site, the dream, the constraints — whatever you have." required></textarea>
+              </div>
+              <div class="sm:col-span-2 flex flex-wrap items-center gap-6">
+                <button type="submit" class="btn">Send inquiry <span aria-hidden="true">&rarr;</span></button>
+                <span class="text-[0.78rem] tracking-[0.16em] uppercase text-paper/70">Or email us directly</span>
+              </div>
+              <p data-demo-form-status role="status" aria-live="polite" style="display: none; grid-column: 1 / -1; font-size: 0.92rem; line-height: 1.6"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>

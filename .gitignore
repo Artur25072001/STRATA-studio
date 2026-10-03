@@ -11,3 +11,7 @@ desktop.ini
 
 # Node dependencies (the QA harness lives outside this repo)
 node_modules/
+
+# Transient render harness written by tools/images.js; it deletes itself, but
+# an interrupted run can leave it behind.
+tools/.render.html

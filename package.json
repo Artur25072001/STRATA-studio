@@ -1,0 +1,20 @@
+{
+  "name": "strata-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo site for a fictional architecture studio (portfolio sample). The build script compiles Tailwind and generates the project case-study pages.",
+  "author": "Artur Dymchevskyi <arturdymschevskyi@gmail.com>",
+  "license": "ISC",
+  "type": "commonjs",
+  "scripts": {
+    "build": "node build.js",
+    "css": "tailwindcss -c tailwind.config.js -i src/tailwind.css -o assets/strata.css --minify",
+    "images": "node tools/images.js",
+    "check:encoding": "node tools/check-encoding.js",
+    "qa": "node ../_qa/strata.js"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.11.0",
+    "tailwindcss": "3.4.17"
+  }
+}
