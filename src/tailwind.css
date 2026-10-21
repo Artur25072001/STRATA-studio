@@ -39,6 +39,19 @@
   /* Interpolated 0 → 1 while the page is scrolled: the room gets darker. */
   --ambient: 0;
 
+  /* The shadow a dim leaves behind, and what the room's type reads as once the
+     lights are down. A shadow is dark in every palette: these used to be --ink
+     and --paper, which in the daylight palette are the page's own cream, so
+     "Dim the room" washed the hero white and fogged the headline out with it. */
+  --shade: 16 15 14;
+  /* Lights down is light, whatever the palette calls the room's type. At
+     midnight this is the same value as --paper, so the dim's foreground rules
+     are a no-op there. */
+  --dim-fg: 245 242 237;
+  /* The accent, lit. Same idea: the daylight bronze is specified against cream,
+     where it reads at 4.6:1; over a dark ground it measured 1.8:1. */
+  --dim-bronze: 184 147 95;
+
   /* Retinted by the material swatches. */
   --accent: 184 147 95;
   --accent-soft: 184 147 95;
@@ -57,6 +70,10 @@
   --ink-deep: 237 232 224;
   --paper: 24 22 20;
   --bronze: 146 106 55;
+
+  /* Still a shadow, not a fog: the daylight palette's own ink, so a dim room in
+     daylight is the same room with the lights off rather than a white-out. */
+  --shade: 24 22 20;
 }
 
 /* --------------------------------------------------------------------------
@@ -338,7 +355,14 @@ html.cursor-on * {
    inside the dimmed wrapper, so the two effects cancelled; and the theme's
    lowest text opacities were doing the rest of the work. The dim is now a real
    layer over the whole hero — photograph, type and all — while the button that
-   explains it is lifted above that layer. */
+   explains it is lifted above that layer.
+
+   What the daylight theme then found: that layer was built from --ink, which in
+   the paper palette is the page's own cream. Measured at 1440px, "Dim the room"
+   took the hero band from 163 to 228 — brighter, not darker — and crushed the
+   headline from 22 to 178, a 1.8:1 smudge. The dim now reads --shade, which is
+   dark in both palettes, so the room can only go one way; night keeps the layer
+   exactly where it was, and daylight gets its own placement below. */
 .dim-surface {
   transition: opacity 0.7s var(--ease-studio);
 }
@@ -351,11 +375,29 @@ html.cursor-on * {
   opacity: 0;
   background: linear-gradient(
     to top,
-    rgb(var(--ink) / 0.92),
-    rgb(var(--ink) / 0.78) 55%,
-    rgb(var(--ink) / 0.62)
+    rgb(var(--shade) / 0.92),
+    rgb(var(--shade) / 0.78) 55%,
+    rgb(var(--shade) / 0.62)
   );
   transition: opacity 0.75s var(--ease-studio);
+}
+
+/* Daylight keeps the shadow and the shadow's job, but puts it *under* the copy
+   (z-index 10) instead of over it, and lightens the ramp a little.
+
+   Placement is not a matter of taste here. Over the copy, one layer covers both
+   the letterform and the ground it is read against, so dark type on a dark layer
+   and light type on a dark layer both collapse toward the layer's own colour —
+   measured 1.7:1 either way. Under the copy the room still goes dark (the
+   measured band drops to 0.55x) and the headline keeps its own light: 8:1. */
+[data-theme="paper"] .hero-shade {
+  z-index: 5;
+  background: linear-gradient(
+    to top,
+    rgb(var(--shade) / 0.86),
+    rgb(var(--shade) / 0.70) 55%,
+    rgb(var(--shade) / 0.55)
+  );
 }
 
 html.is-dim .hero-shade {
@@ -365,6 +407,55 @@ html.is-dim .hero-shade {
 html.is-dim .dim-surface {
   opacity: 0.36;
   filter: brightness(0.62);
+}
+
+/* Lights down: whatever the palette calls the room's type, it is light in a dark
+   room. At midnight every value here is the one the page already had, so this
+   block is a no-op; in the daylight palette it is the difference between a
+   headline and a dark line on a dark ground. The eyebrow keeps its 0.72 because
+   that is what it had at midnight too. */
+html.is-dim .hero {
+  color: rgb(var(--dim-fg));
+}
+
+html.is-dim .hero .eyebrow {
+  color: rgb(var(--dim-fg) / 0.72);
+}
+
+html.is-dim .hero-sub {
+  color: rgb(var(--dim-fg) / 0.8);
+}
+
+html.is-dim .hero [data-hero="cue"] {
+  color: rgb(var(--dim-fg) / 0.75);
+}
+
+/* The label carries its own colour as a utility class, and the rule below zeros
+   the track it hangs from, which is --paper in daylight and would otherwise
+   disappear into the dark room. */
+html.is-dim .hero [data-hero="cue"] span {
+  color: rgb(var(--dim-fg) / 0.75);
+}
+
+html.is-dim .hero .scroll-cue-line {
+  background: rgb(var(--dim-fg) / 0.2);
+}
+
+/* The one lit word in the headline. Idle, the accent is the Daylight bronze
+   (4.6:1 on cream, 1.8:1 on the darkened room); with the lights down it takes
+   the midnight bronze, which measures 3.1:1 there. */
+html.is-dim .hero h1 em {
+  color: rgb(var(--dim-bronze));
+}
+
+/* The tint travels with the shade's own 0.75s, so the room and the type on it go
+   down together instead of the text snapping to a new colour under a fading
+   layer. */
+.hero,
+.hero .eyebrow,
+.hero-sub,
+.hero [data-hero="cue"] {
+  transition: color 0.75s var(--ease-studio);
 }
 
 html.is-dim .dim-keep {
@@ -980,6 +1071,17 @@ details.notice-more > p {
     rgb(var(--ink) / 0)
   );
   pointer-events: none;
+  transition: opacity var(--dur-mid) ease;
+}
+
+/* In daylight with the lights down, the rail's own gradient — --ink, which is
+   the page's cream — read as a bright smudge across the bottom of a dark room
+   (measured 236 against a room at 92). It is decorative, aria-hidden, and only
+   repeats what the deck's counter already says, so there it stands aside for the
+   duration rather than lighting the room back up. At midnight the rail is dark
+   over a dark room and carries its own readable light, so it stays. */
+html[data-theme="paper"].is-dim .rail {
+  opacity: 0;
 }
 
 @media (min-width: 768px) {
@@ -1166,10 +1268,18 @@ html.gl-on .hero-figure img {
     color var(--dur-fast) ease;
 }
 
-.hold-hint:hover,
-html.is-dim .hold-hint {
+/* Hover and the dim state are not the same thing here: hovered, the control is
+   still on the page's own ground and takes the theme's type colour; with the
+   lights down it stands in a dark room, where the daylight palette's type colour
+   is the darkness itself. */
+.hold-hint:hover {
   border-color: rgb(var(--accent));
   color: rgb(var(--paper));
+}
+
+html.is-dim .hold-hint {
+  border-color: rgb(var(--accent));
+  color: rgb(var(--dim-fg));
 }
 
 .hold-hint .dot {
